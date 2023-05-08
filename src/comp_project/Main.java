@@ -1,7 +1,12 @@
 package comp_project;
 
 import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Paths;
 
+import baselogger.BaseLogger;
 import gui.Login;
 
 /************** Pledge of Honor ******************************************
@@ -15,17 +20,20 @@ SIGNATURE: <Bora Kaymakçıoğlu, 82860>
 *************************************************************************/
 
 public class Main {
-
+	
+	// Frames
 	private static Login login = new Login();
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws IOException {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					BaseLogger.info().log("Application started");
 					login.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
