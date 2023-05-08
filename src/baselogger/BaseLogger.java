@@ -3,6 +3,8 @@ package baselogger;
 import java.io.IOException;
 import java.nio.file.Paths;
 
+import javax.naming.InitialContext;
+
 
 /**
  * Logger Class for Error and Info
@@ -17,16 +19,19 @@ public class BaseLogger {
     private static BaseWritter errorWriter;
     private static BaseWritter infoWriter;
 	
-	public BaseLogger(){
-		try {
+    
+    /**
+     * Defines loggers
+     */
+    public static void init() {
+    	try {
 			initializeLoggers();
 		} catch (Exception e) {
 			System.err.println("Error occured in initializing Loggers. Check logger file path strings!");
 			System.err.println(e);
 		}
-		
-	}
-	
+    }
+    
 	/**
 	 * Initializing loggers from file path strings, throwing IO Exception
 	 * @throws IOException

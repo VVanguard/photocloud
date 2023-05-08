@@ -50,9 +50,6 @@ public class Login extends FrameFactory {
 		super(350, 500, Type.NORMAL);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		// Title
-		setTitle("");
-
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{65, 0, 65, 0};
@@ -88,20 +85,6 @@ public class Login extends FrameFactory {
 	 * 
 	 */
 	public void initializeComponents(JPanel jPanel) {
-		
-		/*
-		 * Components
-		 * 
-		 * 
-		 * Heading Label
-		 * Username Label
-		 * Username TxtBox
-		 * Password Label
-		 * Password TxtBox 
-		 * LogIn Button
-		 * SignUp Label
-		 * SignUp Button
-		 */
 		
 		// Heading
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
