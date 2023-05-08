@@ -1,4 +1,4 @@
-package util.customfields;
+package util;
 
 import java.awt.Component;
 import java.awt.GridBagConstraints;

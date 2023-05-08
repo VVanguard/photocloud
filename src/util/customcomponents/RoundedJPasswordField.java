@@ -1,21 +1,21 @@
-package util.customfields;
+package util.customcomponents;
 
 import java.awt.Graphics;
 
-import javax.swing.JToggleButton;
+import javax.swing.JPasswordField;
 
 
 /**
- * Custom Rounded Toggle Button extending JButton
+ * Custom Rounded Password Field extending JPasswordField
  * @author bkaym
  *
  */
-public class RoundedJToggleButton extends JToggleButton {
+public class RoundedJPasswordField extends JPasswordField{
 
 	private int arcR;
 	
 	
-	public RoundedJToggleButton(int arcR) {
+	public RoundedJPasswordField(int arcR) {
 		super();
 		this.arcR = arcR;
 		setOpaque(false);

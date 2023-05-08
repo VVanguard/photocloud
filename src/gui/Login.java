@@ -4,10 +4,11 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import util.Colors;
-import util.customfields.ComponentConfiguration;
-import util.customfields.RoundedJButton;
-import util.customfields.RoundedJPasswordField;
-import util.customfields.RoundedJTextField;
+import util.ComponentConfiguration;
+import util.ComponentGenerator;
+import util.customcomponents.RoundedJButton;
+import util.customcomponents.RoundedJPasswordField;
+import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
 
 import java.awt.Color;
@@ -29,15 +30,24 @@ public class Login extends FrameFactory {
 
 	
 	// Components
-	private Label headLabel;
 	private JTextField txtUsername;
 	private JPasswordField txtPassword;
-	private JLabel lblUsername;
-	private JLabel lblPassword;
 	private JButton btnLogIn;
-	private JLabel lblSignUp;
 	private JButton btnSignUp;
-
+	
+	//Configurations
+	private ComponentConfiguration txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
+			txtUsername, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 4);
+	
+	private ComponentConfiguration txtPasswordConfiguration = ComponentGenerator.generateRoundedPasswordField(
+			txtPassword, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 7);
+	
+	private ComponentConfiguration btnLogInConfiguration = ComponentGenerator.generateRoundedButton(
+			btnLogIn, 5, "Log In", new Font("Arial", Font.PLAIN, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(10, 30, 10, 30), 1, 9);
+	
+	private ComponentConfiguration btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
+			btnSignUp, 5, "Sıgn Up", new Font("Arial", Font.PLAIN, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 60, 20, 60), 1, 12);
+	
 	
 	/**
 	 * Create the frame.
@@ -61,7 +71,9 @@ public class Login extends FrameFactory {
 		// Initialize Components
 		initializeComponents(contentPane);	
 		
-		// Action Listeners
+		/*
+		 * Action Listeners
+		 */
 		// Log In
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,212 +97,47 @@ public class Login extends FrameFactory {
 	 */
 	public void initializeComponents(JPanel jPanel) {
 		
+		/*
+		 * Components
+		 * 
+		 * 
+		 * Heading Label
+		 * Username Label
+		 * Username TxtBox
+		 * Password Label
+		 * Password TxtBox 
+		 * LogIn Button
+		 * SignUp Label
+		 * SignUp Button
+		 */
+		
 		// Heading
-		addComponent(jPanel, generateHeadingLabel());
+		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
+				"PhotoCloud Editor", new Font("Arial", Font.PLAIN, 24), new Insets(0, 0, 10, 0), 1, 1));
 		
 		// Username
-		addComponent(jPanel, generateUsernameLabel());
-		addComponent(jPanel, generateUsernameTextBox());
+		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
+				"Username", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 3));
+		
+		txtUsername = (JTextField)txtUsernameConfiguration.getComponent();
+		addComponent(jPanel, txtUsernameConfiguration);
 		
 		// Password
-		addComponent(jPanel, generatePasswordLabel());
-		addComponent(jPanel, generatePasswordTextBox());
+		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
+				"Password", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 6));
+		
+		txtPassword = (JPasswordField)txtPasswordConfiguration.getComponent();
+		addComponent(jPanel, txtPasswordConfiguration);
 		
 		// LogIn
-		addComponent(jPanel, generateLogInButton());
+		btnLogIn = (JButton)btnLogInConfiguration.getComponent();
+		addComponent(jPanel, btnLogInConfiguration);
 		
 		// SignUp
-		addComponent(jPanel, generateSignUpLabel());
-		addComponent(jPanel, generateSignUpButton());
+		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
+				"Sign Up Now!", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 5, 0), 1, 11));
+		
+		btnSignUp = (JButton) btnSignUpConfiguration.getComponent();
+		addComponent(jPanel, btnSignUpConfiguration);
 	}
-	
-		
-	/*
-	 * Components
-	 * 
-	 * 
-	 * Heading Label
-	 * Username Label
-	 * Username TxtBox
-	 * Password Label
-	 * Password TxtBox 
-	 * LogIn Button
-	 * SignUp Label
-	 * SignUp Button
-	 */
-
-
-	/**
-	 * Generate Heading Label configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateHeadingLabel() {
-		
-		// Head Label
-		headLabel = new Label("PhotoCloud Editor");
-		headLabel.setFont(new Font("Arial", Font.PLAIN, 24));
-		
-		// Head Label Configuration
-		GridBagConstraints gbc_HeadLabel = new GridBagConstraints();
-		gbc_HeadLabel.insets = new Insets(0, 0, 10, 0);
-		gbc_HeadLabel.gridwidth = 3;
-		gbc_HeadLabel.gridx = 0;
-		gbc_HeadLabel.gridy = 1;
-		
-		return new ComponentConfiguration(headLabel, gbc_HeadLabel);
-	}
-	
-	
-	/**
-	 * Generate Username Label configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateUsernameLabel() {
-		
-		// Username JLabel 
-		lblUsername = new JLabel("Username");
-		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsername.setFont(new Font("Arial", Font.PLAIN, 10));
-		
-		// Username JLabel Placement
-		GridBagConstraints gbc_lblUsername = new GridBagConstraints();
-		gbc_lblUsername.insets = new Insets(0, 0, 5, 5);
-		gbc_lblUsername.anchor = GridBagConstraints.BASELINE;
-		gbc_lblUsername.gridx = 1;
-		gbc_lblUsername.gridy = 3;
-		
-		return new ComponentConfiguration(lblUsername, gbc_lblUsername);
-	}
-	
-	
-	/**
-	 * Generate Username Text Box configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateUsernameTextBox() {
-		
-		// Username Rounded Text Box
-		txtUsername = new RoundedJTextField(5);
-		txtUsername.setBackground(Colors.BROKEN_WHITE);
-				
-		// Username Text Box Placement
-		GridBagConstraints gbc_txtUsername = new GridBagConstraints();
-		gbc_txtUsername.insets = new Insets(0, 0, 5, 5);
-		gbc_txtUsername.fill = GridBagConstraints.BOTH;
-		gbc_txtUsername.gridx = 1;
-		gbc_txtUsername.gridy = 4;
-		
-		return new ComponentConfiguration(txtUsername, gbc_txtUsername);	
-	}
-	
-	
-	/**
-	 * Generate Password Label configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generatePasswordLabel() {
-		
-		// Password JLabel
-		lblPassword = new JLabel("Password");
-		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPassword.setFont(new Font("Arial", Font.PLAIN, 10));
-		
-		// Password JLabel Placement
-		GridBagConstraints gbc_lblPassword = new GridBagConstraints();
-		gbc_lblPassword.insets = new Insets(0, 0, 5, 5);
-		gbc_lblPassword.gridx = 1;
-		gbc_lblPassword.gridy = 6;
-		
-		return new ComponentConfiguration(lblPassword, gbc_lblPassword);
-	}
-	
-	
-	/**
-	 * Generate Password Text Box configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generatePasswordTextBox() {
-		
-		// Password Rounded Text Box
-		txtPassword = new RoundedJPasswordField(5);
-		txtPassword.setBackground(new Color(242, 242, 242));
-		
-		// Paassword Text Box Placement
-		GridBagConstraints gbc_txtPassword = new GridBagConstraints();
-		gbc_txtPassword.fill = GridBagConstraints.BOTH;
-		gbc_txtPassword.insets = new Insets(0, 0, 5, 5);
-		gbc_txtPassword.gridx = 1;
-		gbc_txtPassword.gridy = 7;
-		
-		return new ComponentConfiguration(txtPassword, gbc_txtPassword);
-	}
-	
-	
-	/**
-	 * Generate LogIn Button configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateLogInButton() {
-		
-		// LogIn Rounded JButton
-		btnLogIn = new RoundedJButton(5);
-		btnLogIn.setText("Log In");
-		btnLogIn.setFont(new Font("Ariel", Font.BOLD, 12));
-		btnLogIn.setForeground(Colors.BROKEN_WHITE);
-		btnLogIn.setBackground(Colors.BRUNSWICK_GREEN);
-		
-		// LogIn Rounded JButton Placement
-		GridBagConstraints gbc_btnLogIn = new GridBagConstraints();
-		gbc_btnLogIn.insets = new Insets(10, 30, 10, 30);
-		gbc_btnLogIn.fill = GridBagConstraints.BOTH;
-		gbc_btnLogIn.gridx = 1;
-		gbc_btnLogIn.gridy = 9;
-		
-		return new ComponentConfiguration(btnLogIn, gbc_btnLogIn);	
-	}
-	
-	
-	/**
-	 * Generate SingUp Label configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateSignUpLabel() {
-		
-		// SignUp JLabel
-		lblSignUp = new JLabel("Come join us!");
-		lblSignUp.setFont(new Font("Arial", Font.PLAIN, 10));
-		
-		// SignUp Label Placement
-		GridBagConstraints gbc_lblSignUp = new GridBagConstraints();
-		gbc_lblSignUp.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSignUp.gridx = 1;
-		gbc_lblSignUp.gridy = 11;
-
-		return new ComponentConfiguration(lblSignUp, gbc_lblSignUp);	
-	}
-	
-	
-	/**
-	 * Generate Sing Up Button configuration
-	 * @return ComponentConfiguration
-	 */
-	private ComponentConfiguration generateSignUpButton() {
-
-		// SignUp Button
-		btnSignUp = new RoundedJButton(5);
-		btnSignUp.setText("Sign Up");
-		btnSignUp.setFont(new Font("Ariel", Font.BOLD, 12));
-		btnSignUp.setForeground(Colors.BROKEN_WHITE);
-		btnSignUp.setBackground(Colors.BRUNSWICK_GREEN);
-		
-		// SignUp Button Placement
-		GridBagConstraints gbc_btnSignUp = new GridBagConstraints();
-		gbc_btnSignUp.fill = GridBagConstraints.BOTH;
-		gbc_btnSignUp.insets = new Insets(0, 60, 20, 60);
-		gbc_btnSignUp.gridx = 1;
-		gbc_btnSignUp.gridy = 12;
-		
-		return new ComponentConfiguration(btnSignUp, gbc_btnSignUp);
-	}
-	
 }

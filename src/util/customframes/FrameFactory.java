@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import util.Colors;
-import util.customfields.ComponentConfiguration;
+import util.ComponentConfiguration;
 
 
 public abstract class FrameFactory extends JFrame {
