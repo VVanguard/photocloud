@@ -6,24 +6,16 @@ import javax.swing.JPasswordField;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
-import util.customcomponents.RoundedJButton;
-import util.customcomponents.RoundedJPasswordField;
-import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
 
-import java.awt.Color;
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
-import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Label;
 
 
 public class Login extends FrameFactory {
