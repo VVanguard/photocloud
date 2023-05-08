@@ -62,7 +62,13 @@ public class Login extends FrameFactory {
 		initializeComponents(contentPane);	
 		
 		// Action Listeners
-		
+		// Log In
+		btnLogIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("login");
+			}
+		});
+
 		// Sign Up
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
@@ -121,8 +127,8 @@ public class Login extends FrameFactory {
 	private ComponentConfiguration generateHeadingLabel() {
 		
 		// Head Label
-		headLabel = new Label("Vis Photo Editor");
-		headLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		headLabel = new Label("PhotoCloud Editor");
+		headLabel.setFont(new Font("Arial", Font.PLAIN, 24));
 		
 		// Head Label Configuration
 		GridBagConstraints gbc_HeadLabel = new GridBagConstraints();
@@ -240,12 +246,6 @@ public class Login extends FrameFactory {
 		gbc_btnLogIn.gridx = 1;
 		gbc_btnLogIn.gridy = 9;
 		
-		btnLogIn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("login");
-			}
-		});
-
 		return new ComponentConfiguration(btnLogIn, gbc_btnLogIn);	
 	}
 	

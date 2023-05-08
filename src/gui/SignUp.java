@@ -1,8 +1,6 @@
 package gui;
 
-import java.awt.AWTEvent;
 import java.awt.Color;
-import java.awt.Event;
 import java.awt.Font;
 
 import javax.swing.ButtonGroup;
@@ -26,8 +24,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -37,6 +33,7 @@ public class SignUp extends FrameFactory {
 
 	
 	// Components
+	private JLabel headLabel;
 	private JTextField txtUsername;
 	private JPasswordField txtPassword;
 	private JLabel lblUsername;
@@ -56,7 +53,7 @@ public class SignUp extends FrameFactory {
 	public SignUp() {
 
 		// Create Frame (x, y, type) and Content Pane
-		super(500, 400, Type.POPUP);	
+		super(500, 350, Type.POPUP);	
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
@@ -66,7 +63,7 @@ public class SignUp extends FrameFactory {
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{30, 200, 50, 120, 30, 0};
-		gbl_contentPane.rowHeights = new int[]{100, 60, 0, 60, 0, 60, 19, 60, 60, 0};
+		gbl_contentPane.rowHeights = new int[]{50, 60, 0, 60, 0, 60, 19, 60, 60, 0};
 
 		contentPane.setLayout(gbl_contentPane);
 		
@@ -88,6 +85,8 @@ public class SignUp extends FrameFactory {
 	@Override
 	public void initializeComponents(JPanel jPanel) {
 		
+		addComponent(jPanel, generateHeadingLabel());
+		
 		addComponent(jPanel, generateUsernameLabel());		
 		addComponent(jPanel, generateUsernameTextBox());
 		
@@ -105,7 +104,7 @@ public class SignUp extends FrameFactory {
 	/*
 	 * Components
 	 * 
-	 * Heading Button
+	 * Heding Label
 	 * Username Label
 	 * Userame TxtBox
 	 * Password Label
@@ -116,6 +115,26 @@ public class SignUp extends FrameFactory {
 	 * Professional Button
 	 * 
 	 */
+	
+	
+	/**
+	 * Generate Heading Label configuration
+	 * @return ComponentConfiguration
+	 */
+	private ComponentConfiguration generateHeadingLabel() {
+		
+		// Head Label
+		headLabel = new JLabel("PhotoCloud Editor");
+		headLabel.setFont(new Font("Arial", Font.PLAIN, 24));
+		
+		// Head Label Configuration
+		GridBagConstraints gbc_HeadLabel = new GridBagConstraints();
+		gbc_HeadLabel.insets = new Insets(0, 0, 20, 0);
+		gbc_HeadLabel.gridx = 1;
+		gbc_HeadLabel.gridy = 1;
+		
+		return new ComponentConfiguration(headLabel, gbc_HeadLabel);
+	}
 	
 	
 	/**
@@ -191,7 +210,7 @@ public class SignUp extends FrameFactory {
 		txtPassword = new RoundedJPasswordField(5);
 		txtPassword.setBackground(new Color(242, 242, 242));
 		
-		// Paassword Text Box Placement
+		// Password Text Box Placement
 		GridBagConstraints gbc_txtPassword = new GridBagConstraints();
 		gbc_txtPassword.fill = GridBagConstraints.BOTH;
 		gbc_txtPassword.insets = new Insets(10, 5, 10, 5);
