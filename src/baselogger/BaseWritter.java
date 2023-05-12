@@ -42,7 +42,7 @@ public class BaseWritter extends FileWriter {
 		
 		} catch (Exception e) {
 			System.err.println("Error in logging!");
-			e.printStackTrace();
+			System.out.println(e);
 		}
 		
 	}

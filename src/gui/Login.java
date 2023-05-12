@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 
 public class Login extends FrameFactory {
 
+	// Logger
+	private BaseLogger baseLogger = new BaseLogger();
 	
 	// Components
 	private JTextField txtUsername;
@@ -52,7 +54,7 @@ public class Login extends FrameFactory {
 		// Create Frame (x, y, type) and Content Pane
 		super(350, 500, Type.NORMAL);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{65, 0, 65, 0};
@@ -76,10 +78,11 @@ public class Login extends FrameFactory {
 		// Sign Up
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
-				BaseLogger.info().log("New SignUp Request");
-				
 				SignUp signUp = new SignUp();
 				signUp.setVisible(true);
+				
+				baseLogger.info().log("New SignUp Request");
+				baseLogger.error().log("Error Log Try");
 			}
 		});
 	}

@@ -1,11 +1,10 @@
-package comp_project;
+package gui;
 
 import java.awt.EventQueue;
 
 import java.io.IOException;
 
 import baselogger.BaseLogger;
-import gui.Login;
 
 /************** Pledge of Honor ******************************************
 I hereby certify that I have completed this programming project on my own
@@ -21,6 +20,9 @@ public class Main {
 	
 	// Frames
 	private static Login login = new Login();
+	
+	//Logger
+	public BaseLogger baseLogger = new BaseLogger();
 
 	/**
 	 * Launch the application.
@@ -28,12 +30,9 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		
-		BaseLogger.init();
-		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BaseLogger.info().log("Application started");
 					login.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -1,7 +1,6 @@
 package gui;
 
 import java.awt.Font;
-import java.awt.GridBagConstraints;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -9,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import java.awt.GridBagLayout;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -33,6 +34,8 @@ import javax.swing.JLabel;
 
 public class SignUp extends FrameFactory {
 
+	// Logger
+	private BaseLogger baseLogger = new BaseLogger();
 	
 	// Components
 	private JTextField txtName;
@@ -41,7 +44,6 @@ public class SignUp extends FrameFactory {
 	private JTextField txtAge;
 	private JTextField txtUsername;
 	private JPasswordField txtPassword;
-	
 	private JLabel lblImg;
 	
 	private JButton btnUpload;
@@ -50,6 +52,8 @@ public class SignUp extends FrameFactory {
 	private JToggleButton btnHobbyist;
 	private JToggleButton btnProfessional;
 	private ButtonGroup btnTierGroup;
+	
+	private Image ppImg = null;
 	
 	
 	// Configurations
@@ -119,7 +123,27 @@ public class SignUp extends FrameFactory {
 		btnTierGroup.add(btnProfessional);
 		
 		
-		// Action Listeners	
+		/**
+		 * Action Listeners	
+		 */
+		
+		// SignUp
+		btnSignUp.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (ppImg == null) {
+					try {
+						ppImg = ImageOperations.readNewImageFromUser("resources\\profilepictures\\Default_Profile_Picture.png");
+					} catch (IOException error) {
+						error.printStackTrace();
+						baseLogger.error().log("Failed to set Default Profile Picture");
+					}
+				}
+				
+				//TODO: Create User BackEnd
+			}
+		});
 		
 		// Upload Image 
 		btnUpload.addActionListener(new ActionListener() {
@@ -139,7 +163,6 @@ public class SignUp extends FrameFactory {
 				
 				// If File is selected in the chooser
 				if (result == JFileChooser.APPROVE_OPTION) {
-					BaseLogger.info().log("Initiate Photo Upload");
 					
 					File selectedFile = chooser.getSelectedFile();
 					String imagePath = selectedFile.getAbsolutePath();
@@ -147,18 +170,12 @@ public class SignUp extends FrameFactory {
 					// Insert Image to the JLabel
 					try {
 						lblImg.setIcon(new ImageIcon(ImageOperations.ResizeImage(ImageOperations.readNewImageFromUser(imagePath), 150, 150)));
-						BaseLogger.info().log("Photo Upload Successfull");
+						baseLogger.info().log("Photo Upload Successful");
 					} catch (IOException error) {
-						error.printStackTrace();
-						BaseLogger.info().log("Photo Upload Failed");
+						baseLogger.error().log("Photo Upload Failed: " + error);
 						lblImg.setText("Upload Failed, Try Again Later");
 					}
 				} 
-				
-				// If no File is Selected
-				else if (result == JFileChooser.CANCEL_OPTION) {
-					BaseLogger.info().log("Photo Upload Canceled");
-				}
 			}
 		});
 	}
@@ -254,13 +271,6 @@ public class SignUp extends FrameFactory {
 		lblImg = (JLabel)lblImgLabelConfiguration.getComponent();
 		lblImgLabelConfiguration.getGridBagConstraints().gridheight = 5;
 		addComponent(jPanel, lblImgLabelConfiguration);
-		
-//		GridBagConstraints gbcImg = new GridBagConstraints();
-//		gbcImg.fill = GridBagConstraints.BOTH;
-//		gbcImg.gridheight = 5;
-//		gbcImg.gridx = 3;
-//		gbcImg.gridy = 9;
-//		contentPane.add(lblImg, gbcImg);
 		
 		btnUpload = (JButton)btnUploadConfiguration.getComponent();
 		addComponent(jPanel, btnUploadConfiguration);

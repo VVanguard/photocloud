@@ -13,17 +13,21 @@ import javax.naming.InitialContext;
  */
 public class BaseLogger {
 	
-	private static final String ERROR_FILE = "logs//application_error.txt";
-    private static final String INFO_FILE = "logs//application_info.txt";
+	private final String ERROR_FILE = "logs//application_error.txt";
+    private final String INFO_FILE = "logs//application_info.txt";
     
-    private static BaseWritter errorWriter;
-    private static BaseWritter infoWriter;
+    private BaseWritter errorWriter;
+    private BaseWritter infoWriter;
 	
+    
+    public BaseLogger() {
+		init();
+	}
     
     /**
      * Defines loggers
      */
-    public static void init() {
+    private void init() {
     	try {
 			initializeLoggers();
 		} catch (Exception e) {
@@ -36,7 +40,7 @@ public class BaseLogger {
 	 * Initializing loggers from file path strings, throwing IO Exception
 	 * @throws IOException
 	 */
-	private static void initializeLoggers() throws IOException {
+	private void initializeLoggers() throws IOException {
 		infoWriter = new BaseWritter(INFO_FILE, true, "INFO");
 		errorWriter = new BaseWritter(ERROR_FILE, true, "ERROR");
 	}
@@ -46,7 +50,7 @@ public class BaseLogger {
 	 * Returns the info writer in a static way
 	 * @return	infoWriter
 	 */
-	public static BaseWritter info() {
+	public BaseWritter info() {
 		return infoWriter;
 	}
 	
@@ -55,7 +59,7 @@ public class BaseLogger {
 	 * Returns the error writer in a static way
 	 * @return	errorWriter
 	 */
-	public static BaseWritter error() {
+	public BaseWritter error() {
 		return errorWriter;
 	}
 	
