@@ -1,23 +1,34 @@
 package gui;
 
 import java.awt.Font;
+import java.awt.GridBagConstraints;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
+import baselogger.BaseLogger;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.FrameFactory;
+import util.image.ImageOperations;
 
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 
 
 public class SignUp extends FrameFactory {
@@ -31,11 +42,15 @@ public class SignUp extends FrameFactory {
 	private JTextField txtUsername;
 	private JPasswordField txtPassword;
 	
+	private JLabel lblImg;
+	
+	private JButton btnUpload;
 	private JButton btnSignUp;
 	private JToggleButton btnFree;
 	private JToggleButton btnHobbyist;
 	private JToggleButton btnProfessional;
 	private ButtonGroup btnTierGroup;
+	
 	
 	// Configurations
 	private ComponentConfiguration txtNameConfiguration = ComponentGenerator.generateRoundedTextField(
@@ -68,6 +83,11 @@ public class SignUp extends FrameFactory {
 	private ComponentConfiguration btnProfessionalConfiguration = ComponentGenerator.generateRoundedToggleButton(
 			btnProfessional, 10, "PROFESSIONAL", new Font("Ariel", Font.BOLD, 20), Colors.BROKEN_WHITE, Colors.CHARCOAL_GRAY, new Insets(5, 0, 5, 0), 3, 7);
 	
+	private ComponentConfiguration btnUploadConfiguration = ComponentGenerator.generateRoundedButton(
+			btnUpload, 20, "Upload Picture", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(10, 20, 10, 20), 3, 15);
+	
+	private ComponentConfiguration lblImgLabelConfiguration = ComponentGenerator.generateCenteredLabel(
+			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 3, 9);
 	
 	/**
 	 * Create the frame.
@@ -97,6 +117,50 @@ public class SignUp extends FrameFactory {
 		btnTierGroup.add(btnFree);
 		btnTierGroup.add(btnHobbyist);
 		btnTierGroup.add(btnProfessional);
+		
+		
+		// Action Listeners	
+		
+		// Upload Image 
+		btnUpload.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser chooser = new JFileChooser();
+				// Set Current Directory
+				chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+				
+				// Create image filter
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("images", "jpg", "gif", "png");
+				chooser.addChoosableFileFilter(filter);
+				
+				// Create result variable
+				int result = chooser.showSaveDialog(null);
+				
+				// If File is selected in the chooser
+				if (result == JFileChooser.APPROVE_OPTION) {
+					BaseLogger.info().log("Initiate Photo Upload");
+					
+					File selectedFile = chooser.getSelectedFile();
+					String imagePath = selectedFile.getAbsolutePath();
+					
+					// Insert Image to the JLabel
+					try {
+						lblImg.setIcon(new ImageIcon(ImageOperations.ResizeImage(ImageOperations.readNewImageFromUser(imagePath), 150, 150)));
+						BaseLogger.info().log("Photo Upload Successfull");
+					} catch (IOException error) {
+						error.printStackTrace();
+						BaseLogger.info().log("Photo Upload Failed");
+						lblImg.setText("Upload Failed, Try Again Later");
+					}
+				} 
+				
+				// If no File is Selected
+				else if (result == JFileChooser.CANCEL_OPTION) {
+					BaseLogger.info().log("Photo Upload Canceled");
+				}
+			}
+		});
 	}
 
 	
@@ -110,9 +174,9 @@ public class SignUp extends FrameFactory {
 		/*
 		 * Components
 		 * 
-		 * Heding Label
+		 * Heading Label
 		 * Username Label
-		 * Userame TxtBox
+		 * Username TxtBox
 		 * Password Label
 		 * Password TxtBox
 		 * SignUp Button
@@ -185,5 +249,20 @@ public class SignUp extends FrameFactory {
 		
 		btnProfessional = (JToggleButton)btnProfessionalConfiguration.getComponent();
 		addComponent(jPanel, btnProfessionalConfiguration);
+		
+		//Image Label
+		lblImg = (JLabel)lblImgLabelConfiguration.getComponent();
+		lblImgLabelConfiguration.getGridBagConstraints().gridheight = 5;
+		addComponent(jPanel, lblImgLabelConfiguration);
+		
+//		GridBagConstraints gbcImg = new GridBagConstraints();
+//		gbcImg.fill = GridBagConstraints.BOTH;
+//		gbcImg.gridheight = 5;
+//		gbcImg.gridx = 3;
+//		gbcImg.gridy = 9;
+//		contentPane.add(lblImg, gbcImg);
+		
+		btnUpload = (JButton)btnUploadConfiguration.getComponent();
+		addComponent(jPanel, btnUploadConfiguration);
 	}
 }

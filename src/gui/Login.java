@@ -10,6 +10,9 @@ import util.customframes.FrameFactory;
 
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
+
+import baselogger.BaseLogger;
+
 import java.awt.Insets;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -73,6 +76,8 @@ public class Login extends FrameFactory {
 		// Sign Up
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
+				BaseLogger.info().log("New SignUp Request");
+				
 				SignUp signUp = new SignUp();
 				signUp.setVisible(true);
 			}
