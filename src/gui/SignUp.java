@@ -15,6 +15,7 @@ import javax.swing.JToggleButton;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import baselogger.BaseLogger;
+import user.User;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
@@ -124,7 +125,9 @@ public class SignUp extends FrameFactory {
 		
 		
 		/**
+		 * 
 		 * Action Listeners	
+		 * 
 		 */
 		
 		// SignUp
@@ -132,16 +135,27 @@ public class SignUp extends FrameFactory {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				// Use the default profile picture if there is no preference
 				if (ppImg == null) {
 					try {
 						ppImg = ImageOperations.readNewImageFromUser("resources\\profilepictures\\Default_Profile_Picture.png");
 					} catch (IOException error) {
-						error.printStackTrace();
-						baseLogger.error().log("Failed to set Default Profile Picture");
+						baseLogger.error().log("Failed to set Default Profile Picture: " + error);
 					}
 				}
 				
-				//TODO: Create User BackEnd
+				User newUser = new User(
+						getName(), 
+						getName(), 
+						getTitle(), 
+						ABORT, 
+						getWarningString(), 
+						getName(), 
+						ppImg, 
+						null
+					);
+						
 			}
 		});
 		
