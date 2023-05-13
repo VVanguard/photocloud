@@ -4,3 +4,4 @@ email: bkaymakcioglu@gmail.com
 name: Bora
 surname: Kaymakcioglu
 age: 20
+imgPath: resources/pictures/bkaymakcioglu.jpg

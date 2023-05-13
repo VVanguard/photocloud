@@ -2,13 +2,13 @@ package gui;
 
 import java.awt.Font;
 
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
 import java.awt.GridBagLayout;
-import java.awt.Image;
 
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
@@ -28,6 +28,7 @@ import util.validators.Validators;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -58,7 +59,7 @@ public class SignUp extends FrameFactory {
 	private JToggleButton btnProfessional;
 	private ButtonGroup btnTierGroup;
 	
-	private Image ppImg = null;
+	private BufferedImage ppImg = null;
 	
 	
 	// Configurations
@@ -109,6 +110,7 @@ public class SignUp extends FrameFactory {
 		// Create Frame (x, y, type) and Content Pane
 		super(500, 580, Type.POPUP);	
 		
+		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		// Title
@@ -143,15 +145,6 @@ public class SignUp extends FrameFactory {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				// Use the default profile picture if there is no preference
-				if (ppImg == null) {
-					try {
-						ppImg = ImageOperations.readNewImageFromUser("resources\\profilepictures\\Default_Profile_Picture.png");
-					} catch (IOException error) {
-						baseLogger.error().log("Failed to set Default Profile Picture: " + error);
-					}
-				}
-				
 				// Create User
 				try {
 					errorLabel.setText("");
@@ -175,9 +168,32 @@ public class SignUp extends FrameFactory {
 							String.valueOf(txtPassword.getPassword())
 						);
 					
+					// Use the default profile picture if there is no preference
+					System.out.println(ppImg);
+					
+					if (ppImg == null) {
+						System.out.println("null");
+						newUser.setPpImg("resources/pictures/Default_Profile_Picture.png");
+					}
+					
+					// Else use the selected profile picture
+					else {
+						try {
+							ImageOperations.saveImageToResources(ppImg, newUser.getUsername());
+							newUser.setPpImg("resources/pictures/" + newUser.getUsername() + ".jpg");
+						} catch (Exception error2) {
+							baseLogger.error().log("Error in saving pp Image: " + error2);
+						}
+					}
+					
+					//TODO: Create tier selection and verifications
+					
+					// Write User to database
 					UserOperations.writeUser(newUser);
 					
 					baseLogger.info().log("New User Created: " + txtUsername.getText());
+					
+					//TODO: Navigate to Discovery Page
 					
 				} catch (Exception error) {
 					errorLabel.setText(error.getMessage());
@@ -214,6 +230,8 @@ public class SignUp extends FrameFactory {
 					// Insert Image to the JLabel
 					try {
 						lblImg.setIcon(new ImageIcon(ImageOperations.ResizeImage(ImageOperations.readNewImageFromUser(imagePath), 150, 150)));
+						ppImg = ImageIO.read(new File(imagePath));
+						
 						baseLogger.info().log("Photo Upload Successful");
 					} catch (IOException error) {
 						baseLogger.error().log("Photo Upload Failed: " + error);

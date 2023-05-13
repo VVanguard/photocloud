@@ -29,13 +29,14 @@ public class UserOperations {
 		
 		// Write User Details to a File
 		PrintWriter pWriter = new PrintWriter(new FileWriter(newUserFile, true));
-		pWriter.printf("username: %s\npassword: %s\nemail: %s\nname: %s\nsurname: %s\nage: %d",
+		pWriter.printf("username: %s\npassword: %s\nemail: %s\nname: %s\nsurname: %s\nage: %d\nimgPath: %s\n",
 				user.getUsername(),
 				user.getPassword(),
 				user.getEmail(),
 				user.getName(),
 				user.getSurname(),
-				user.getAge()
+				user.getAge(),
+				user.getImgPath()
 				);
 		
 		pWriter.close();

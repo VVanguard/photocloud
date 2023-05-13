@@ -11,7 +11,7 @@ public class User {
 	private String username;
 	private String password;
 	
-	private Image ppImg;
+	private String imgPath;
 	
 	private UserTiers tier;
 	
@@ -92,13 +92,13 @@ public class User {
 	}
 
 
-	public Image getPpImg() {
-		return ppImg;
+	public String getImgPath() {
+		return imgPath;
 	}
 
 
-	public void setPpImg(Image ppImg) {
-		this.ppImg = ppImg;
+	public void setPpImg(String imgPath) {
+		this.imgPath = imgPath;
 	}
 
 

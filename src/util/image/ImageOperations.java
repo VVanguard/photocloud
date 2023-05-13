@@ -31,12 +31,29 @@ public class ImageOperations {
 	
 	/**
 	 * Reads a Buffered Image from the user
+	 * 
 	 * @param imagePath
 	 * @return new buffered image
 	 * @throws IOException
 	 */
 	public static BufferedImage readNewImageFromUser(String imagePath) throws IOException {
 		return ImageIO.read(new File(imagePath));
+	}
+	
+
+	/**
+	 * Saves a new image to resources folder
+	 * 
+	 * @param image			image to save
+	 * @param saveName		image name
+	 * @param extension		extension of the image
+	 * 
+	 * @return 				returns image path to save in user details
+	 * 
+	 * @throws IOException
+	 */
+	public static void saveImageToResources(BufferedImage img, String saveName) throws IOException {
+		ImageIO.write(img, "jpg", new File("resources/pictures/" + saveName + ".jpg"));
 	}
 	
 }

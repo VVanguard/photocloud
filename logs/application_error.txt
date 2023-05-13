@@ -11,3 +11,12 @@
 [Sat 13 05 22:45:45 2023][ERROR] util.exceptions.InvalidFieldEntryException: Age should be numeric!
 [Sat 13 05 22:45:51 2023][ERROR] util.exceptions.InvalidFieldEntryException: Age should be numeric!
 [Sat 13 05 22:53:07 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 13 05 23:32:05 2023][ERROR] util.exceptions.InvalidFieldEntryException: Password must include at least one number!
+[Sat 13 05 23:32:10 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 13 05 23:33:04 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 13 05 23:39:32 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 13 05 23:39:35 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 13 05 23:39:56 2023][ERROR] util.exceptions.InvalidFieldEntryException: Email address must be unique
+[Sat 13 05 23:45:33 2023][ERROR] util.exceptions.InvalidFieldEntryException: Email address must be unique
+[Sat 13 05 23:48:35 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username should only contain alphabetic and numeric characters!
+[Sat 13 05 23:48:43 2023][ERROR] util.exceptions.InvalidFieldEntryException: Name and Surname should be alphabetic!

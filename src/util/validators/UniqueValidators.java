@@ -29,8 +29,6 @@ public class UniqueValidators {
 				while (scanner.hasNext()) {
 					
 					String[] rawData = scanner.nextLine().split(" ");
-					System.out.println(rawData[1]);
-					System.out.println(username);
 					
 					// Check username uniqueness
 					if (rawData[1].matches(username)) {
