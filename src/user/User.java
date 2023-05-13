@@ -16,15 +16,13 @@ public class User {
 	private UserTiers tier;
 	
 	
-	public User(String name, String surname, String email, int age, String username, String password, Image ppImg, UserTiers tier) {
+	public User(String name, String surname, String email, int age, String username, String password) {
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.age = age;
 		this.username = username;
 		this.password = password;
-		this.ppImg = ppImg;
-		this.tier = tier;
 	}
 
 	

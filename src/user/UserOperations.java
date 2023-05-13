@@ -32,9 +32,9 @@ public class UserOperations {
 		pWriter.printf("username: %s\npassword: %s\nemail: %s\nname: %s\nsurname: %s\nage: %d",
 				user.getUsername(),
 				user.getPassword(),
+				user.getEmail(),
 				user.getName(),
 				user.getSurname(),
-				user.getEmail(),
 				user.getAge()
 				);
 		

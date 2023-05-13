@@ -16,11 +16,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import baselogger.BaseLogger;
 import user.User;
+import user.UserOperations;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.FrameFactory;
 import util.image.ImageOperations;
+import util.validators.UniqueValidators;
+import util.validators.Validators;
 
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -46,6 +49,7 @@ public class SignUp extends FrameFactory {
 	private JTextField txtUsername;
 	private JPasswordField txtPassword;
 	private JLabel lblImg;
+	private JLabel errorLabel;
 	
 	private JButton btnUpload;
 	private JButton btnSignUp;
@@ -93,6 +97,9 @@ public class SignUp extends FrameFactory {
 	
 	private ComponentConfiguration lblImgLabelConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 3, 9);
+	
+	private ComponentConfiguration errorLabelConfiguration = ComponentGenerator.generateCenteredLabel(
+			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 14);
 	
 	/**
 	 * Create the frame.
@@ -145,16 +152,39 @@ public class SignUp extends FrameFactory {
 					}
 				}
 				
-				User newUser = new User(
-						getName(), 
-						getName(), 
-						getTitle(), 
-						ABORT, 
-						getWarningString(), 
-						getName(), 
-						ppImg, 
-						null
-					);
+				// Create User
+				try {
+					errorLabel.setText("");
+					
+					// Validate Fields
+					Validators.validateUsername(txtUsername.getText());
+					Validators.validatePassword(String.valueOf(txtPassword.getPassword()));
+					Validators.validateNameSpaces(txtName.getText());
+					Validators.validateNameSpaces(txtSurname.getText());
+					Validators.validateAge(txtAge.getText());
+					
+					UniqueValidators.validateUniqueness(txtUsername.getText(), txtMail.getText());
+					
+					// Create and Save the new User
+					User newUser = new User(
+							txtName.getText(), 
+							txtSurname.getText(), 
+							txtMail.getText(), 
+							Integer.valueOf(txtAge.getText()), 
+							txtUsername.getText(), 
+							String.valueOf(txtPassword.getPassword())
+						);
+					
+					UserOperations.writeUser(newUser);
+					
+					baseLogger.info().log("New User Created: " + txtUsername.getText());
+					
+				} catch (Exception error) {
+					errorLabel.setText(error.getMessage());
+					baseLogger.error().log(error.toString());
+				}
+				
+				
 						
 			}
 		});
@@ -281,12 +311,17 @@ public class SignUp extends FrameFactory {
 		btnProfessional = (JToggleButton)btnProfessionalConfiguration.getComponent();
 		addComponent(jPanel, btnProfessionalConfiguration);
 		
-		//Image Label
+		// Image Label
 		lblImg = (JLabel)lblImgLabelConfiguration.getComponent();
 		lblImgLabelConfiguration.getGridBagConstraints().gridheight = 5;
 		addComponent(jPanel, lblImgLabelConfiguration);
 		
 		btnUpload = (JButton)btnUploadConfiguration.getComponent();
 		addComponent(jPanel, btnUploadConfiguration);
+		
+		// Error Label
+		errorLabel = (JLabel)errorLabelConfiguration.getComponent();
+		errorLabelConfiguration.getGridBagConstraints().gridwidth = 3;
+		addComponent(jPanel, errorLabelConfiguration);
 	}
 }

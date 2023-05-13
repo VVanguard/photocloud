@@ -11,6 +11,6 @@ public class InvalidFieldEntryException extends Exception {
 	 * @param exception		exception details
 	 */
 	public InvalidFieldEntryException(String exception) {
-		super(String.format("Invalid Field Entry Exception: %s", exception));
+		super(exception);
 	}
 }

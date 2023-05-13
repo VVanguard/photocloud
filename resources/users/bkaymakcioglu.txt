@@ -1,0 +1,6 @@
+username: bkaymakcioglu
+password: B130K330
+email: bkaymakcioglu@gmail.com
+name: Bora
+surname: Kaymakcioglu
+age: 20

@@ -82,7 +82,6 @@ public class Login extends FrameFactory {
 				signUp.setVisible(true);
 				
 				baseLogger.info().log("New SignUp Request");
-				baseLogger.error().log("Error Log Try");
 			}
 		});
 	}

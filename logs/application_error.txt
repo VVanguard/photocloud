@@ -1,1 +1,13 @@
 [Sat 13 05 01:51:44 2023][ERROR] Error Log Try
+[Sat 13 05 22:20:00 2023][ERROR] Error Log Try
+[Sat 13 05 22:20:35 2023][ERROR] util.exceptions.InvalidFieldEntryException: Invalid Field Entry Exception: Name and Surname should be alphabetic!
+[Sat 13 05 22:21:44 2023][ERROR] Error Log Try
+[Sat 13 05 22:21:46 2023][ERROR] util.exceptions.InvalidFieldEntryException: Invalid Field Entry Exception: Username should only contain alphabetic and numeric characters!
+[Sat 13 05 22:25:18 2023][ERROR] util.exceptions.InvalidFieldEntryException: Invalid Field Entry Exception: Username should only contain alphabetic and numeric characters!
+[Sat 13 05 22:27:16 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username should only contain alphabetic and numeric characters!
+[Sat 13 05 22:28:11 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username should only contain alphabetic and numeric characters!
+[Sat 13 05 22:30:08 2023][ERROR] util.exceptions.InvalidFieldEntryException: Password length must be at least 6!
+[Sat 13 05 22:30:11 2023][ERROR] util.exceptions.InvalidFieldEntryException: Name and Surname should be alphabetic!
+[Sat 13 05 22:45:45 2023][ERROR] util.exceptions.InvalidFieldEntryException: Age should be numeric!
+[Sat 13 05 22:45:51 2023][ERROR] util.exceptions.InvalidFieldEntryException: Age should be numeric!
+[Sat 13 05 22:53:07 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!

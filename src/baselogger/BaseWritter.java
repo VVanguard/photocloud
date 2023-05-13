@@ -38,7 +38,6 @@ public class BaseWritter extends FileWriter {
 				));
 			
 			flush();
-			close();
 		
 		} catch (Exception e) {
 			System.err.println("Error in logging!");
