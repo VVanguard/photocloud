@@ -1,6 +1,5 @@
 package user;
 
-import java.awt.Image;
 
 public class User {
 	
@@ -16,13 +15,14 @@ public class User {
 	private UserTiers tier;
 	
 	
-	public User(String name, String surname, String email, int age, String username, String password) {
+	public User(String name, String surname, String email, int age, String username, String password, UserTiers tier) {
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.age = age;
 		this.username = username;
 		this.password = password;
+		this.tier = tier;
 	}
 
 	

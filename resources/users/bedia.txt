@@ -5,3 +5,4 @@ name: Bedia
 surname: Kaymakcioglu
 age: 49
 imgPath: resources\pictures\Default_Profile_Picture.png
+tier: FREE

@@ -3,5 +3,6 @@ package user;
 public enum UserTiers {
 	FREE,
 	HOBBYIST,
-	PROFESSIONAL
+	PROFESSIONAL,
+	ADMINISTRATOR
 }

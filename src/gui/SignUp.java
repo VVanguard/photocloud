@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.Font;
 
 import javax.imageio.ImageIO;
@@ -17,12 +18,13 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import baselogger.BaseLogger;
 import user.User;
 import user.UserOperations;
+import user.UserTiers;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.FrameFactory;
 import util.image.ImageOperations;
-import util.validators.UniqueValidators;
+import util.validators.DatabaseValidators;
 import util.validators.Validators;
 
 import java.awt.Insets;
@@ -155,8 +157,9 @@ public class SignUp extends FrameFactory {
 					Validators.validateNameSpaces(txtName.getText());
 					Validators.validateNameSpaces(txtSurname.getText());
 					Validators.validateAge(txtAge.getText());
+					UserTiers tier = Validators.validateTierSelection(btnFree, btnHobbyist, btnProfessional);
 					
-					UniqueValidators.validateUniqueness(txtUsername.getText(), txtMail.getText());
+					DatabaseValidators.validateUniqueness(txtUsername.getText(), txtMail.getText());
 					
 					// Create and Save the new User
 					User newUser = new User(
@@ -165,8 +168,10 @@ public class SignUp extends FrameFactory {
 							txtMail.getText(), 
 							Integer.valueOf(txtAge.getText()), 
 							txtUsername.getText(), 
-							String.valueOf(txtPassword.getPassword())
+							String.valueOf(txtPassword.getPassword()),
+							tier
 						);
+					
 					
 					// Use the default profile picture if there is no preference
 					System.out.println(ppImg);
@@ -186,14 +191,16 @@ public class SignUp extends FrameFactory {
 						}
 					}
 					
-					//TODO: Create tier selection and verifications
-					
 					// Write User to database
 					UserOperations.writeUser(newUser);
 					
+					// Arrange Other Pages
+					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
+					GUIContainer.getSignUp().setFrameStatus(FrameStatus.HIDE);
+					//TODO: Show Profile or Discovery
+					
 					baseLogger.info().log("New User Created: " + txtUsername.getText());
 					
-					//TODO: Navigate to Discovery Page
 					
 				} catch (Exception error) {
 					errorLabel.setText(error.getMessage());
@@ -339,6 +346,7 @@ public class SignUp extends FrameFactory {
 		
 		// Error Label
 		errorLabel = (JLabel)errorLabelConfiguration.getComponent();
+		errorLabel.setForeground(Color.RED);
 		errorLabelConfiguration.getGridBagConstraints().gridwidth = 3;
 		addComponent(jPanel, errorLabelConfiguration);
 	}

@@ -1,0 +1,8 @@
+username: cozmen
+password: Cozmen123
+email: cozmen@gmail.com
+name: Ceren
+surname: Ozmen
+age: 21
+imgPath: resources/pictures/cozmen.jpg
+tier: FREE

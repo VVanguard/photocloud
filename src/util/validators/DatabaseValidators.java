@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import util.exceptions.InvalidFieldEntryException;
 
-public class UniqueValidators {
+public class DatabaseValidators {
 	
 
 	/**
@@ -47,5 +47,33 @@ public class UniqueValidators {
 				throw new FileNotFoundException();
 			}
 		}
+	}
+	
+	
+	public static String ValideLogInCredentials(String username, String password) throws InvalidFieldEntryException, FileNotFoundException {
+		
+		File[] files = new File("resources//users").listFiles();
+
+		for (File file : files) {
+			try {
+				Scanner scanner = new Scanner(file);
+				
+				String usernameData = scanner.nextLine().split(" ")[1];
+				String passwordData = scanner.nextLine().split(" ")[1];
+				
+				if (usernameData.matches(username) && passwordData.matches(password)) {
+					scanner.close();
+					return username;
+				}
+
+				scanner.close();
+
+			} catch (FileNotFoundException e) {
+				throw new FileNotFoundException();
+			}
+		}
+		
+		// If no username that matches with a password found
+		throw new InvalidFieldEntryException("Username or Password is not correct!");
 	}
 }

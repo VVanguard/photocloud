@@ -1,5 +1,8 @@
 package util.validators;
 
+import javax.swing.JToggleButton;
+
+import user.UserTiers;
 import util.exceptions.InvalidFieldEntryException;
 
 public class Validators {
@@ -80,6 +83,20 @@ public class Validators {
 		
 		if (!nameSpace.matches("[a-zA-Z]+")) {
 			throw new InvalidFieldEntryException("Name and Surname should be alphabetic!");
+		}
+	}
+	
+	
+	public static UserTiers validateTierSelection(JToggleButton btnFree, JToggleButton btnHobbyist, JToggleButton btnProfessional) throws InvalidFieldEntryException {
+		
+		if (btnFree.isSelected()) {
+			return UserTiers.FREE;
+		} else if (btnHobbyist.isSelected()) {
+			return UserTiers.HOBBYIST;
+		} else if (btnProfessional.isSelected()) {
+			return UserTiers.PROFESSIONAL;
+		} else {
+			throw new InvalidFieldEntryException("Tier is not selected!");
 		}
 	}
 }

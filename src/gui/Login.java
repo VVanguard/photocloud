@@ -7,6 +7,8 @@ import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.FrameFactory;
+import util.validators.DatabaseValidators;
+import util.validators.Validators;
 
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
@@ -14,15 +16,17 @@ import javax.swing.JTextField;
 import baselogger.BaseLogger;
 
 import java.awt.Insets;
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
 public class Login extends FrameFactory {
-
+	
 	// Logger
 	private BaseLogger baseLogger = new BaseLogger();
 	
@@ -31,6 +35,7 @@ public class Login extends FrameFactory {
 	private JPasswordField txtPassword;
 	private JButton btnLogIn;
 	private JButton btnSignUp;
+	private JLabel lblError;
 	
 	//Configurations
 	private ComponentConfiguration txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
@@ -44,6 +49,9 @@ public class Login extends FrameFactory {
 	
 	private ComponentConfiguration btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
 			btnSignUp, 5, "Sıgn Up", new Font("Arial", Font.PLAIN, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 60, 20, 60), 1, 12);
+	
+	private ComponentConfiguration lblErrorConfiguration = ComponentGenerator.generateCenteredLabel(
+			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 50, 0), 1, 10);
 	
 	
 	/**
@@ -71,19 +79,31 @@ public class Login extends FrameFactory {
 		// Log In
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("login");
+				try {
+					// Validate Credentials
+					String usernameToLogIn = DatabaseValidators.ValideLogInCredentials(
+							txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
+					
+					baseLogger.info().log("New LogIn: " + usernameToLogIn);
+					
+				} catch (Exception error) {
+					lblError.setText(error.getMessage());
+					baseLogger.error().log("Username or Password is not correct");
+				}
 			}
 		});
 
 		// Sign Up
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
-				SignUp signUp = new SignUp();
-				signUp.setVisible(true);
-				
+				// New SignUP Request
+				GUIContainer.getSignUp().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
 				baseLogger.info().log("New SignUp Request");
 			}
 		});
+		
+		setFrameStatus(FrameStatus.VISIBLE);
 	}
 
 	
@@ -121,5 +141,10 @@ public class Login extends FrameFactory {
 		
 		btnSignUp = (JButton) btnSignUpConfiguration.getComponent();
 		addComponent(jPanel, btnSignUpConfiguration);
+		
+		// Error Label
+		lblError = (JLabel)lblErrorConfiguration.getComponent();
+		lblError.setForeground(Color.RED);
+		addComponent(jPanel, lblErrorConfiguration);
 	}
 }

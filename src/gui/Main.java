@@ -17,9 +17,9 @@ SIGNATURE: <Bora Kaymakçıoğlu, 82860>
 *************************************************************************/
 
 public class Main {
-	
-	// Frames
-	private static Login login = new Login();
+
+	// GUI Container
+	public static GUIContainer guiContainer = new GUIContainer();
 	
 	//Logger
 	public BaseLogger baseLogger = new BaseLogger();
@@ -33,7 +33,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login.setVisible(true);
+					GUIContainer.updateGUI();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -4,12 +4,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import gui.FrameStatus;
 import util.Colors;
 import util.ComponentConfiguration;
 
 
 public abstract class FrameFactory extends JFrame {
 	
+	protected FrameStatus status = FrameStatus.HIDE;
 	protected JPanel contentPane;
 	
 	public FrameFactory(int xSize, int ySize, Type type) {
@@ -37,7 +39,7 @@ public abstract class FrameFactory extends JFrame {
 	 * @param jPanel
 	 * @param componentConfiguration	
 	 */
-	public void addComponent(JPanel jPanel, ComponentConfiguration componentConfiguration) {
+	protected void addComponent(JPanel jPanel, ComponentConfiguration componentConfiguration) {
 		jPanel.add(componentConfiguration.getComponent(), componentConfiguration.getGridBagConstraints());
 	}
 
@@ -46,5 +48,20 @@ public abstract class FrameFactory extends JFrame {
 	 * Initialize components on a desired JPanel
 	 * @param jPanel
 	 */
-	public abstract void initializeComponents(JPanel jPanel);
+	protected abstract void initializeComponents(JPanel jPanel);
+	
+	
+	//
+	// Getters & Setters
+	//
+	
+	
+	public FrameStatus getFrameStatus() {
+		return status;
+	}
+	
+
+	public void setFrameStatus(FrameStatus status) {
+		this.status = status;
+	}
 }
