@@ -1,0 +1,8 @@
+username: dummy
+password: Dummy123
+email: dummy
+name: Dummy
+surname: Dummy
+age: 99
+imgPath: resources/pictures/Default_Profile_Picture.png
+tier: HOBBYIST

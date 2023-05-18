@@ -6,16 +6,19 @@ TODO:
 
 Functionality
 - [X] Git Integration
-- [ ] add photo selection to SignUp
-- [ ] add signUp and logIn verifications
+- [X] add photo selection to SignUp
+- [X] add signUp and logIn verifications
 - [X] logger
-- [ ] Users
+- [X] Users
 - [ ] Admin
 - [ ] Photo Editting 
 
+
 Pages
-- [ ] Photo Edittor
+- [ ] Photo Editor
 - [ ] Discovery Page
 - [ ] Profile Page
 - [X] LogIn
 - [X] SignUp
+- [ ] Profile Pages
+- [ ] Profile Pages Info Edit Section

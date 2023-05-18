@@ -84,6 +84,11 @@ public class Login extends FrameFactory {
 					String usernameToLogIn = DatabaseValidators.ValideLogInCredentials(
 							txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
 					
+					// Create new Profile Page and navigate
+					GUIContainer.updateProfilePage(usernameToLogIn);
+					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+					GUIContainer.updateGUI();
+					
 					baseLogger.info().log("New LogIn: " + usernameToLogIn);
 					
 				} catch (Exception error) {

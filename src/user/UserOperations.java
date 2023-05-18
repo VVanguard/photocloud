@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  * User I/O Operations
@@ -16,7 +17,7 @@ public class UserOperations {
 	
 	
 	/**
-	 * Write user details to a file
+	 * Writes user details to a file
 	 * 
 	 * @param user			user to write 
 	 * 
@@ -41,5 +42,42 @@ public class UserOperations {
 				);
 		
 		pWriter.close();
+	}
+	
+	
+	/**
+	 * Gets user from resources/users database
+	 * 
+	 * @param username			username to search in database
+	 * @return					return new user from database
+	 * 
+	 * @throws IOException
+	 */
+	public static User getUserFromDatabase(String username) throws IOException {
+		
+		// User file
+		File file = new File(USER_PATH + username + ".txt");
+		
+		Scanner scanner = new Scanner(file);
+		scanner.nextLine();
+		
+		// Read Data
+		String password = scanner.nextLine().split(" ")[1];
+		String email = scanner.nextLine().split(" ")[1];
+		String name = scanner.nextLine().split(" ")[1];
+		String surname = scanner.nextLine().split(" ")[1];
+		int age = Integer.valueOf(scanner.nextLine().split(" ")[1]);
+		String imgPath = scanner.nextLine().split(" ")[1];
+		UserTiers tier = UserTiers.valueOf(scanner.nextLine().split(" ")[1]);
+		
+		scanner.close();
+		
+		// Create user from database
+		User newUser = new User(name, surname, email, age, username, password, tier);
+		
+		// Set PP Image Path
+		newUser.setPpImg(imgPath);
+		
+		return newUser;
 	}
 }

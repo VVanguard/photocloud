@@ -30,6 +30,9 @@ import util.validators.Validators;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -201,6 +204,13 @@ public class SignUp extends FrameFactory {
 					
 					baseLogger.info().log("New User Created: " + txtUsername.getText());
 					
+					// Update Frame Status and navigate to the new user's profile page
+					GUIContainer.updateProfilePage(newUser.getUsername());
+					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
+					GUIContainer.getSignUp().setFrameStatus(FrameStatus.HIDE);
+					GUIContainer.updateGUI();
+					
 					
 				} catch (Exception error) {
 					errorLabel.setText(error.getMessage());
@@ -245,6 +255,18 @@ public class SignUp extends FrameFactory {
 						lblImg.setText("Upload Failed, Try Again Later");
 					}
 				} 
+			}
+		});
+		
+		
+		/**
+		 * Window Listener for closing
+		 */
+		this.addWindowListener(new WindowAdapter() {
+			
+			@Override
+			public void windowClosed(WindowEvent e) {
+				setFrameStatus(FrameStatus.HIDE);
 			}
 		});
 	}

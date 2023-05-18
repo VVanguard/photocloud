@@ -25,3 +25,10 @@
 [Tue 16 05 23:40:41 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username should only contain alphabetic and numeric characters!
 [Tue 16 05 23:52:36 2023][ERROR] Username or Password is not correct
 [Tue 16 05 23:53:21 2023][ERROR] Username or Password is not correct
+[Thu 18 05 01:42:50 2023][ERROR] Failed to get User from username: bkaymakcioglu
+[Thu 18 05 01:43:18 2023][ERROR] Failed to get User from username: bkaymakcioglu
+[Thu 18 05 01:44:56 2023][ERROR] Failed to get User from username: bkaymakcioglu
+[Thu 18 05 01:45:28 2023][ERROR] Failed to get User from username: bkaymakcioglu
+[Thu 18 05 02:27:42 2023][ERROR] Failed to get User from username: 
+[Thu 18 05 02:34:56 2023][ERROR] Username or Password is not correct
+[Thu 18 05 02:47:02 2023][ERROR] Username or Password is not correct

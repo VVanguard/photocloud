@@ -8,6 +8,7 @@ public class GUIContainer {
 	
 	private static Login logIn = new Login();
 	private static SignUp signUp = new SignUp(); 
+	public static ProfilePage profilePage = new ProfilePage("dummyuser");
 
 	private static ArrayList<FrameFactory> frames = new ArrayList<>();
 	
@@ -19,6 +20,7 @@ public class GUIContainer {
 	public GUIContainer() {
 		frames.add(logIn);
 		frames.add(signUp);
+		frames.add(profilePage);
 	}
 
 
@@ -56,5 +58,16 @@ public class GUIContainer {
 
 	public static SignUp getSignUp() {
 		return signUp;
+	}
+	
+	
+	public static ProfilePage getProfilePage() {
+		return profilePage;
+	}
+	
+	public static void updateProfilePage(String username) {
+		profilePage = new ProfilePage(username);
+		// Replace profile page reference
+		frames.set(2, profilePage);
 	}
 }
