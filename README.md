@@ -10,15 +10,18 @@ Functionality
 - [X] add signUp and logIn verifications
 - [X] logger
 - [X] Users
-- [ ] Admin
+- [ ] Admin User
 - [ ] Photo Editting 
+- [ ] Search Users
+- [ ] Save Photos to ScrollPane
 
 
 Pages
-- [ ] Photo Editor
+- [X] Photo Editor
 - [ ] Discovery Page
-- [ ] Profile Page
+- [X] Profile Page
 - [X] LogIn
 - [X] SignUp
-- [ ] Profile Pages
-- [ ] Profile Pages Info Edit Section
+- [X] Profile Pages
+- [X] Profile Pages Info Edit Section
+- [ ] Scroll Pane panel design
