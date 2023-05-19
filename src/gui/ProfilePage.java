@@ -4,15 +4,20 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import baselogger.BaseLogger;
 import user.User;
@@ -45,7 +50,7 @@ public class ProfilePage extends FrameFactory {
 	
 	private JScrollPane scrollPaneUserPhotos;
 	
-	private JPanel panelAddMore;
+	private RoundedJButton btnAddMore;
 	
 	// Configurations
 	private ComponentConfiguration txtSearchConfiguration = ComponentGenerator.generateRoundedTextField( 
@@ -69,6 +74,8 @@ public class ProfilePage extends FrameFactory {
 	private ComponentConfiguration btnEditInfoConfiguration = ComponentGenerator.generateRoundedButton(
 			btnEditInfo, 5, "Edit Info", new Font("Ariel", Font.BOLD, 10), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 50, 0, 50), 3, 5);
 	
+	private ComponentConfiguration btnAddMoreConfiguration = ComponentGenerator.generateRoundedButton(
+			btnAddMore, 20, "+", new Font("Ariel", Font.BOLD, 24), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 0, 25, 0), 2, 8);
 	
 	/**
 	 * Create Pane
@@ -76,13 +83,13 @@ public class ProfilePage extends FrameFactory {
 	 * @param username	username of the profile
 	 */
 	public ProfilePage(String username) {
-		super(475, 775, Type.POPUP);
+		super(475, 825, Type.POPUP);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{25, 200, 25, 200, 25};
-		gbl_contentPane.rowHeights = new int[]{50, 25, 25, 25, 75, 25, 25, 500, 25};
+		gbl_contentPane.rowHeights = new int[]{50, 25, 25, 25, 75, 25, 25, 475, 50, 25};
 		
 		contentPane.setLayout(gbl_contentPane);
 		
@@ -118,6 +125,7 @@ public class ProfilePage extends FrameFactory {
 		setFrameStatus(FrameStatus.HIDE);
 		baseLogger.info().log("Entered to User Profile: " + username);
 		
+		
 		/**
 		 * Window Listener for closing
 		 */
@@ -126,6 +134,53 @@ public class ProfilePage extends FrameFactory {
 			@Override
 			public void windowClosed(WindowEvent e) {
 				setFrameStatus(FrameStatus.HIDE);
+			}
+		});
+		
+		
+		/**
+		 * Action Listeners
+		 */
+		
+		// Add More Photos
+		btnAddMore.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser chooser = new JFileChooser();
+				// Set Current Directory
+				chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+				
+				// Create image filter
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("images", "jpg", "gif", "png");
+				chooser.addChoosableFileFilter(filter);
+				
+				// Create result variable
+				int result = chooser.showSaveDialog(null);
+				
+				// If File is selected in the chooser
+				if (result == JFileChooser.APPROVE_OPTION) {
+					
+					File selectedFile = chooser.getSelectedFile();
+					String imagePath = selectedFile.getAbsolutePath();
+					
+					// Create new Edit Window
+					// Update Frame Status and navigate to the image editor
+					GUIContainer.updateImageEditor(imagePath, user);
+					System.out.println(user.getUsername());
+					GUIContainer.updateGUI();
+				} 
+			}
+		});
+		
+		//Edit Info
+		btnEditInfo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				GUIContainer.updateEditInfo(user);
+				GUIContainer.getEditInfo().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
 			}
 		});
 	}
@@ -176,8 +231,12 @@ public class ProfilePage extends FrameFactory {
 		gbc_scrollPane.gridwidth = 3;
 		gbc_scrollPane.gridy = 7;
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
-		gbc_scrollPane.insets = new Insets(0, 0, 35, 0);
+		gbc_scrollPane.insets = new Insets(0, 0, 10, 0);
 		getContentPane().add(scrollPaneUserPhotos, gbc_scrollPane);
+		
+		// Add More Button
+		btnAddMore = (RoundedJButton)btnAddMoreConfiguration.getComponent();
+		addComponent(jPanel, btnAddMoreConfiguration);
 	}
 
 }

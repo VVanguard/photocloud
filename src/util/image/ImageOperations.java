@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
  */
 public class ImageOperations {
 
-	private static BufferedImage toBufferedImage(Image img) {
+	public static BufferedImage toBufferedImage(Image img) {
 		// Create a buffered image with RGB values
 	    BufferedImage newBuffImg = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 
@@ -40,6 +40,39 @@ public class ImageOperations {
 	public static BufferedImage ResizeImage(Image image, int pixelX, int pixelY) {
 		BufferedImage newImg = toBufferedImage(image.getScaledInstance(pixelX, pixelY, Image.SCALE_SMOOTH));
 		return newImg;
+	}
+	
+	
+	/**
+	 * Scale an image for the display panel
+	 * 
+	 * @param image			image to scale
+	 * 
+	 * @param widthMax		max width of the screen
+	 * @param heightMax		max height of the screen
+	 * @return				buffered image
+	 */
+	public static BufferedImage scaleForDisplay(Image image, int widthMax, int heightMax) {
+		double ratio = Double.valueOf(widthMax) / Double.valueOf(heightMax);
+		System.out.println(ratio);
+		Image scaledImg;		
+		
+		System.out.println(image.getWidth(null) / ratio);
+		
+		// Check the ratio between the current image
+		// If the width of the image is larger than the height by a ratio, scale it by width
+		if (image.getWidth(null) / ratio >= image.getHeight(null)) {
+			double heightCalculated = Double.valueOf(widthMax) / Double.valueOf(image.getWidth(null)) * image.getHeight(null);
+			scaledImg = image.getScaledInstance(widthMax, (int)heightCalculated, Image.SCALE_SMOOTH);
+		} 
+		
+		// Else scale it by height
+		else {
+			double widthCalculated = Double.valueOf(heightMax) / Double.valueOf(image.getHeight(null)) * image.getWidth(null);
+			scaledImg = image.getScaledInstance((int)widthCalculated, heightMax, Image.SCALE_SMOOTH);
+		}
+		
+		return toBufferedImage(scaledImg);
 	}
 	
 	
@@ -89,7 +122,9 @@ public class ImageOperations {
 	 * Reads a Buffered Image from the user
 	 * 
 	 * @param imagePath
+	 * 
 	 * @return new buffered image
+	 * 
 	 * @throws IOException
 	 */
 	public static BufferedImage readNewImageFromUser(String imagePath) throws IOException {
@@ -102,14 +137,29 @@ public class ImageOperations {
 	 * 
 	 * @param image			image to save
 	 * @param saveName		image name
-	 * @param extension		extension of the image
-	 * 
-	 * @return 				returns image path to save in user details
 	 * 
 	 * @throws IOException
 	 */
 	public static void saveImageToResources(BufferedImage img, String saveName) throws IOException {
 		ImageIO.write(img, "jpg", new File("resources/pictures/" + saveName + ".jpg"));
+	}
+	
+	
+	/**
+	 * Replaces the profile image of the user in resources
+	 * 
+	 * @param img			image that will replace
+	 * @param saveName		image name
+	 * 
+	 * @throws IOException
+	 */
+	public static void updateImageInResources(BufferedImage img, String saveName) throws IOException {
+		try {
+			File oldProfilePicture = new File("resources/pictures/" + saveName + ".jpg");
+			oldProfilePicture.delete();
+		} catch (Exception e) {} finally {
+			saveImageToResources(img, saveName);
+		}
 	}
 	
 }

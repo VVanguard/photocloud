@@ -8,7 +8,6 @@ import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.FrameFactory;
 import util.validators.DatabaseValidators;
-import util.validators.Validators;
 
 import java.awt.GridBagLayout;
 import javax.swing.JTextField;
@@ -87,6 +86,7 @@ public class Login extends FrameFactory {
 					// Create new Profile Page and navigate
 					GUIContainer.updateProfilePage(usernameToLogIn);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
 					GUIContainer.updateGUI();
 					
 					baseLogger.info().log("New LogIn: " + usernameToLogIn);

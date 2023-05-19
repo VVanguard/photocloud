@@ -2,13 +2,18 @@ package gui;
 
 import java.util.ArrayList;
 
+import user.User;
+import user.UserTiers;
 import util.customframes.FrameFactory;
 
 public class GUIContainer {
 	
+	// Frames
 	private static Login logIn = new Login();
 	private static SignUp signUp = new SignUp(); 
-	public static ProfilePage profilePage = new ProfilePage("dummyuser");
+	private static ProfilePage profilePage = new ProfilePage("dummyuser");
+	private static ImageEditor imageEditor = new ImageEditor();
+	private static EditInfo editInfo = new EditInfo();
 
 	private static ArrayList<FrameFactory> frames = new ArrayList<>();
 	
@@ -21,6 +26,8 @@ public class GUIContainer {
 		frames.add(logIn);
 		frames.add(signUp);
 		frames.add(profilePage);
+		frames.add(imageEditor);
+		frames.add(editInfo);
 	}
 
 
@@ -65,9 +72,33 @@ public class GUIContainer {
 		return profilePage;
 	}
 	
+	
+	public static ImageEditor getImageEditor() {
+		return imageEditor;
+	}
+	
+	
+	public static EditInfo getEditInfo() {
+		return editInfo;
+	}
+	
+	
 	public static void updateProfilePage(String username) {
 		profilePage = new ProfilePage(username);
 		// Replace profile page reference
 		frames.set(2, profilePage);
+	}
+	
+	
+	public static void updateImageEditor(String imgPath, User user) {
+		imageEditor = new ImageEditor(imgPath, user);
+		// Replace image editor reference
+		frames.set(3, imageEditor);
+	}
+	
+	
+	public static void updateEditInfo(User user) {
+		editInfo = new EditInfo(user);
+		frames.set(4, editInfo);
 	}
 }

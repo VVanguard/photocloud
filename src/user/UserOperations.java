@@ -80,4 +80,14 @@ public class UserOperations {
 		
 		return newUser;
 	}
+	
+	
+	public static void updateUserInDatabase(User user) throws IOException {
+		// User file
+		File file = new File(USER_PATH + user.getUsername() + ".txt");
+		file.delete();	
+		
+		// Rewrite the user
+		writeUser(user);
+	}
 }

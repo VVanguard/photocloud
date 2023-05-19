@@ -10,7 +10,7 @@ public class User {
 	private String username;
 	private String password;
 	
-	private String imgPath;
+	private String imgPath = "resources/pictures/Default_Profile_Picture.jpg";
 	
 	private UserTiers tier;
 	

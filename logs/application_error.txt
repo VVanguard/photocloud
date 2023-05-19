@@ -32,3 +32,17 @@
 [Thu 18 05 02:27:42 2023][ERROR] Failed to get User from username: 
 [Thu 18 05 02:34:56 2023][ERROR] Username or Password is not correct
 [Thu 18 05 02:47:02 2023][ERROR] Username or Password is not correct
+[Thu 18 05 15:24:41 2023][ERROR] Username or Password is not correct
+[Fri 19 05 17:07:21 2023][ERROR] Failed to read Image: 
+[Fri 19 05 17:07:45 2023][ERROR] Username or Password is not correct
+[Fri 19 05 17:07:48 2023][ERROR] Username or Password is not correct
+[Fri 19 05 17:14:05 2023][ERROR] Username or Password is not correct
+[Fri 19 05 17:17:52 2023][ERROR] Username or Password is not correct
+[Fri 19 05 17:21:27 2023][ERROR] Username or Password is not correct
+[Fri 19 05 19:24:39 2023][ERROR] Username or Password is not correct
+[Fri 19 05 22:16:41 2023][ERROR] Failed to get User from username: jd
+[Fri 19 05 22:17:37 2023][ERROR] Failed to get User from username: jd
+[Fri 19 05 22:18:01 2023][ERROR] Failed to get User from username: jd
+[Fri 19 05 22:36:56 2023][ERROR] Username or Password is not correct
+[Fri 19 05 22:41:05 2023][ERROR] Username or Password is not correct
+[Fri 19 05 22:42:53 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!

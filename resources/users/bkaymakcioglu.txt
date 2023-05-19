@@ -1,8 +1,8 @@
 username: bkaymakcioglu
-password: B130K330
+password: bk1234
 email: bkaymakcioglu@gmail.com
 name: Bora
 surname: Kaymakcioglu
 age: 20
 imgPath: resources/pictures/bkaymakcioglu.jpg
-tier: FREE
+tier: PROFESSIONAL
