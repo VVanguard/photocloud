@@ -11,7 +11,7 @@ public class GUIContainer {
 	// Frames
 	private static Login logIn = new Login();
 	private static SignUp signUp = new SignUp(); 
-	private static ProfilePage profilePage = new ProfilePage("dummyuser");
+	private static ProfilePage profilePage = new ProfilePage("dummyuser", true);
 	private static ImageEditor imageEditor = new ImageEditor();
 	private static EditInfo editInfo = new EditInfo();
 
@@ -83,8 +83,8 @@ public class GUIContainer {
 	}
 	
 	
-	public static void updateProfilePage(String username) {
-		profilePage = new ProfilePage(username);
+	public static void updateProfilePage(String username, boolean isUserSelf) {
+		profilePage = new ProfilePage(username, isUserSelf);
 		// Replace profile page reference
 		frames.set(2, profilePage);
 	}

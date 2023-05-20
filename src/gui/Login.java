@@ -84,7 +84,7 @@ public class Login extends FrameFactory {
 							txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
 					
 					// Create new Profile Page and navigate
-					GUIContainer.updateProfilePage(usernameToLogIn);
+					GUIContainer.updateProfilePage(usernameToLogIn, true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
 					GUIContainer.updateGUI();

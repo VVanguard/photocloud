@@ -202,7 +202,7 @@ public class SignUp extends FrameFactory {
 					baseLogger.info().log("New User Created: " + txtUsername.getText());
 					
 					// Update Frame Status and navigate to the new user's profile page
-					GUIContainer.updateProfilePage(newUser.getUsername());
+					GUIContainer.updateProfilePage(newUser.getUsername(), true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
 					GUIContainer.getSignUp().setFrameStatus(FrameStatus.HIDE);
@@ -211,7 +211,7 @@ public class SignUp extends FrameFactory {
 					
 				} catch (Exception error) {
 					errorLabel.setText(error.getMessage());
-					baseLogger.error().log(error.toString());
+					baseLogger.error().log(error.getMessage());
 				}
 				
 				

@@ -46,3 +46,39 @@
 [Fri 19 05 22:36:56 2023][ERROR] Username or Password is not correct
 [Fri 19 05 22:41:05 2023][ERROR] Username or Password is not correct
 [Fri 19 05 22:42:53 2023][ERROR] util.exceptions.InvalidFieldEntryException: Username must be unique!
+[Sat 20 05 12:14:30 2023][ERROR] Username or Password is not correct
+[Sat 20 05 12:34:02 2023][ERROR] Username or Password is not correct
+[Sat 20 05 12:36:13 2023][ERROR] Username or Password is not correct
+[Sat 20 05 15:14:49 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:52 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:52 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:53 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:53 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:53 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:53 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:54 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:54 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:54 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:54 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:54 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:55 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:55 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:55 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:55 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:55 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:14:56 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:41 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:42 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:42 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:43 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:43 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:43 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:44 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:44 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:44 2023][ERROR] Failed to apply filter: BLUR
+[Sat 20 05 15:15:44 2023][ERROR] Failed to apply filter: BLUR

@@ -95,22 +95,30 @@ public class ImageMatrix {
 	}
 
 	
-	public int getRed(int x, int y) {
-		return (img[x][y] >> 16) & 0xFF;
+	public static int getRed(int[][] imgArray, int x, int y) {
+		return (imgArray[x][y] >> 16) & 0xFF;
 	}
 
 	
-	public int getGreen(int x, int y) {
-		return (img[x][y] >> 8) & 0xFF;
+	public static int getGreen(int[][] imgArray, int x, int y) {
+		return (imgArray[x][y] >> 8) & 0xFF;
 	}
 
 	
-	public int getBlue(int x, int y) {
-		return img[x][y] & 0xFF;
+	public static int getBlue(int[][] imgArray, int x, int y) {
+		return imgArray[x][y] & 0xFF;
 	}
 
 	
 	public static int convertRGB(int red, int green, int blue) {
 		return (red << 16 | green << 8 | blue);
+	}
+	
+	public int[][] getImgArray() {
+		return img;
+	}
+	
+	public void setImgArray(int[][] img) {
+		this.img = img;
 	}
 }

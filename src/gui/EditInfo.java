@@ -198,7 +198,7 @@ public class EditInfo extends FrameFactory {
 					GUIContainer.getEditInfo().setFrameStatus(FrameStatus.DISPOSED);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.HIDE);
 					GUIContainer.updateGUI();
-					GUIContainer.updateProfilePage(currentUser.getUsername());
+					GUIContainer.updateProfilePage(currentUser.getUsername(), true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.updateGUI();
 

@@ -38,6 +38,7 @@ public class ProfilePage extends FrameFactory {
 	
 	// User
 	User user;
+	boolean isUserSelf;
 	
 	// Components
 	private RoundedJTextField txtSearch;
@@ -82,7 +83,7 @@ public class ProfilePage extends FrameFactory {
 	 * 
 	 * @param username	username of the profile
 	 */
-	public ProfilePage(String username) {
+	public ProfilePage(String username, boolean isUserSelf) {
 		super(475, 825, Type.POPUP);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
@@ -99,6 +100,7 @@ public class ProfilePage extends FrameFactory {
 		// Get User from username
 		try {
 			user = UserOperations.getUserFromDatabase(username);
+			this.isUserSelf = isUserSelf;
 		} catch (Exception e) {
 			baseLogger.error().log("Failed to get User from username: " + username);
 		}
@@ -220,7 +222,10 @@ public class ProfilePage extends FrameFactory {
 		
 		// Edit Info Button
 		btnEditInfo = (RoundedJButton)btnEditInfoConfiguration.getComponent();
-		addComponent(jPanel, btnEditInfoConfiguration);
+		
+		if (isUserSelf) {
+			addComponent(jPanel, btnEditInfoConfiguration);
+		}
 		
 		// Scroll Pane
 		scrollPaneUserPhotos = new JScrollPane();
