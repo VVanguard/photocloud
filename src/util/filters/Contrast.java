@@ -24,8 +24,6 @@ public class Contrast {
 		
 		double contrastWeight;
 		
-		
-		
 		// Horizontal Iteration of the kernel
 		for (int widthId = 0; widthId < imageMatrix.getWidth(); widthId++) {
 			// Vertical Iteration of the kernel

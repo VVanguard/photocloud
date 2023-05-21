@@ -55,31 +55,31 @@ public class ProfilePage extends FrameFactory {
 	private JLabel lblError;
 	
 	// Configurations
-	private ComponentConfiguration txtSearchConfiguration = ComponentGenerator.generateRoundedTextField( 
+	private ComponentConfiguration<RoundedJTextField> txtSearchConfiguration = ComponentGenerator.generateRoundedTextField( 
 			txtSearch, 15, Colors.DIM_GRAY, new Insets(5, 10, 30, 10), 3, 1);
 	
-	private ComponentConfiguration lblSearchConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblSearchConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", null, new Insets(0, 20, 25, 0), 2, 1);
 	
-	private ComponentConfiguration btnDiscoveryConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnDiscoveryConfiguration = ComponentGenerator.generateRoundedButton(
 			btnDiscovery, 15, "Discovery", new Font("Ariel", Font.BOLD, 12), Colors.GHOST_WHITE, Colors.DIM_GRAY, new Insets(5, 10, 30, 10), 1, 1);
 	
-	private ComponentConfiguration lblPPImgConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblPPImgConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 10), new Insets(50, 0, 0, 0), 1, 1);
 	
-	private ComponentConfiguration lblUsernameConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblUsernameConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 20), new Insets(25, 0, 0, 0), 3, 2);
 	
-	private ComponentConfiguration lblTierConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblTierConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.BOLD, 14), new Insets(0, 0, 5, 0), 3, 3);
 	
-	private ComponentConfiguration btnEditInfoConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnEditInfoConfiguration = ComponentGenerator.generateRoundedButton(
 			btnEditInfo, 5, "Edit Info", new Font("Ariel", Font.BOLD, 10), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 50, 0, 50), 3, 5);
 	
-	private ComponentConfiguration btnAddMoreConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnAddMoreConfiguration = ComponentGenerator.generateRoundedButton(
 			btnAddMore, 20, "+", new Font("Ariel", Font.BOLD, 24), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 0, 25, 0), 2, 8);
 	
-	private ComponentConfiguration lblErrorConfiguraion = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblErrorConfiguraion = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 12), new Insets(25, 0, 0, 0), 2, 9);
 	
 	
@@ -137,8 +137,11 @@ public class ProfilePage extends FrameFactory {
 		
 		
 		/**
+		 * 
 		 * Window Listener for closing
+		 *
 		 */
+		
 		this.addWindowListener(new WindowAdapter() {
 			
 			@Override
@@ -149,7 +152,9 @@ public class ProfilePage extends FrameFactory {
 		
 		
 		/**
+		 * 
 		 * Action Listeners
+		 * 
 		 */
 		
 		// Add More Photos
@@ -200,35 +205,50 @@ public class ProfilePage extends FrameFactory {
 	 * 
 	 */
 	@Override
-	protected void initializeComponents(JPanel jPanel) {
+	public void initializeComponents(JPanel jPanel) {
+		
+		/*
+		 * Components
+		 * 
+		 * Search TxtBox
+		 * Search Label
+		 * Discovery Button
+		 * Profile Picture Label
+		 * Username Label
+		 * Tier Label
+		 * Edit Info Button
+		 * Scroll Pane for image display
+		 * 
+		 */
+		
 		
 		// Search TextBox
-		txtSearch = (RoundedJTextField)txtSearchConfiguration.getComponent();
+		txtSearch = txtSearchConfiguration.getComponent();
 		addComponent(jPanel, txtSearchConfiguration);
 		
 		lblSearch = (JLabel)lblSearchConfiguration.getComponent();
 		addComponent(jPanel, lblSearchConfiguration);
 		
 		// Discovery Button
-		btnDiscovery = (RoundedJButton)btnDiscoveryConfiguration.getComponent();
+		btnDiscovery = btnDiscoveryConfiguration.getComponent();
 		addComponent(jPanel, btnDiscoveryConfiguration);
 		
 		// Profile Picture Label
-		lblPPImg = (JLabel)lblPPImgConfiguration.getComponent();
+		lblPPImg = lblPPImgConfiguration.getComponent();
 		lblPPImgConfiguration.getGridBagConstraints().gridheight = 5;
 		addComponent(jPanel, lblPPImgConfiguration);
 		
 		// Username Label
-		lblUsername = (JLabel)lblUsernameConfiguration.getComponent();
+		lblUsername = lblUsernameConfiguration.getComponent();
 		addComponent(jPanel, lblUsernameConfiguration);
 		
 		// Tier Label
-		lblTier = (JLabel)lblTierConfiguration.getComponent();
+		lblTier = lblTierConfiguration.getComponent();
 		lblTier.setForeground(Colors.BRUNSWICK_GREEN);
 		addComponent(jPanel, lblTierConfiguration);
 		
 		// Edit Info Button
-		btnEditInfo = (RoundedJButton)btnEditInfoConfiguration.getComponent();
+		btnEditInfo = btnEditInfoConfiguration.getComponent();
 		
 		if (isUserSelf) {
 			addComponent(jPanel, btnEditInfoConfiguration);
@@ -247,14 +267,19 @@ public class ProfilePage extends FrameFactory {
 		getContentPane().add(scrollPaneUserPhotos, gbc_scrollPane);
 		
 		// Add More Button
-		btnAddMore = (RoundedJButton)btnAddMoreConfiguration.getComponent();
+		btnAddMore = btnAddMoreConfiguration.getComponent();
 		addComponent(jPanel, btnAddMoreConfiguration);
 		
-		lblError = (JLabel)lblErrorConfiguraion.getComponent();
+		lblError = lblErrorConfiguraion.getComponent();
 		addComponent(jPanel, lblErrorConfiguraion);
 	}
 	
 	
+	/**
+	 * Displays the image error on the profile page
+	 * 
+	 * @param str	error string
+	 */
 	public void displayFileError(String str) {
 		lblError.setText(str);
 	}

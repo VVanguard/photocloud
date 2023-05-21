@@ -67,40 +67,40 @@ public class ImageEditor extends FrameFactory {
 
 	
 	// Configurations
-	ComponentConfiguration lblImageConfiguration = ComponentGenerator.generateCenteredLabel(
+	ComponentConfiguration<JLabel> lblImageConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", null, new Insets(0, 0, 0, 0), 2, 1);
 	
-	ComponentConfiguration lblFilterConfiguration = ComponentGenerator.generateCenteredLabel(
+	ComponentConfiguration<JLabel> lblFilterConfiguration = ComponentGenerator.generateCenteredLabel(
 			"Select Filter" , new Font("Ariel", Font.BOLD, 14), new Insets(100, 40, 0, 0), 1, 1);
 	
-	ComponentConfiguration btnBlurConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnBlurConfiguration = ComponentGenerator.generateRoundedButton(
 			btnBlur, 15, "Blur", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(5, 20, 5, 5), 1, 3);
 	
-	ComponentConfiguration btnSharpenConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnSharpenConfiguration = ComponentGenerator.generateRoundedButton(
 			btnSharpen, 15, "Sharpen", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(5, 20, 5, 5), 1, 4);
 	
-	ComponentConfiguration btnBrightnessConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnBrightnessConfiguration = ComponentGenerator.generateRoundedButton(
 			btnBrightness, 15, "Brightness", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(5, 20, 5, 5), 1, 6);
 	
-	ComponentConfiguration btnContrastConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnContrastConfiguration = ComponentGenerator.generateRoundedButton(
 			btnContrast, 15, "Contrast", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(5, 20, 5, 5), 1, 7);
 	
-	ComponentConfiguration btnEdgeDetectionConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnEdgeDetectionConfiguration = ComponentGenerator.generateRoundedButton(
 			btnEdgeDetection, 15, "Edge Detection", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(5, 20, 5, 5), 1, 9);
 	
-	ComponentConfiguration btnGrayscaleConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnGrayscaleConfiguration = ComponentGenerator.generateRoundedButton(
 			btnGrayscale, 15, "Grayscale", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(5, 20, 5, 5), 1, 10);
 	
-	ComponentConfiguration btnApplyFilterConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnApplyFilterConfiguration = ComponentGenerator.generateRoundedButton(
 			btnApplyFilter, 15, "Apply", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(150, 20, 15, 5), 1, 13);
 	
-	ComponentConfiguration txtCaptionConfiguration = ComponentGenerator.generateRoundedTextField(
+	ComponentConfiguration<RoundedJTextField> txtCaptionConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtCaption, 25, Colors.BROKEN_WHITE, new Insets(0, 20, 40, 0), 2, 14);
 	
-	ComponentConfiguration btnSaveToDraftsConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnSaveToDraftsConfiguration = ComponentGenerator.generateRoundedButton(
 			btnSaveToDrafts, 10, "Save To Drafts", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(0, 5, 40, 5), 3, 14);
 	
-	ComponentConfiguration btnShareConfiguration = ComponentGenerator.generateRoundedButton(
+	ComponentConfiguration<RoundedJButton> btnShareConfiguration = ComponentGenerator.generateRoundedButton(
 			btnShare, 10, "Share", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 5, 40, 75), 4, 14);
 	
 	// Images
@@ -163,6 +163,7 @@ public class ImageEditor extends FrameFactory {
 		 * 
 		 */
 		
+		// Blur
 		btnBlur.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) { 
@@ -173,6 +174,7 @@ public class ImageEditor extends FrameFactory {
 			}
 		});
 		
+		// Sharpen
 		btnSharpen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -261,37 +263,35 @@ public class ImageEditor extends FrameFactory {
 						bfImg = Sharpen.SharpenImage(bfImg, slider.getValue());
 						bfImgScaled = Sharpen.SharpenImage(bfImgScaled, slider.getValue());
 					} 
-					
+					// Grayscale
 					else if (filterType == FilterType.GRAYSCALE) {
 						bfImg = Grayscale.GrayscaleImage(bfImg, slider.getValue());
 						bfImgScaled = Grayscale.GrayscaleImage(bfImgScaled, slider.getValue());
 					} 
-
+					// Edge Detection
 					else if (filterType == FilterType.EDGE_DETECTION) {
 						bfImg = EdgeDetection.detectEdges(bfImg);
 						bfImgScaled = EdgeDetection.detectEdges(bfImgScaled);
 					} 
-
+					// Brightness
 					else if (filterType == FilterType.BRIGHTNESS) {
 						bfImg = Brightness.BrightenImage(bfImg, slider.getValue());
 						bfImgScaled = Brightness.BrightenImage(bfImgScaled, slider.getValue());
 					} 
-
+					// Contrast
 					else if (filterType == FilterType.CONTRAST) {
 						bfImg = Contrast.changeContrast(bfImg, slider.getValue());
 						bfImgScaled = Contrast.changeContrast(bfImgScaled, slider.getValue());
 					} 
-					
+					// Set Edited image as displayed
 					lblImage.setIcon(new ImageIcon(bfImgScaled));
 					
 					long endTime = System.nanoTime(); 
 					baseLogger.info().log(user.getUsername() + " applied " + filterType.toString() + " to image at " + imgPath + ". Duration: " + (endTime - startTime) / 1000000 + "ms.");
 					
 				} catch (Exception e2) {
-					e2.printStackTrace();
 					baseLogger.error().log("Failed to apply filter: " + filterType.toString());
 				}
-				
 			}
 		});
 	}
@@ -301,38 +301,45 @@ public class ImageEditor extends FrameFactory {
 	 * Initialize Components
 	 */
 	@Override
-	protected void initializeComponents(JPanel jPanel) {
+	public void initializeComponents(JPanel jPanel) {
+		
+		/*
+		 * Components 
+		 *
+		 * 
+		 * 
+		 */
 		
 		// Image Label
-		lblImage = (JLabel)lblImageConfiguration.getComponent();
+		lblImage = lblImageConfiguration.getComponent();
 		lblImageConfiguration.getGridBagConstraints().gridwidth = 4;
 		lblImageConfiguration.getGridBagConstraints().gridheight = 13;
 		addComponent(jPanel, lblImageConfiguration);
 		
 		// Filter Label
-		lblFilter = (JLabel)lblFilterConfiguration.getComponent();
+		lblFilter = lblFilterConfiguration.getComponent();
 		addComponent(jPanel, lblFilterConfiguration);
 		
 		//Buttons
-		btnBlur = (RoundedJButton)btnBlurConfiguration.getComponent();
+		btnBlur = btnBlurConfiguration.getComponent();
 		addComponent(jPanel, btnBlurConfiguration);
 		
-		btnSharpen = (RoundedJButton)btnSharpenConfiguration.getComponent();
+		btnSharpen = btnSharpenConfiguration.getComponent();
 		addComponent(jPanel, btnSharpenConfiguration);
 		
-		btnBrightness = (RoundedJButton)btnBrightnessConfiguration.getComponent();
+		btnBrightness = btnBrightnessConfiguration.getComponent();
 		addComponent(jPanel, btnBrightnessConfiguration);
 		
-		btnContrast = (RoundedJButton)btnContrastConfiguration.getComponent();
+		btnContrast = btnContrastConfiguration.getComponent();
 		addComponent(jPanel, btnContrastConfiguration);
 		
-		btnEdgeDetection = (RoundedJButton)btnEdgeDetectionConfiguration.getComponent();
+		btnEdgeDetection = btnEdgeDetectionConfiguration.getComponent();
 		addComponent(jPanel, btnEdgeDetectionConfiguration);
 		
-		btnGrayscale = (RoundedJButton)btnGrayscaleConfiguration.getComponent();
+		btnGrayscale = btnGrayscaleConfiguration.getComponent();
 		addComponent(jPanel, btnGrayscaleConfiguration);
 		
-		btnApplyFilter = (RoundedJButton)btnApplyFilterConfiguration.getComponent();
+		btnApplyFilter = btnApplyFilterConfiguration.getComponent();
 		addComponent(jPanel, btnApplyFilterConfiguration);
 		
 		// Weight for Edits
@@ -359,17 +366,17 @@ public class ImageEditor extends FrameFactory {
 				"PROFESSIONAL", new Font("Arial", Font.BOLD, 12), new Insets(20, 40, 0, 0), 1, 8));
 		
 		// Caption
-		txtCaption = (RoundedJTextField)txtCaptionConfiguration.getComponent();
+		txtCaption = txtCaptionConfiguration.getComponent();
 		addComponent(jPanel, txtCaptionConfiguration);
 		
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Add Caption", new Font("Ariel", Font.BOLD, 12), new Insets(0, 120, 40, 0), 1, 14));
 		
 		// Share/Save Buttons
-		btnSaveToDrafts = (RoundedJButton)btnSaveToDraftsConfiguration.getComponent();
+		btnSaveToDrafts = btnSaveToDraftsConfiguration.getComponent();
 		addComponent(jPanel, btnSaveToDraftsConfiguration);
 		
-		btnShare = (RoundedJButton)btnShareConfiguration.getComponent();
+		btnShare = btnShareConfiguration.getComponent();
 		btnShareConfiguration.getGridBagConstraints().gridwidth = 2;
 		addComponent(jPanel, btnShareConfiguration);
 	}

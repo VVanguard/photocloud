@@ -7,12 +7,9 @@ import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 
 import java.awt.GridBagLayout;
 
-import javax.swing.JTextField;
-import javax.swing.JToggleButton;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import baselogger.BaseLogger;
@@ -22,6 +19,10 @@ import user.UserTiers;
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
+import util.customcomponents.RoundedJButton;
+import util.customcomponents.RoundedJPasswordField;
+import util.customcomponents.RoundedJTextField;
+import util.customcomponents.RoundedJToggleButton;
 import util.customframes.FrameFactory;
 import util.image.ImageOperations;
 import util.validators.DatabaseValidators;
@@ -36,7 +37,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 
@@ -47,63 +47,63 @@ public class SignUp extends FrameFactory {
 	private BaseLogger baseLogger = new BaseLogger();
 	
 	// Components
-	private JTextField txtName;
-	private JTextField txtSurname;
-	private JTextField txtMail;
-	private JTextField txtAge;
-	private JTextField txtUsername;
-	private JPasswordField txtPassword;
+	private RoundedJTextField txtName;
+	private RoundedJTextField txtSurname;
+	private RoundedJTextField txtMail;
+	private RoundedJTextField txtAge;
+	private RoundedJTextField txtUsername;
+	private RoundedJPasswordField txtPassword;
 	private JLabel lblImg;
 	private JLabel errorLabel;
 	
-	private JButton btnUpload;
-	private JButton btnSignUp;
-	private JToggleButton btnFree;
-	private JToggleButton btnHobbyist;
-	private JToggleButton btnProfessional;
+	private RoundedJButton btnUpload;
+	private RoundedJButton btnSignUp;
+	private RoundedJToggleButton btnFree;
+	private RoundedJToggleButton btnHobbyist;
+	private RoundedJToggleButton btnProfessional;
 	private ButtonGroup btnTierGroup;
 	
 	private BufferedImage ppImg = null;
 	
 	
 	// Configurations
-	private ComponentConfiguration txtNameConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtNameConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtName, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 3);
 	
-	private ComponentConfiguration txtSurnameConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtSurnameConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtSurname, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 5);
 	
-	private ComponentConfiguration txtMailConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtMailConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtMail, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 7);
 	
-	private ComponentConfiguration txtAgeConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtAgeConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtAge, 5, Colors.BROKEN_WHITE, new Insets(10, 80, 10, 80), 1, 9);
 	
-	private ComponentConfiguration txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtUsername, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 11);
 	
-	private ComponentConfiguration txtPasswordConfiguration = ComponentGenerator.generateRoundedPasswordField(
+	private ComponentConfiguration<RoundedJPasswordField> txtPasswordConfiguration = ComponentGenerator.generateRoundedPasswordField(
 			txtPassword, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 13);
 
-	private ComponentConfiguration btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
 			btnSignUp, 20, "Sign Up", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(10, 20, 10, 20), 1, 15);
 	
-	private ComponentConfiguration btnFreeConfiguration = ComponentGenerator.generateRoundedToggleButton(
+	private ComponentConfiguration<RoundedJToggleButton> btnFreeConfiguration = ComponentGenerator.generateRoundedToggleButton(
 			btnFree, 10, "FREE", new Font("Ariel", Font.BOLD, 20), Colors.BROKEN_WHITE, Colors.CHARCOAL_GRAY, new Insets(5, 0, 5, 0), 3, 3);
 	
-	private ComponentConfiguration btnHobbyistConfiguration = ComponentGenerator.generateRoundedToggleButton(
+	private ComponentConfiguration<RoundedJToggleButton> btnHobbyistConfiguration = ComponentGenerator.generateRoundedToggleButton(
 			btnHobbyist, 10, "HOBBYIST", new Font("Ariel", Font.BOLD, 20), Colors.BROKEN_WHITE, Colors.CHARCOAL_GRAY, new Insets(5, 0, 5, 0), 3, 5);
 	
-	private ComponentConfiguration btnProfessionalConfiguration = ComponentGenerator.generateRoundedToggleButton(
+	private ComponentConfiguration<RoundedJToggleButton> btnProfessionalConfiguration = ComponentGenerator.generateRoundedToggleButton(
 			btnProfessional, 10, "PROFESSIONAL", new Font("Ariel", Font.BOLD, 20), Colors.BROKEN_WHITE, Colors.CHARCOAL_GRAY, new Insets(5, 0, 5, 0), 3, 7);
 	
-	private ComponentConfiguration btnUploadConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnUploadConfiguration = ComponentGenerator.generateRoundedButton(
 			btnUpload, 20, "Upload Picture", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(10, 20, 10, 20), 3, 15);
 	
-	private ComponentConfiguration lblImgLabelConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblImgLabelConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 3, 9);
 	
-	private ComponentConfiguration errorLabelConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> errorLabelConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 14);
 	
 	/**
@@ -288,7 +288,6 @@ public class SignUp extends FrameFactory {
 		 * 
 		 */
 		
-		
 		// Head Label
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"PhotoCloud Editor", new Font("Arial", Font.PLAIN, 24), new Insets(0, 0, 20, 0), 1, 1));
@@ -297,71 +296,71 @@ public class SignUp extends FrameFactory {
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Name", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 2));
 		
-		txtName = (JTextField)txtNameConfiguration.getComponent();
+		txtName = txtNameConfiguration.getComponent();
 		addComponent(jPanel, txtNameConfiguration);
 		
 		//Surname
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Surname", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 4));
 		
-		txtSurname = (JTextField)txtSurnameConfiguration.getComponent();
+		txtSurname = txtSurnameConfiguration.getComponent();
 		addComponent(jPanel, txtSurnameConfiguration);
 
 		// E-mail
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"E-mail", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 6));
 
-		txtMail = (JTextField)txtMailConfiguration.getComponent();
+		txtMail = txtMailConfiguration.getComponent();
 		addComponent(jPanel, txtMailConfiguration);
 
 		// Age
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Age", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 8));
 		
-		txtAge = (JTextField)txtAgeConfiguration.getComponent();
+		txtAge = txtAgeConfiguration.getComponent();
 		addComponent(jPanel, txtAgeConfiguration);
 		
 		// Username
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Username", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 10));	
 		
-		txtUsername = (JTextField)txtUsernameConfiguration.getComponent();
+		txtUsername = txtUsernameConfiguration.getComponent();
 		addComponent(jPanel, txtUsernameConfiguration);
 				
 		// Password
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Password", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 12));
 		
-		txtPassword = (JPasswordField)txtPasswordConfiguration.getComponent();
+		txtPassword = txtPasswordConfiguration.getComponent();
 		addComponent(jPanel, txtPasswordConfiguration);
 		
 		// Sign Up Button
-		btnSignUp = (JButton)btnSignUpConfiguration.getComponent();
+		btnSignUp = btnSignUpConfiguration.getComponent();
 		addComponent(jPanel, btnSignUpConfiguration);
 		
 		// Toggle Buttons
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Select a Tier", new Font("Ariel", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 3, 2));
 		
-		btnFree = (JToggleButton)btnFreeConfiguration.getComponent();
+		btnFree = btnFreeConfiguration.getComponent();
 		addComponent(jPanel, btnFreeConfiguration);
 
-		btnHobbyist = (JToggleButton)btnHobbyistConfiguration.getComponent();
+		btnHobbyist = btnHobbyistConfiguration.getComponent();
 		addComponent(jPanel, btnHobbyistConfiguration);
 		
-		btnProfessional = (JToggleButton)btnProfessionalConfiguration.getComponent();
+		btnProfessional = btnProfessionalConfiguration.getComponent();
 		addComponent(jPanel, btnProfessionalConfiguration);
 		
 		// Image Label
-		lblImg = (JLabel)lblImgLabelConfiguration.getComponent();
+		lblImg = lblImgLabelConfiguration.getComponent();
 		lblImgLabelConfiguration.getGridBagConstraints().gridheight = 5;
 		addComponent(jPanel, lblImgLabelConfiguration);
 		
-		btnUpload = (JButton)btnUploadConfiguration.getComponent();
+		btnUpload = btnUploadConfiguration.getComponent();
 		addComponent(jPanel, btnUploadConfiguration);
 		
 		// Error Label
-		errorLabel = (JLabel)errorLabelConfiguration.getComponent();
+		errorLabel = errorLabelConfiguration.getComponent();
 		errorLabel.setForeground(Color.RED);
 		errorLabelConfiguration.getGridBagConstraints().gridwidth = 3;
 		addComponent(jPanel, errorLabelConfiguration);

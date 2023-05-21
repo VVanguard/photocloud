@@ -1,23 +1,23 @@
 package gui;
 
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 
 import util.Colors;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
+import util.customcomponents.RoundedJButton;
+import util.customcomponents.RoundedJPasswordField;
+import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
 import util.validators.DatabaseValidators;
 
 import java.awt.GridBagLayout;
-import javax.swing.JTextField;
 
 import baselogger.BaseLogger;
 
 import java.awt.Insets;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import java.awt.event.ActionListener;
@@ -30,26 +30,26 @@ public class Login extends FrameFactory {
 	private BaseLogger baseLogger = new BaseLogger();
 	
 	// Components
-	private JTextField txtUsername;
-	private JPasswordField txtPassword;
-	private JButton btnLogIn;
-	private JButton btnSignUp;
+	private RoundedJTextField txtUsername;
+	private RoundedJPasswordField txtPassword;
+	private RoundedJButton btnLogIn;
+	private RoundedJButton btnSignUp;
 	private JLabel lblError;
 	
 	//Configurations
-	private ComponentConfiguration txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
+	private ComponentConfiguration<RoundedJTextField> txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtUsername, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 4);
 	
-	private ComponentConfiguration txtPasswordConfiguration = ComponentGenerator.generateRoundedPasswordField(
+	private ComponentConfiguration<RoundedJPasswordField> txtPasswordConfiguration = ComponentGenerator.generateRoundedPasswordField(
 			txtPassword, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 7);
 	
-	private ComponentConfiguration btnLogInConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnLogInConfiguration = ComponentGenerator.generateRoundedButton(
 			btnLogIn, 5, "Log In", new Font("Arial", Font.PLAIN, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(10, 30, 10, 30), 1, 9);
 	
-	private ComponentConfiguration btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
+	private ComponentConfiguration<RoundedJButton> btnSignUpConfiguration = ComponentGenerator.generateRoundedButton(
 			btnSignUp, 5, "Sıgn Up", new Font("Arial", Font.PLAIN, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 60, 20, 60), 1, 12);
 	
-	private ComponentConfiguration lblErrorConfiguration = ComponentGenerator.generateCenteredLabel(
+	private ComponentConfiguration<JLabel> lblErrorConfiguration = ComponentGenerator.generateCenteredLabel(
 			"", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 50, 0), 1, 10);
 	
 	
@@ -72,9 +72,13 @@ public class Login extends FrameFactory {
 		// Initialize Components
 		initializeComponents(contentPane);	
 		
+		
 		/*
+		 * 
 		 * Action Listeners
+		 * 
 		 */
+		
 		// Log In
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,6 +122,20 @@ public class Login extends FrameFactory {
 	 */
 	public void initializeComponents(JPanel jPanel) {
 		
+		/*
+		 * Components
+		 * 
+		 * Heading Label
+		 * Username Label
+		 * Username TxtBox
+		 * Password Label
+		 * Password TxtBox
+		 * Login Button
+		 * SignUp Label
+		 * SignUp Button
+		 * Error Label
+		 */
+		
 		// Heading
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"PhotoCloud Editor", new Font("Arial", Font.PLAIN, 24), new Insets(0, 0, 10, 0), 1, 1));
@@ -126,29 +144,29 @@ public class Login extends FrameFactory {
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Username", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 3));
 		
-		txtUsername = (JTextField)txtUsernameConfiguration.getComponent();
+		txtUsername = txtUsernameConfiguration.getComponent();
 		addComponent(jPanel, txtUsernameConfiguration);
 		
 		// Password
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Password", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 0, 0), 1, 6));
 		
-		txtPassword = (JPasswordField)txtPasswordConfiguration.getComponent();
+		txtPassword = txtPasswordConfiguration.getComponent();
 		addComponent(jPanel, txtPasswordConfiguration);
 		
 		// LogIn
-		btnLogIn = (JButton)btnLogInConfiguration.getComponent();
+		btnLogIn = btnLogInConfiguration.getComponent();
 		addComponent(jPanel, btnLogInConfiguration);
 		
 		// SignUp
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"Sign Up Now!", new Font("Arial", Font.PLAIN, 10), new Insets(0, 0, 5, 0), 1, 11));
 		
-		btnSignUp = (JButton) btnSignUpConfiguration.getComponent();
+		btnSignUp = btnSignUpConfiguration.getComponent();
 		addComponent(jPanel, btnSignUpConfiguration);
 		
 		// Error Label
-		lblError = (JLabel)lblErrorConfiguration.getComponent();
+		lblError = lblErrorConfiguration.getComponent();
 		lblError.setForeground(Color.RED);
 		addComponent(jPanel, lblErrorConfiguration);
 	}

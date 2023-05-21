@@ -33,9 +33,11 @@ public class ComponentGenerator {
 	 * @param gridX		X placement in grid bag constraints
 	 * @param gridY		Y placement in grid bag constraints
 	 * @param insets	new Insets 
+	 * 
 	 * @return 			returns new Component Configuration
 	 */
-	public static ComponentConfiguration generateCenteredLabel(String txt, Font font, Insets insets, int gridX, int gridY) {
+	public static ComponentConfiguration<JLabel> generateCenteredLabel(
+			String txt, Font font, Insets insets, int gridX, int gridY) {
 		
 		// Centered Label
 		JLabel newLabel = new JLabel(txt);
@@ -47,7 +49,7 @@ public class ComponentGenerator {
 		gbc_newLabel.gridx = gridX;
 		gbc_newLabel.gridy = gridY;
 		
-		return new ComponentConfiguration(newLabel, gbc_newLabel);
+		return new ComponentConfiguration<JLabel>(newLabel, gbc_newLabel);
 	}
 
 	
@@ -60,9 +62,11 @@ public class ComponentGenerator {
 	 * @param insets		new Insets
 	 * @param gridX			X placement in grid bag constraints
 	 * @param gridY			Y placement in grid bag constraints
+	 * 
 	 * @return				returns new Component Configuration
 	 */
-	public static ComponentConfiguration generateRoundedTextField(JTextField jTextField, int arcL, Color color, Insets insets, int gridX, int gridY) {
+	public static ComponentConfiguration<RoundedJTextField> generateRoundedTextField(
+			RoundedJTextField jTextField, int arcL, Color color, Insets insets, int gridX, int gridY) {
 		
 		// New Rounded Text Box
 		jTextField = new RoundedJTextField(arcL);
@@ -75,7 +79,7 @@ public class ComponentGenerator {
 		gbc_newTxtField.gridx = gridX;
 		gbc_newTxtField.gridy = gridY;
 
-		return new ComponentConfiguration(jTextField, gbc_newTxtField);	
+		return new ComponentConfiguration<RoundedJTextField>(jTextField, gbc_newTxtField);	
 	}
 	
 	
@@ -88,9 +92,11 @@ public class ComponentGenerator {
 	 * @param insets			new Insets
 	 * @param gridX				X placement in grid bag constraints
 	 * @param gridY				Y placement in grid bag constraints
+	 * 
 	 * @return					returns new Component Configuration
 	 */
-	public static ComponentConfiguration generateRoundedPasswordField(JPasswordField jPasswordField, int arcL, Color color, Insets insets, int gridX, int gridY) {
+	public static ComponentConfiguration<RoundedJPasswordField> generateRoundedPasswordField(
+			RoundedJPasswordField jPasswordField, int arcL, Color color, Insets insets, int gridX, int gridY) {
 		
 		// Rounded Password Field
 		jPasswordField = new RoundedJPasswordField(arcL);
@@ -103,7 +109,7 @@ public class ComponentGenerator {
 		gbc_newPasswordField.gridx = gridX;
 		gbc_newPasswordField.gridy = gridY;
 		
-		return new ComponentConfiguration(jPasswordField, gbc_newPasswordField);
+		return new ComponentConfiguration<RoundedJPasswordField>(jPasswordField, gbc_newPasswordField);
 	}
 	
 	
@@ -119,10 +125,11 @@ public class ComponentGenerator {
 	 * @param insets			new Insets
 	 * @param gridX				X placement in grid bag constraints
 	 * @param gridY				Y placement in grid bag constraints
+	 * 
 	 * @return					returns new Component Configuration
 	 */
-	public static ComponentConfiguration generateRoundedButton(
-			JButton jButton, int arcL, String txt, Font font, Color foregroundColor, Color backgorundColor, Insets insets, int gridX, int gridY) {
+	public static ComponentConfiguration<RoundedJButton> generateRoundedButton(
+			RoundedJButton jButton, int arcL, String txt, Font font, Color foregroundColor, Color backgorundColor, Insets insets, int gridX, int gridY) {
 
 		// SignUp Button
 		jButton = new RoundedJButton(arcL);
@@ -138,7 +145,7 @@ public class ComponentGenerator {
 		gbc_jButton.gridx = gridX;
 		gbc_jButton.gridy = gridY;
 		
-		return new ComponentConfiguration(jButton, gbc_jButton);
+		return new ComponentConfiguration<RoundedJButton>(jButton, gbc_jButton);
 	}
 	
 	
@@ -154,10 +161,11 @@ public class ComponentGenerator {
 	 * @param insets			new Insets
 	 * @param gridX				X placement in grid bag constraints
 	 * @param gridY				Y placement in grid bag constraints
+	 * 
 	 * @return					returns new Component Configuration
 	 */
-	public static ComponentConfiguration generateRoundedToggleButton(
-			JToggleButton jToggleButton, int arcL, String txt, Font font, Color foregroundColor, Color backgorundColor, Insets insets, int gridX, int gridY) {
+	public static ComponentConfiguration<RoundedJToggleButton> generateRoundedToggleButton(
+		RoundedJToggleButton jToggleButton, int arcL, String txt, Font font, Color foregroundColor, Color backgorundColor, Insets insets, int gridX, int gridY) {
 
 		// SignUp Button
 		jToggleButton = new RoundedJToggleButton(arcL);
@@ -173,6 +181,6 @@ public class ComponentGenerator {
 		gbc_jToggleButton.gridx = gridX;
 		gbc_jToggleButton.gridy = gridY;
 		
-		return new ComponentConfiguration(jToggleButton, gbc_jToggleButton);
+		return new ComponentConfiguration<RoundedJToggleButton>(jToggleButton, gbc_jToggleButton);
 	}
 }

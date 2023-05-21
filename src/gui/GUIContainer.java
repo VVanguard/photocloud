@@ -3,7 +3,6 @@ package gui;
 import java.util.ArrayList;
 
 import user.User;
-import user.UserTiers;
 import util.customframes.FrameFactory;
 
 public class GUIContainer {
@@ -14,7 +13,7 @@ public class GUIContainer {
 	private static ProfilePage profilePage = new ProfilePage("dummyuser", true);
 	private static ImageEditor imageEditor = new ImageEditor();
 	private static EditInfo editInfo = new EditInfo();
-
+	
 	private static ArrayList<FrameFactory> frames = new ArrayList<>();
 	
 	
@@ -58,6 +57,7 @@ public class GUIContainer {
 	// Getters 
 	//
 	
+	
 	public static Login getLogIn() {
 		return logIn;
 	}
@@ -81,6 +81,11 @@ public class GUIContainer {
 	public static EditInfo getEditInfo() {
 		return editInfo;
 	}
+	
+	
+	//
+	// Setters
+	//
 	
 	
 	public static void updateProfilePage(String username, boolean isUserSelf) {
