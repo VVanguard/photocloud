@@ -11,7 +11,7 @@ Functionality
 - [X] logger
 - [X] Users
 - [ ] Admin User
-- [ ] Photo Editting 
+- [X] Photo Editting 
 - [ ] Search Users
 - [ ] Save Photos to ScrollPane
 

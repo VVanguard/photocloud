@@ -174,10 +174,7 @@ public class SignUp extends FrameFactory {
 					
 					
 					// Use the default profile picture if there is no preference
-					System.out.println(ppImg);
-					
 					if (ppImg == null) {
-						System.out.println("null");
 						newUser.setPpImg("resources/pictures/Default_Profile_Picture.png");
 					}
 					

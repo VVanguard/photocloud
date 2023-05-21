@@ -26,7 +26,12 @@ import util.customcomponents.RoundedJButton;
 import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
 import util.filters.Blur;
+import util.filters.Brightness;
+import util.filters.Contrast;
+import util.filters.EdgeDetection;
 import util.filters.FilterType;
+import util.filters.Grayscale;
+import util.filters.Sharpen;
 import util.image.ImageOperations;
 
 
@@ -127,36 +132,29 @@ public class ImageEditor extends FrameFactory {
 		
 		contentPane.setLayout(gbl_contentPane);
 		
+		// Declare user
+		setUser(userEdit);
+		
 		// Initialize Components
 		initializeComponents(contentPane);
 		
 		// Create Buffered Images
 		try {
+			GUIContainer.getProfilePage().displayFileError("");
 			bfImg = ImageOperations.toBufferedImage(ImageOperations.readNewImageFromUser(imgPath));
-			System.out.println(ImageOperations.readNewImageFromUser(imgPath).getHeight());
-			System.out.println(ImageOperations.readNewImageFromUser(imgPath).getWidth());
 			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(imgPath), 1300, 900);
+		} catch (NullPointerException e) {
+			baseLogger.error().log("Failed to read Image: " + imgPath);
+			GUIContainer.getProfilePage().displayFileError("Cose a jpg!");
 		} catch (IOException e) {
 			baseLogger.error().log("Failed to read Image: " + imgPath);
+			GUIContainer.getProfilePage().displayFileError("Cose a jpg!");
 		}
 		
 		// Set the frame visible
 		lblImage.setIcon(new ImageIcon(bfImgScaled));
 		setFrameStatus(FrameStatus.VISIBLE);
-		
-		// Declare user
-		setUser(userEdit);
-		
-		// Tier Based Coloring
-		if (user.getTier() == UserTiers.PROFESSIONAL) {
-			btnEdgeDetection.setBackground(Colors.BRUNSWICK_GREEN);
-			btnGrayscale.setBackground(Colors.BRUNSWICK_GREEN);
-			btnBrightness.setBackground(Colors.BRUNSWICK_GREEN);
-			btnContrast.setBackground(Colors.BRUNSWICK_GREEN);
-		} else if (user.getTier() == UserTiers.HOBBYIST) {
-			btnBrightness.setBackground(Colors.BRUNSWICK_GREEN);
-			btnContrast.setBackground(Colors.BRUNSWICK_GREEN);
-		}
+
 		
 		/*
 		 * Action Listeners
@@ -168,8 +166,9 @@ public class ImageEditor extends FrameFactory {
 		btnBlur.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) { 
-				filterType = FilterType.BLUR;	
+				slider.setEnabled(true);
 				slider.setValue(1);
+				filterType = FilterType.BLUR;	
 				lblFilter.setText(filterType.toString());
 			}
 		});
@@ -177,47 +176,64 @@ public class ImageEditor extends FrameFactory {
 		btnSharpen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				slider.setEnabled(true);
+				slider.setValue(1);
 				filterType = FilterType.SHARPEN;	
-				slider.setValue(1);
 				lblFilter.setText(filterType.toString());
 			}
 		});
 		
-		btnBrightness.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				filterType = FilterType.BRIGHTNESS;	
-				slider.setValue(50);
-				lblFilter.setText(filterType.toString());
-			}
-		});
+		// Tier Based Configuration
+		if (user.getTier() == UserTiers.PROFESSIONAL) {
+			// Edge Detection
+			btnEdgeDetection.setBackground(Colors.BRUNSWICK_GREEN);
+			btnEdgeDetection.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					slider.setValue(100);
+					slider.setEnabled(false);
+					filterType = FilterType.EDGE_DETECTION;	
+					lblFilter.setText(filterType.toString());
+				}
+			});
+			// Grayscale
+			btnGrayscale.setBackground(Colors.BRUNSWICK_GREEN);
+			btnGrayscale.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					slider.setEnabled(true);
+					slider.setValue(1);
+					filterType = FilterType.GRAYSCALE;	
+					lblFilter.setText(filterType.toString());
+				}
+			});
+		} 
 		
-		btnContrast.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				filterType = FilterType.CONTRAST;	
-				slider.setValue(50);
-				lblFilter.setText(filterType.toString());
-			}
-		});
-		
-		btnEdgeDetection.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				filterType = FilterType.EDGE_DETECTION;	
-				slider.setValue(1);
-				lblFilter.setText(filterType.toString());
-			}
-		});
-
-		btnGrayscale.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				filterType = FilterType.GRAYSCALE;	
-				slider.setValue(1);
-				lblFilter.setText(filterType.toString());
-			}
-		});
+		if (user.getTier() == UserTiers.HOBBYIST || user.getTier() == UserTiers.PROFESSIONAL) {
+			// Brightness
+			btnBrightness.setBackground(Colors.BRUNSWICK_GREEN);
+			btnBrightness.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					slider.setEnabled(true);
+					slider.setValue(1);
+					filterType = FilterType.BRIGHTNESS;	
+					lblFilter.setText(filterType.toString());
+				}
+			});
+			
+			// Contrast
+			btnContrast.setBackground(Colors.BRUNSWICK_GREEN);
+			btnContrast.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					slider.setEnabled(true);
+					slider.setValue(1);
+					filterType = FilterType.CONTRAST;	
+					lblFilter.setText(filterType.toString());
+				}
+			});
+		}
 		
 		
 		/*
@@ -232,6 +248,7 @@ public class ImageEditor extends FrameFactory {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				long startTime = System.nanoTime();
 				// Try applying the selected filter
 				try {
 					// Blur
@@ -239,30 +256,39 @@ public class ImageEditor extends FrameFactory {
 						bfImg = Blur.BlurImage(bfImg, slider.getValue());
 						bfImgScaled = Blur.BlurImage(bfImgScaled, slider.getValue());
 					}
-					
-					else if (false) {
-						
+					// Sharpen
+					else if (filterType == FilterType.SHARPEN) {
+						bfImg = Sharpen.SharpenImage(bfImg, slider.getValue());
+						bfImgScaled = Sharpen.SharpenImage(bfImgScaled, slider.getValue());
 					} 
 					
-					else if (false) {
-
+					else if (filterType == FilterType.GRAYSCALE) {
+						bfImg = Grayscale.GrayscaleImage(bfImg, slider.getValue());
+						bfImgScaled = Grayscale.GrayscaleImage(bfImgScaled, slider.getValue());
 					} 
 
-					else if (false) {
-
+					else if (filterType == FilterType.EDGE_DETECTION) {
+						bfImg = EdgeDetection.detectEdges(bfImg);
+						bfImgScaled = EdgeDetection.detectEdges(bfImgScaled);
 					} 
 
-					else if (false) {
-
+					else if (filterType == FilterType.BRIGHTNESS) {
+						bfImg = Brightness.BrightenImage(bfImg, slider.getValue());
+						bfImgScaled = Brightness.BrightenImage(bfImgScaled, slider.getValue());
 					} 
 
-					else if (false) {
-
+					else if (filterType == FilterType.CONTRAST) {
+						bfImg = Contrast.changeContrast(bfImg, slider.getValue());
+						bfImgScaled = Contrast.changeContrast(bfImgScaled, slider.getValue());
 					} 
 					
 					lblImage.setIcon(new ImageIcon(bfImgScaled));
 					
+					long endTime = System.nanoTime(); 
+					baseLogger.info().log(user.getUsername() + " applied " + filterType.toString() + " to image at " + imgPath + ". Duration: " + (endTime - startTime) / 1000000 + "ms.");
+					
 				} catch (Exception e2) {
+					e2.printStackTrace();
 					baseLogger.error().log("Failed to apply filter: " + filterType.toString());
 				}
 				

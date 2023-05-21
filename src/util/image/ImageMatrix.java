@@ -111,12 +111,18 @@ public class ImageMatrix {
 
 	
 	public static int convertRGB(int red, int green, int blue) {
-		return (red << 16 | green << 8 | blue);
+		int redScaled = (red > 255) ? 255 : ((red < 0) ? 0 : red);
+		int greenScaled = (green > 255) ? 255 : ((green < 0) ? 0 : green);
+		int blueScaled = (blue > 255) ? 255 : ((blue < 0) ? 0 : blue);
+		
+		return (redScaled << 16 | greenScaled << 8 | blueScaled);
 	}
+	
 	
 	public int[][] getImgArray() {
 		return img;
 	}
+	
 	
 	public void setImgArray(int[][] img) {
 		this.img = img;

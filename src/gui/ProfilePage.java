@@ -38,7 +38,7 @@ public class ProfilePage extends FrameFactory {
 	
 	// User
 	User user;
-	boolean isUserSelf;
+	public boolean isUserSelf;
 	
 	// Components
 	private RoundedJTextField txtSearch;
@@ -52,6 +52,7 @@ public class ProfilePage extends FrameFactory {
 	private JScrollPane scrollPaneUserPhotos;
 	
 	private RoundedJButton btnAddMore;
+	private JLabel lblError;
 	
 	// Configurations
 	private ComponentConfiguration txtSearchConfiguration = ComponentGenerator.generateRoundedTextField( 
@@ -78,6 +79,10 @@ public class ProfilePage extends FrameFactory {
 	private ComponentConfiguration btnAddMoreConfiguration = ComponentGenerator.generateRoundedButton(
 			btnAddMore, 20, "+", new Font("Ariel", Font.BOLD, 24), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 0, 25, 0), 2, 8);
 	
+	private ComponentConfiguration lblErrorConfiguraion = ComponentGenerator.generateCenteredLabel(
+			"", new Font("Arial", Font.PLAIN, 12), new Insets(25, 0, 0, 0), 2, 9);
+	
+	
 	/**
 	 * Create Pane
 	 * 
@@ -95,12 +100,12 @@ public class ProfilePage extends FrameFactory {
 		contentPane.setLayout(gbl_contentPane);
 		
 		// Initialize Components
+		this.isUserSelf = isUserSelf;
 		initializeComponents(contentPane);
 		
 		// Get User from username
 		try {
 			user = UserOperations.getUserFromDatabase(username);
-			this.isUserSelf = isUserSelf;
 		} catch (Exception e) {
 			baseLogger.error().log("Failed to get User from username: " + username);
 		}
@@ -125,7 +130,10 @@ public class ProfilePage extends FrameFactory {
 		
 		// Set Frame Status
 		setFrameStatus(FrameStatus.HIDE);
-		baseLogger.info().log("Entered to User Profile: " + username);
+		
+		if (username != "dummyuser") {
+			baseLogger.info().log("Entered to User Profile: " + username);
+		}
 		
 		
 		/**
@@ -169,7 +177,6 @@ public class ProfilePage extends FrameFactory {
 					// Create new Edit Window
 					// Update Frame Status and navigate to the image editor
 					GUIContainer.updateImageEditor(imagePath, user);
-					System.out.println(user.getUsername());
 					GUIContainer.updateGUI();
 				} 
 			}
@@ -242,6 +249,14 @@ public class ProfilePage extends FrameFactory {
 		// Add More Button
 		btnAddMore = (RoundedJButton)btnAddMoreConfiguration.getComponent();
 		addComponent(jPanel, btnAddMoreConfiguration);
+		
+		lblError = (JLabel)lblErrorConfiguraion.getComponent();
+		addComponent(jPanel, lblErrorConfiguraion);
+	}
+	
+	
+	public void displayFileError(String str) {
+		lblError.setText(str);
 	}
 
 }

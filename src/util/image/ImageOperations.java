@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
  */
 public class ImageOperations {
 
-	public static BufferedImage toBufferedImage(Image img) {
+	public static BufferedImage toBufferedImage(Image img) throws NullPointerException{
 		// Create a buffered image with RGB values
 	    BufferedImage newBuffImg = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 
@@ -37,7 +37,7 @@ public class ImageOperations {
 	 * 
 	 * @return			returns resized image
 	 */
-	public static BufferedImage ResizeImage(Image image, int pixelX, int pixelY) {
+	public static BufferedImage ResizeImage(Image image, int pixelX, int pixelY) throws IOException{
 		BufferedImage newImg = toBufferedImage(image.getScaledInstance(pixelX, pixelY, Image.SCALE_SMOOTH));
 		return newImg;
 	}
@@ -51,13 +51,11 @@ public class ImageOperations {
 	 * @param widthMax		max width of the screen
 	 * @param heightMax		max height of the screen
 	 * @return				buffered image
+	 * @throws IOException 
 	 */
-	public static BufferedImage scaleForDisplay(Image image, int widthMax, int heightMax) {
+	public static BufferedImage scaleForDisplay(Image image, int widthMax, int heightMax) throws IOException {
 		double ratio = Double.valueOf(widthMax) / Double.valueOf(heightMax);
-		System.out.println(ratio);
 		Image scaledImg;		
-		
-		System.out.println(image.getWidth(null) / ratio);
 		
 		// Check the ratio between the current image
 		// If the width of the image is larger than the height by a ratio, scale it by width
@@ -112,7 +110,7 @@ public class ImageOperations {
 	 * 
 	 * @return
 	 */
-	public static BufferedImage resizeSquare(BufferedImage image, int pixel) {
+	public static BufferedImage resizeSquare(BufferedImage image, int pixel) throws IOException{
 		return ResizeImage(cropCenterSquare(image), pixel, pixel);
 	}
 	

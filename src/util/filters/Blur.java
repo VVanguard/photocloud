@@ -21,8 +21,6 @@ public class Blur {
 		int initialImageArray[][] = imageMatrix.getImgArray(); 
 		int finalImageArray[][] = initialImageArray.clone();
 
-		System.out.println(finalImageArray);
-
 		int kernelSize = 2 * (int)Math.ceil(rate / 20) + 1;
 
 		// Horizontal Iteration of the kernel
