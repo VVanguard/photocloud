@@ -149,7 +149,6 @@ public class SignUp extends FrameFactory {
 				
 				// Create User
 				try {
-					errorLabel.setText("");
 					
 					// Validate Fields
 					Validators.validateUsername(txtUsername.getText());

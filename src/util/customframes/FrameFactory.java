@@ -9,6 +9,11 @@ import util.Colors;
 import util.ComponentConfiguration;
 
 
+/**
+ * Frame Factory class that is the base of all JFrames in this project
+ * @author bkaym
+ *
+ */
 public abstract class FrameFactory extends JFrame implements Displayable {
 	
 	protected FrameStatus status = FrameStatus.HIDE;
@@ -34,12 +39,12 @@ public abstract class FrameFactory extends JFrame implements Displayable {
 	
 	
 	/**
-	 * Adds the component configuration to the jpanel
+	 * Adds the component configuration to the content pane
 	 *  
 	 * @param jPanel
 	 * @param componentConfiguration	
 	 */
-	public void addComponent(JPanel jPanel, ComponentConfiguration componentConfiguration) {
+	public void addComponent(JPanel jPanel, ComponentConfiguration<?> componentConfiguration) {
 		jPanel.add(componentConfiguration.getComponent(), componentConfiguration.getGridBagConstraints());
 	}
 	

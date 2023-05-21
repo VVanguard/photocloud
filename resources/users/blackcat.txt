@@ -1,8 +1,0 @@
-username: blackcat
-password: Levo123
-email: lunal@gmail.com
-name: Levent
-surname: Unal
-age: 20
-imgPath: resources/pictures/Default_Profile_Picture.png
-tier: HOBBYIST

@@ -1,8 +1,0 @@
-username: metin
-password: MS1234
-email: ms@gmail.com
-name: Metin
-surname: Sahin
-age: 19
-imgPath: resources/pictures/metin.jpg
-tier: PROFESSIONAL

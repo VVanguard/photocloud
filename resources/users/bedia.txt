@@ -1,8 +1,0 @@
-username: bedia
-password: B37570
-email: bedia.kaymakcioglu@gmail.com
-name: Bedia
-surname: Kaymakcioglu
-age: 49
-imgPath: resources\pictures\Default_Profile_Picture.png
-tier: FREE

@@ -1,0 +1,8 @@
+username: msahin
+password: ms1234
+email: bkaymakcioglu@gmail.com
+name: M
+surname: S
+age: 19
+imgPath: resources/pictures/Default_Profile_Picture.png
+tier: HOBBYIST

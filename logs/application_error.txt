@@ -112,3 +112,19 @@
 [Sat 20 05 19:05:22 2023][ERROR] Failed to apply filter: EDGE_DETECTION
 [Sat 20 05 19:07:10 2023][ERROR] Failed to apply filter: EDGE_DETECTION
 [Sat 20 05 19:07:59 2023][ERROR] Failed to apply filter: EDGE_DETECTION
+[Sun 21 05 18:35:21 2023][ERROR] Failed to get User from username: dummyuser
+[Sun 21 05 18:35:34 2023][ERROR] Failed to get User from username: dummyuser
+[Sun 21 05 18:36:46 2023][ERROR] Failed to get User from username: dummyuser
+[Sun 21 05 18:39:33 2023][ERROR] Username or Password is not correct
+[Sun 21 05 18:39:35 2023][ERROR] Username or Password is not correct
+[Sun 21 05 18:46:14 2023][ERROR] resources\users\bkaymakcioglu\bkaymakcioglu.txt (The system cannot find the path specified)
+[Sun 21 05 18:52:07 2023][ERROR] Tier is not selected!
+
+[Sun 21 05 20:53:05 2023][ERROR] Tier is not selected!
+[Sun 21 05 20:53:07 2023][ERROR] Scanner closed
+[Sun 21 05 20:53:10 2023][ERROR] Scanner closed
+[Sun 21 05 20:54:05 2023][ERROR] Please enter a valid age!
+[Sun 21 05 20:54:08 2023][ERROR] Username must be unique!
+[Sun 21 05 20:54:09 2023][ERROR] Username must be unique!
+[Sun 21 05 20:54:16 2023][ERROR] Email address must be unique
+[Sun 21 05 20:55:26 2023][ERROR] Username must be unique!

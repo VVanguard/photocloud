@@ -108,7 +108,7 @@ public class ImageOperations {
 	 * @param image		image to resize and crop
 	 * @param pixel		dimension of a centered image
 	 * 
-	 * @return
+	 * @return			returns a new buffered image
 	 */
 	public static BufferedImage resizeSquare(BufferedImage image, int pixel) throws IOException{
 		return ResizeImage(cropCenterSquare(image), pixel, pixel);
@@ -158,6 +158,11 @@ public class ImageOperations {
 		} catch (Exception e) {} finally {
 			saveImageToResources(img, saveName);
 		}
+	}
+	
+	
+	public static void writePictureData(String username, String imgPath, String thumbnail, String caption, String[] comments) {
+		File userPictureDataFile = new File("resources/picturedata/" + username + "_pictures.txt");
 	}
 	
 }

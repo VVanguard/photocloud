@@ -26,5 +26,5 @@ public interface Displayable {
 	 * @param jPanel					content pane
 	 * @param componentConfiguration	configuration of the component
 	 */
-	public void addComponent(JPanel jPanel, ComponentConfiguration componentConfiguration);
+	public void addComponent(JPanel jPanel, ComponentConfiguration<?> componentConfiguration);
 }

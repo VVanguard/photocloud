@@ -1,0 +1,8 @@
+username: bediak
+password: bk1234
+email: bedia.kaymakcioglu@gmail.com
+name: Bedia
+surname: Kaymakcioglu
+age: 50
+imgPath: resources/pictures/bediak.jpg
+tier: HOBBYIST
