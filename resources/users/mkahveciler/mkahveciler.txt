@@ -1,0 +1,8 @@
+username: mkahveciler
+password: mk1234
+email: mkahveciler@gmail.com
+name: Mert
+surname: Kahveciler
+age: 20
+imgPath: resources/pictures/mkahveciler.jpg
+tier: PROFESSIONAL

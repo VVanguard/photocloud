@@ -938,3 +938,87 @@
 [Mon 22 05 22:47:17 2023][INFO] Entered to User Profile: bkaymakcioglu
 [Mon 22 05 22:47:18 2023][INFO] Entered to User Profile: bkaymakcioglu
 [Mon 22 05 22:48:10 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:00:02 2023][INFO] New SignUp Request
+[Mon 22 05 23:00:29 2023][INFO] Photo Upload Successful
+[Mon 22 05 23:00:32 2023][INFO] New User Created: lunal
+[Mon 22 05 23:00:33 2023][INFO] Entered to User Profile: lunal
+[Mon 22 05 23:00:42 2023][INFO] lunal applied BLUR to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG_20191029_113133.jpg. Duration: 159ms.
+[Mon 22 05 23:00:48 2023][INFO] lunal applied SHARPEN to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG_20191029_113133.jpg. Duration: 105ms.
+[Mon 22 05 23:00:59 2023][INFO] Entered to User Profile: lunal
+[Mon 22 05 23:01:04 2023][INFO] Entered to User Profile: lunal
+[Mon 22 05 23:02:39 2023][INFO] New SignUp Request
+[Mon 22 05 23:03:10 2023][INFO] New User Created: ervatan
+[Mon 22 05 23:03:10 2023][INFO] Entered to User Profile: ervatan
+[Mon 22 05 23:03:25 2023][INFO] ervatan applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-no-name-66997.jpg. Duration: 425ms.
+[Mon 22 05 23:03:26 2023][INFO] ervatan applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-no-name-66997.jpg. Duration: 224ms.
+[Mon 22 05 23:03:41 2023][INFO] Entered to User Profile: ervatan
+[Mon 22 05 23:03:50 2023][INFO] Entered to User Profile: ervatan
+[Mon 22 05 23:04:25 2023][INFO] Entered to User Profile: ervatan
+[Mon 22 05 23:04:25 2023][INFO] New LogIn: ervatan
+[Mon 22 05 23:04:30 2023][INFO] New SignUp Request
+[Mon 22 05 23:05:02 2023][INFO] Photo Upload Successful
+[Mon 22 05 23:05:08 2023][INFO] New User Created: bkoksal
+[Mon 22 05 23:05:09 2023][INFO] Entered to User Profile: bkoksal
+[Mon 22 05 23:05:25 2023][INFO] bkoksal applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 407ms.
+[Mon 22 05 23:05:28 2023][INFO] bkoksal applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 133ms.
+[Mon 22 05 23:05:29 2023][INFO] bkoksal applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 88ms.
+[Mon 22 05 23:05:29 2023][INFO] bkoksal applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 86ms.
+[Mon 22 05 23:05:29 2023][INFO] bkoksal applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 79ms.
+[Mon 22 05 23:05:29 2023][INFO] bkoksal applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-vlad-alexandru-popa-1402787.jpg. Duration: 76ms.
+[Mon 22 05 23:05:46 2023][INFO] Entered to User Profile: bkoksal
+[Mon 22 05 23:06:42 2023][INFO] New SignUp Request
+[Mon 22 05 23:07:03 2023][INFO] New User Created: kkocaman
+[Mon 22 05 23:07:03 2023][INFO] Entered to User Profile: kkocaman
+[Mon 22 05 23:07:42 2023][INFO] kkocaman applied EDGE_DETECTION to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-372166.jpg. Duration: 482ms.
+[Mon 22 05 23:07:47 2023][INFO] Entered to User Profile: kkocaman
+[Mon 22 05 23:08:12 2023][INFO] kkocaman applied EDGE_DETECTION to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 259ms.
+[Mon 22 05 23:08:16 2023][INFO] kkocaman applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 244ms.
+[Mon 22 05 23:08:21 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 43ms.
+[Mon 22 05 23:08:22 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 25ms.
+[Mon 22 05 23:08:22 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 23ms.
+[Mon 22 05 23:08:22 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 24ms.
+[Mon 22 05 23:08:22 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 25ms.
+[Mon 22 05 23:08:22 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 24ms.
+[Mon 22 05 23:08:23 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 24ms.
+[Mon 22 05 23:08:23 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 26ms.
+[Mon 22 05 23:08:23 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 23ms.
+[Mon 22 05 23:08:23 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 24ms.
+[Mon 22 05 23:08:24 2023][INFO] kkocaman applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-pixabay-33045.jpg. Duration: 25ms.
+[Mon 22 05 23:08:33 2023][INFO] Entered to User Profile: kkocaman
+[Mon 22 05 23:08:57 2023][INFO] New SignUp Request
+[Mon 22 05 23:09:21 2023][INFO] Photo Upload Successful
+[Mon 22 05 23:09:22 2023][INFO] New User Created: mkahveciler
+[Mon 22 05 23:09:23 2023][INFO] Entered to User Profile: mkahveciler
+[Mon 22 05 23:10:05 2023][INFO] mkahveciler applied GRAYSCALE to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 94ms.
+[Mon 22 05 23:10:07 2023][INFO] mkahveciler applied EDGE_DETECTION to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 244ms.
+[Mon 22 05 23:10:19 2023][INFO] Entered to User Profile: mkahveciler
+[Mon 22 05 23:10:45 2023][INFO] mkahveciler applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 21ms.
+[Mon 22 05 23:10:48 2023][INFO] mkahveciler applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 26ms.
+[Mon 22 05 23:10:48 2023][INFO] mkahveciler applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 12ms.
+[Mon 22 05 23:10:49 2023][INFO] mkahveciler applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 11ms.
+[Mon 22 05 23:10:57 2023][INFO] Entered to User Profile: mkahveciler
+[Mon 22 05 23:11:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:11:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:12:07 2023][INFO] bkaymakcioglu applied EDGE_DETECTION to image at C:\Users\bkaym\Desktop\Image Container\pexels-giorgio-de-angelis-1413412.jpg. Duration: 453ms.
+[Mon 22 05 23:12:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:12:30 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:12:31 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:12:57 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 106ms.
+[Mon 22 05 23:12:58 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 42ms.
+[Mon 22 05 23:12:59 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 14ms.
+[Mon 22 05 23:12:59 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 15ms.
+[Mon 22 05 23:13:03 2023][INFO] bkaymakcioglu applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 39ms.
+[Mon 22 05 23:13:03 2023][INFO] bkaymakcioglu applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-oliver-sjöström-1433052.jpg. Duration: 25ms.
+[Mon 22 05 23:13:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:13:31 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:13:38 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 23:13:38 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 23:13:45 2023][INFO] Entered to User Profile: msahin
+[Mon 22 05 23:13:45 2023][INFO] Entered to profile: msahin
+[Mon 22 05 23:14:26 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:14:26 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:14:31 2023][INFO] Entered to User Profile: bediak
+[Mon 22 05 23:14:37 2023][INFO] Entered to User Profile: bediak
+[Mon 22 05 23:14:37 2023][INFO] Entered to profile: bediak
+[Mon 22 05 23:14:46 2023][INFO] Entered to User Profile: lunal
+[Mon 22 05 23:15:50 2023][INFO] Entered to User Profile: bkaymakcioglu
