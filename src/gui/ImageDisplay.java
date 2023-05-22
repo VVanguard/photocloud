@@ -10,8 +10,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -124,6 +127,9 @@ public class ImageDisplay extends FrameFactory {
 		// Initialize Components
 		initializeComponents(contentPane);
 		
+		// Display Comments in the database
+		displayComments();
+		
 		// Create Buffered Images
 		try {
 			GUIContainer.getProfilePage().displayFileError("");
@@ -156,7 +162,6 @@ public class ImageDisplay extends FrameFactory {
 		// Set the frame visible
 		setFrameStatus(FrameStatus.VISIBLE);
 		
-
 		/**
 		 * Action Listeners
 		 * 
@@ -178,15 +183,21 @@ public class ImageDisplay extends FrameFactory {
 		
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						ProfilePage ppPage = new ProfilePage(commentPanel.getUsername(), commentPanel.getUsername().matches(user.getUsername()), currentUser);
-						ppPage.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-						ppPage.setVisible(true);
+	
+						// Generate new profile page
+						GUIContainer.getProfilePage().dispose();
+						dispose();
+						GUIContainer.updateProfilePage(commentPanel.getUsername(), commentPanel.getUsername().matches(user.getUsername()));
+						GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+						GUIContainer.updateGUI();
 					}
 				});
 				
 				// Add comment to scroll pane
-				scrollPanePanel.add(commentPanel);
-				baseLogger.info().log(user.getUsername() + " commented on: " + image.getThumbnail() + " of user " + image.getUsername());
+				if (!commentPanel.getComment().matches("")) {
+					scrollPanePanel.add(commentPanel);
+					baseLogger.info().log(user.getUsername() + " commented on: " + image.getThumbnail() + " of user " + image.getUsername());
+				}
 			}
 		});
 		
@@ -215,13 +226,40 @@ public class ImageDisplay extends FrameFactory {
 			}
 		});
 		
-		/*
-		 * Add Window Listener
+		
+		/**
+		 * Window Listener
 		 * 
-		 * Save Image Data when Closed
-		 * 
+		 * Update Image Data
+		 *
 		 */
-	
+		
+		this.addWindowListener(new WindowAdapter() {		
+			@Override
+			public void windowClosed(WindowEvent e) {
+				
+				// Update Comments
+				ArrayList<String> comments = image.getComments();
+				comments.clear();
+				
+				// Get comment count
+				int commentCount = scrollPanePanel.getComponentCount();
+				
+				// Add every new comment to comments
+				for (int commentId = 0; commentId < commentCount; commentId++) {
+					CommentPanel commentPanel = (CommentPanel) scrollPanePanel.getComponent(commentId);
+					comments.add(commentPanel.getUsername() + " " + commentPanel.getComment());
+				}	
+				
+				// Update Image Data
+				try {
+					ImageOperations.writePictureData(image);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+					baseLogger.info().log("Image Updated: " + image.getImageUUID());
+				}
+			}
+		});
 	}
 
 
@@ -358,13 +396,70 @@ public class ImageDisplay extends FrameFactory {
 		btnComments = btnCommentsConfiguration.getComponent();
 		btnCommentsConfiguration.getGridBagConstraints().gridwidth = 2;
 		addComponent(jPanel, btnCommentsConfiguration);
+
 	}
 	
 	
-	/*
-	 * Getters & Setters 
-	 * 
+	/**
+	 * Displays the comments in the database
 	 */
+	public void displayComments() {
+		ArrayList<String> comments = pImage.getComments();
+		
+		// Iterate through comments and add to scroll panel
+		for (String commentLine : comments) {
+			
+			// Split username and comment
+			String[] commentData = commentLine.split(" ", 2);
+			
+			CommentPanel commentPanel = new CommentPanel(commentData[0], commentData[1]);
+			
+			/*
+			 * Add Mouse Listeners to Comment Panel
+			 */
+			commentPanel.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					
+					// Update Comments
+					ArrayList<String> comments = pImage.getComments();
+					
+					// Get comment count
+					int commentCount = scrollPanePanel.getComponentCount();
+					comments.clear();
+					
+					// Add every new comment to comments
+					for (int commentId = 0; commentId < commentCount; commentId++) {
+						CommentPanel commentPanel = (CommentPanel) scrollPanePanel.getComponent(commentId);
+						comments.add(commentPanel.getUsername() + " " + commentPanel.getComment());
+					}	
+					
+					// Update Image Data
+					try {
+						ImageOperations.writePictureData(pImage);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+						baseLogger.info().log("Image Updated: " + pImage.getImageUUID());
+					}
+					
+					// Generate new profile page
+					GUIContainer.getProfilePage().dispose();
+					dispose();
+					GUIContainer.updateProfilePage(commentPanel.getUsername(), commentPanel.getUsername().matches(user.getUsername()));
+					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+					GUIContainer.updateGUI();
+				}
+			});
+			
+			scrollPanePanel.add(commentPanel);
+		}
+	}
+	
+	
+	//
+	// Getters & Setters
+	//
+	
 	private void setUser(User user) {
 		this.user = user;
 	}

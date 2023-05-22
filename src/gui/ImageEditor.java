@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 import javax.swing.ImageIcon;
@@ -308,7 +307,7 @@ public class ImageEditor extends FrameFactory {
 						txtThumbnail.getText(), 
 						txtCaption.getText(),
 						0, 0,
-						new HashMap<String, String>(), 
+						new ArrayList<String>(), 
 						ImageEnum.PRIVATE,
 						imageUUID.toString()
 					);
@@ -352,7 +351,7 @@ public class ImageEditor extends FrameFactory {
 						txtThumbnail.getText(), 
 						txtCaption.getText(), 
 						0,0,
-						new HashMap<String, String>(), 
+						new ArrayList<String>(), 
 						ImageEnum.PUBLIC,
 						imageUUID.toString()
 					);

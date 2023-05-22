@@ -216,11 +216,13 @@ public class ImageOperations {
 		// Write caption
 		printWriter.printf("%s\n", pImage.getCaption());
 		
-		printWriter.printf("%d %d", pImage.getLikeCount(), pImage.getDislikeCount());
+		printWriter.printf("%d %d\n", pImage.getLikeCount(), pImage.getDislikeCount());
 		
 		//Write Comments
-		for (Map.Entry<String, String> pairEntry : pImage.getComments().entrySet()) {
-			printWriter.printf("%s %s\n", pairEntry.getKey(), pairEntry.getValue());
+		for (String commentString : pImage.getComments()) {
+			// Split username and comment
+			String[] commentData = commentString.split(" ", 2);
+			printWriter.printf("%s %s\n", commentData[0], commentData[1]);
 		}
 		
 		setImageVisibility(pImage);

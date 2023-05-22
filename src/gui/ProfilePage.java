@@ -12,7 +12,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
@@ -36,8 +36,6 @@ import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
 import util.exceptions.InvalidFieldEntryException;
 import util.image.ImageOperations;
-import util.validators.DatabaseValidators;
-
 
 public class ProfilePage extends FrameFactory {
 
@@ -379,12 +377,12 @@ public class ProfilePage extends FrameFactory {
 				String[] likeDislikeCounts = fileScanner.nextLine().split(" ");
 				
 				// Comments
-				HashMap<String, String> comments = new HashMap<String, String>();
+				ArrayList<String> comments = new ArrayList<String>();
 				
 				// Save Comments
 				while (fileScanner.hasNextLine()) {
-					String[] commentLine = fileScanner.nextLine().split(" ", 2);
-					comments.put(commentLine[0], commentLine[1]);
+					String commentLine = fileScanner.nextLine();
+					comments.add(commentLine);
 				}
 				
 				fileScanner.close();
@@ -403,7 +401,7 @@ public class ProfilePage extends FrameFactory {
 				// Create new Image
 				PhotocloudImage pImage = new PhotocloudImage(
 						firstLineData[0], 
-						firstLineData[1] + ".jpg", 
+						firstLineData[1], 
 						thumbnail, 
 						caption, 
 						Integer.valueOf(likeDislikeCounts[0]), Integer.valueOf(likeDislikeCounts[1]), 

@@ -194,3 +194,15 @@
 [Mon 22 05 16:10:06 2023][ERROR] Failed to read image
 [Mon 22 05 16:10:06 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
 [Mon 22 05 16:13:49 2023][ERROR] Failed to read image data file: 00e0f654-be7c-4bc9-9bf2-04c3de74cdd3.txt
+[Mon 22 05 17:14:42 2023][ERROR] Failed to read image
+[Mon 22 05 17:14:42 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
+[Mon 22 05 17:15:23 2023][ERROR] Failed to read image
+[Mon 22 05 17:15:23 2023][ERROR] Failed to read image data file: 9a2b89c0-8f17-48a9-a123-96dee3633003.txt
+[Mon 22 05 17:16:04 2023][ERROR] Failed to read image
+[Mon 22 05 17:16:04 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
+[Mon 22 05 17:16:38 2023][ERROR] Failed to read image
+[Mon 22 05 17:16:38 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
+[Mon 22 05 17:18:06 2023][ERROR] Failed to read image data file: 00e0f654-be7c-4bc9-9bf2-04c3de74cdd3.txt
+[Mon 22 05 17:18:06 2023][ERROR] Failed to read image
+[Mon 22 05 17:18:06 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
+[Mon 22 05 17:35:12 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt

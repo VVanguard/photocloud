@@ -57,7 +57,17 @@ public class CommentPanel extends PanelFactory {
 	}
 	
 	
+	//
+	// Getters
+	//
+	
+	
 	public String getUsername() {
 		return username.getText();
+	}
+	
+	
+	public String getComment() {
+		return comment.getText();
 	}
 }

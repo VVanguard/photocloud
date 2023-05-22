@@ -1,5 +1,6 @@
 package image;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -10,7 +11,7 @@ public class PhotocloudImage {
 	private String imgPath;
 	private String thumbnail;
 	private String caption;
-	private HashMap<String, String> comments;
+	private ArrayList<String> comments;
 	private ImageEnum imageEnum;
 	private String imageUUID;
 	
@@ -28,7 +29,7 @@ public class PhotocloudImage {
 	 * @param comments
 	 * @param imageEnum
 	 */
-	public PhotocloudImage(String username, String imgPath, String thumbnail, String caption, int likeCount, int dislikeCount, HashMap<String, String> comments, ImageEnum imageEnum) {
+	public PhotocloudImage(String username, String imgPath, String thumbnail, String caption, int likeCount, int dislikeCount, ArrayList<String> comments, ImageEnum imageEnum) {
 		this.username = username;
 		this.imgPath = imgPath;
 		this.thumbnail = thumbnail;
@@ -53,7 +54,7 @@ public class PhotocloudImage {
 	 * @param imageEnum
 	 * @param imageUUID
 	 */
-	public PhotocloudImage(String username, String imgPath, String thumbnail, String caption, int likeCount, int dislikeCount, HashMap<String, String> comments, ImageEnum imageEnum, String imageUUID) {
+	public PhotocloudImage(String username, String imgPath, String thumbnail, String caption, int likeCount, int dislikeCount, ArrayList<String> comments, ImageEnum imageEnum, String imageUUID) {
 		this.username = username;
 		this.imgPath = imgPath;
 		this.thumbnail = thumbnail;
@@ -101,7 +102,7 @@ public class PhotocloudImage {
 	}
 
 
-	public HashMap<String, String> getComments() {
+	public ArrayList<String> getComments() {
 		return comments;
 	}
 
@@ -131,7 +132,7 @@ public class PhotocloudImage {
 	}
 
 
-	public void setComments(HashMap<String, String> comments) {
+	public void setComments(ArrayList<String> comments) {
 		this.comments = comments;
 	}
 

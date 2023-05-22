@@ -604,3 +604,110 @@
 [Mon 22 05 16:21:24 2023][INFO] cozmen applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 151ms.
 [Mon 22 05 16:21:32 2023][INFO] cozmen applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 71ms.
 [Mon 22 05 16:21:57 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:14:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:14:43 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:15:23 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:15:23 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 17:16:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:16:04 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:16:38 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:16:38 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:18:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:18:07 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:19:26 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:19:26 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:19:33 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:19:33 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 17:23:01 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:23:01 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:23:03 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:23:13 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:25:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:25:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:25:15 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:25:25 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:28:08 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:28:08 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:28:17 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:28:24 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:29:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:29:05 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:29:11 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:29:19 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:34:31 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:34:31 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:34:41 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:35:07 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:35:08 2023][INFO] New LogIn: cozmen
+[Mon 22 05 17:35:12 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:35:12 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 17:35:23 2023][INFO] cozmen commented on: View  of user cozmen
+[Mon 22 05 17:37:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:37:03 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:37:08 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:37:08 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 17:37:16 2023][INFO] bkaymakcioglu commented on: View  of user cozmen
+[Mon 22 05 17:41:51 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:41:51 2023][INFO] New LogIn: cozmen
+[Mon 22 05 17:42:07 2023][INFO] cozmen commented on: View  of user cozmen
+[Mon 22 05 17:42:13 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:43:38 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:43:38 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:43:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:43:52 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:43:52 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 17:43:55 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:43:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:44:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:44:32 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:44:44 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:44:44 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 17:44:49 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:44:52 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 17:47:21 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:47:22 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:47:28 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:47:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:47:45 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:47:51 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:50:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:50:14 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:50:23 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:50:25 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:50:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:50:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:52:24 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:52:24 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 17:52:34 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 17:52:37 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:52:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 17:52:44 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:06:53 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 18:06:54 2023][INFO] New LogIn: cozmen
+[Mon 22 05 18:07:13 2023][INFO] cozmen commented on: View  of user cozmen
+[Mon 22 05 18:07:22 2023][INFO] cozmen commented on: View  of user cozmen
+[Mon 22 05 18:08:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:08:32 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:08:42 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:09:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:09:05 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:12:57 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:12:57 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:13:04 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:13:10 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:13:13 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:13:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:15:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:15:17 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:15:40 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:15:59 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:16:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:16:14 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:16:21 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:17:34 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:17:35 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:17:42 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:17:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 18:17:58 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 18:18:03 2023][INFO] bkaymakcioglu commented on: Salep of user bkaymakcioglu
+[Mon 22 05 18:18:06 2023][INFO] Entered to User Profile: bkaymakcioglu
