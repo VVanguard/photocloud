@@ -14,10 +14,10 @@ import util.ComponentConfiguration;
  */
 public abstract class PanelFactory extends JPanel implements Displayable {
 	
-	public PanelFactory() {
+	public PanelFactory(int x, int y) {
 		
 		// Set Size
-		setSize(120,140);
+		setSize(x, y);
 		
 		// Pane Configurations
 		setBackground(Colors.GHOST_WHITE);

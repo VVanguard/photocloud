@@ -1,0 +1,8 @@
+username: admin
+password: admin
+email: admin@admin
+name: admin
+surname: admin
+age: 20
+imgPath: resources/pictures/Default_Profile_Picture.png
+tier: ADMIN

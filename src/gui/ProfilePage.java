@@ -6,10 +6,14 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -20,6 +24,8 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import baselogger.BaseLogger;
+import image.ImageEnum;
+import image.PhotocloudImage;
 import user.User;
 import user.UserOperations;
 import util.Colors;
@@ -28,7 +34,9 @@ import util.ComponentGenerator;
 import util.customcomponents.RoundedJButton;
 import util.customcomponents.RoundedJTextField;
 import util.customframes.FrameFactory;
+import util.exceptions.InvalidFieldEntryException;
 import util.image.ImageOperations;
+import util.validators.DatabaseValidators;
 
 
 public class ProfilePage extends FrameFactory {
@@ -38,17 +46,19 @@ public class ProfilePage extends FrameFactory {
 	
 	// User
 	User user;
+	User currentUser;
 	public boolean isUserSelf;
 	
 	// Components
 	private RoundedJTextField txtSearch;
-	private JLabel lblSearch;
+	private RoundedJButton btnSearch;
 	private RoundedJButton btnDiscovery;
 	private JLabel lblPPImg;
 	private JLabel lblUsername;
 	private JLabel lblTier;
 	private RoundedJButton btnEditInfo;
 	
+	private JPanel scrollPanePanel;
 	private JScrollPane scrollPaneUserPhotos;
 	
 	private RoundedJButton btnAddMore;
@@ -58,8 +68,8 @@ public class ProfilePage extends FrameFactory {
 	private ComponentConfiguration<RoundedJTextField> txtSearchConfiguration = ComponentGenerator.generateRoundedTextField( 
 			txtSearch, 15, Colors.DIM_GRAY, new Insets(5, 10, 30, 10), 3, 1);
 	
-	private ComponentConfiguration<JLabel> lblSearchConfiguration = ComponentGenerator.generateCenteredLabel(
-			"", null, new Insets(0, 20, 25, 0), 2, 1);
+	private ComponentConfiguration<RoundedJButton> btnSearchConfiguration = ComponentGenerator.generateRoundedButton(
+			btnSearch, 15, "", new Font("Ariel", Font.BOLD, 12), Colors.GHOST_WHITE, Colors.DIM_GRAY, new Insets(5, 10, 30, 10), 2, 1);
 	
 	private ComponentConfiguration<RoundedJButton> btnDiscoveryConfiguration = ComponentGenerator.generateRoundedButton(
 			btnDiscovery, 15, "Discovery", new Font("Ariel", Font.BOLD, 12), Colors.GHOST_WHITE, Colors.DIM_GRAY, new Insets(5, 10, 30, 10), 1, 1);
@@ -88,19 +98,20 @@ public class ProfilePage extends FrameFactory {
 	 * 
 	 * @param username	username of the profile
 	 */
-	public ProfilePage(String username, boolean isUserSelf) {
+	public ProfilePage(String username, boolean isUserSelf, User currentUser) {
 		super(475, 825, Type.POPUP);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{25, 200, 25, 200, 25};
+		gbl_contentPane.columnWidths = new int[]{25, 200, 20, 200, 25};
 		gbl_contentPane.rowHeights = new int[]{50, 25, 25, 25, 75, 25, 25, 475, 50, 25};
 		
 		contentPane.setLayout(gbl_contentPane);
 		
 		// Initialize Components
 		this.isUserSelf = isUserSelf;
+		this.currentUser = currentUser;
 		initializeComponents(contentPane);
 		
 		// Get User from username
@@ -119,7 +130,7 @@ public class ProfilePage extends FrameFactory {
 		
 		// Import Search Icon
 		try {
-			lblSearch.setIcon(new ImageIcon(ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser("resources/pictures/search_icon.png"), 20)));
+			btnSearch.setIcon(new ImageIcon(ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser("resources/pictures/search_icon.png"), 20)));
 		} catch (IOException e) {
 			baseLogger.error().log("Failed Import: search_icon.png at pictures");
 		}
@@ -134,6 +145,9 @@ public class ProfilePage extends FrameFactory {
 		if (username != "dummyuser") {
 			baseLogger.info().log("Entered to User Profile: " + username);
 		}
+		
+		//Display images on the database
+		displayImages();
 		
 		
 		/**
@@ -197,6 +211,35 @@ public class ProfilePage extends FrameFactory {
 				GUIContainer.updateGUI();
 			}
 		});
+		 
+		// Search
+		btnSearch.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				String usernameString = txtSearch.getText();
+				try {
+					// Create new Profile Page and navigate
+					if (usernameString.matches("admin")) {
+						throw new InvalidFieldEntryException("");
+					}
+					
+					GUIContainer.updateProfilePage(usernameString, 
+							usernameString.matches(GUIContainer.getCurrentUser().getUsername()) || GUIContainer.getCurrentUser().getUsername().matches("admin"));
+					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+					GUIContainer.updateGUI();
+
+					baseLogger.info().log("Entered to profile: " + txtSearch.getText());
+
+				} catch (Exception error) {
+					txtSearch.setText("No User Found!!");
+					baseLogger.error().log("No User such: " + txtSearch.getText());
+				}
+			
+			}
+		});
+
 	}
 
 	
@@ -226,8 +269,8 @@ public class ProfilePage extends FrameFactory {
 		txtSearch = txtSearchConfiguration.getComponent();
 		addComponent(jPanel, txtSearchConfiguration);
 		
-		lblSearch = (JLabel)lblSearchConfiguration.getComponent();
-		addComponent(jPanel, lblSearchConfiguration);
+		btnSearch = btnSearchConfiguration.getComponent();
+		addComponent(jPanel, btnSearchConfiguration);
 		
 		// Discovery Button
 		btnDiscovery = btnDiscoveryConfiguration.getComponent();
@@ -254,8 +297,14 @@ public class ProfilePage extends FrameFactory {
 			addComponent(jPanel, btnEditInfoConfiguration);
 		}
 		
+		// Scroll Pane Grid - 18 photos max per user
+		GridBagLayout gbc_scrollPanePanel = new GridBagLayout();
+		gbc_scrollPanePanel.columnWidths = new int[] {140,140,140};
+		gbc_scrollPanePanel.rowHeights = new int[] {140, 140, 140, 140, 140, 140};
+		scrollPanePanel = new JPanel(gbc_scrollPanePanel);
+
 		// Scroll Pane
-		scrollPaneUserPhotos = new JScrollPane();
+		scrollPaneUserPhotos = new JScrollPane(scrollPanePanel);
 		scrollPaneUserPhotos.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPaneUserPhotos.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -266,12 +315,17 @@ public class ProfilePage extends FrameFactory {
 		gbc_scrollPane.insets = new Insets(0, 0, 10, 0);
 		getContentPane().add(scrollPaneUserPhotos, gbc_scrollPane);
 		
+		
 		// Add More Button
 		btnAddMore = btnAddMoreConfiguration.getComponent();
-		addComponent(jPanel, btnAddMoreConfiguration);
+		
+		if (isUserSelf) {
+			addComponent(jPanel, btnAddMoreConfiguration);
+		}
 		
 		lblError = lblErrorConfiguraion.getComponent();
 		addComponent(jPanel, lblErrorConfiguraion);
+	
 	}
 	
 	
@@ -282,6 +336,129 @@ public class ProfilePage extends FrameFactory {
 	 */
 	public void displayFileError(String str) {
 		lblError.setText(str);
+	}
+	
+	
+	/**
+	 * Displays images that are read from user database
+	 * 
+	 */
+	private void displayImages() {
+		
+		String DATA_PATH = "resources/users/" + user.getUsername() + "/picturedata/";
+		File[] imageDataFileList = new File(DATA_PATH).listFiles();
+		
+		Scanner fileScanner;
+		ImagePanel imagePanel;
+		
+		boolean isDeleted = false;
+		
+		// Image Panel Count
+		int count = 0;
+		
+		// Iterate through files
+		for (File imageDataFile : imageDataFileList) {
+			
+			// Initiate file specific scanner
+			try {
+				fileScanner = new Scanner(imageDataFile);
+				isDeleted = false;
+				
+				// [username][imgPath][Visibility]
+				String[] firstLineData = fileScanner.nextLine().split(" ");
+				ImageEnum imageEnum;
+				
+				if (firstLineData[0].matches("deleted")) {
+					System.out.println("deleted found");
+					isDeleted = true;
+				}
+				
+				String thumbnail = fileScanner.nextLine();
+				String caption = fileScanner.nextLine();
+				
+				String[] likeDislikeCounts = fileScanner.nextLine().split(" ");
+				
+				// Comments
+				HashMap<String, String> comments = new HashMap<String, String>();
+				
+				// Save Comments
+				while (fileScanner.hasNextLine()) {
+					String[] commentLine = fileScanner.nextLine().split(" ", 2);
+					comments.put(commentLine[0], commentLine[1]);
+				}
+				
+				fileScanner.close();
+				
+				// Convert String to Enumerator
+				if (firstLineData[2].matches("PRIVATE")) {
+					imageEnum = ImageEnum.PRIVATE;
+				} else if (firstLineData[2].matches("PUBLIC")) {
+					imageEnum = ImageEnum.PUBLIC;
+				} else {
+					imageEnum = ImageEnum.NULL;
+				}
+				
+				System.out.println(imageDataFile.getName().replace(".txt", ""));
+				
+				// Create new Image
+				PhotocloudImage pImage = new PhotocloudImage(
+						firstLineData[0], 
+						firstLineData[1] + ".jpg", 
+						thumbnail, 
+						caption, 
+						Integer.valueOf(likeDislikeCounts[0]), Integer.valueOf(likeDislikeCounts[1]), 
+						comments, 
+						imageEnum,
+						imageDataFile.getName().replace(".txt", "")
+					);
+				
+				// Create Panel that contains image
+				imagePanel = new ImagePanel(pImage);
+				
+				
+				/*
+				 * Add Mouse Listeners to Image Panel
+				 * 
+				 */
+				imagePanel.addMouseListener(new MouseAdapter() {
+		
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						ImageDisplay imageDisplay = new ImageDisplay(pImage, currentUser);
+						imageDisplay.setVisible(true);
+					}
+				});
+				
+				
+				// If user is self add every panel
+				if (isUserSelf) {
+					GridBagConstraints gbc = new GridBagConstraints();
+					gbc.gridx = count % 3;
+					gbc.gridy = count / 3;
+					scrollPanePanel.add(imagePanel, gbc);
+					//scrollPanePanel.add(imagePanel);
+				} 
+				
+				// If user is not self add only public panels
+				else {
+					if (imageEnum == ImageEnum.PUBLIC) {
+						GridBagConstraints gbc = new GridBagConstraints();
+						gbc.gridx = count % 3;
+						gbc.gridy = count / 3;
+						scrollPanePanel.add(imagePanel, gbc);
+					}
+				}
+				
+				// Increase Count
+				count++;
+			} catch (Exception e) {
+				if (!isDeleted) {
+					baseLogger.error().log("Failed to read image data file: " + imageDataFile.getName());
+				}
+			}
+		}
+	
+	
 	}
 
 }

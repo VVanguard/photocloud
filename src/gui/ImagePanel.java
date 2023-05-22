@@ -9,9 +9,10 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import baselogger.BaseLogger;
-import user.User;
+import image.PhotocloudImage;
 import util.ComponentConfiguration;
 import util.ComponentGenerator;
 import util.customframes.PanelFactory;
@@ -29,13 +30,13 @@ public class ImagePanel extends PanelFactory {
 	
 	// Configurations
 	private ComponentConfiguration<JLabel> lblImageConfiguration = ComponentGenerator.generateCenteredLabel(
-			"", new Font("Ariel", Font.PLAIN, 12), new Insets(0, 0, 0, 0), 0, 0);
+			"", new Font("Ariel", Font.PLAIN, 12), new Insets(5, 0, 5, 0), 0, 0);
 	
 	private ComponentConfiguration<JLabel> lblUserConfiguration = ComponentGenerator.generateCenteredLabel(
-			"", new Font("Ariel", Font.PLAIN, 12), new Insets(0, 0, 0, 0), 0, 0);
+			"", new Font("Ariel", Font.PLAIN, 12), new Insets(0, 15, 0, 0), 0, 1);
 	
 	private ComponentConfiguration<JLabel> lblThumbnailConfiguration = ComponentGenerator.generateCenteredLabel(
-			"", new Font("Ariel", Font.PLAIN, 12), new Insets(0, 0, 0, 0), 0, 0);
+			"", new Font("Ariel", Font.PLAIN, 12), new Insets(0, 0, 0, 5), 1, 1);
 	
 	
 	/**
@@ -43,8 +44,8 @@ public class ImagePanel extends PanelFactory {
 	 * @throws IOException 
 	 * 
 	 */
-	public ImagePanel(String imgPath, String username, String thumbnail) throws IOException {
-		super();
+	public ImagePanel(PhotocloudImage pImage) throws IOException {
+		super(120, 140);
 		
 		GridBagLayout gbl_ImagePanel = new GridBagLayout();
 		gbl_ImagePanel.columnWidths = new int[]{60, 60};
@@ -55,12 +56,16 @@ public class ImagePanel extends PanelFactory {
 		initializeComponents(this);
 		
 		try {
-			BufferedImage bfImg = ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser(imgPath), 120);
+			BufferedImage bfImg = ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser(pImage.getImgPath()), 120);
 			lblImage.setIcon(new ImageIcon(bfImg));
 		} catch (Exception e) {
 			baseLogger.error().log("Failed to read image");
+			e.printStackTrace();
 			throw new IOException();
 		}
+		
+		lblUser.setText(pImage.getUsername());
+		lblThumbnail.setText(pImage.getThumbnail());
 	}
 
 
@@ -86,23 +91,12 @@ public class ImagePanel extends PanelFactory {
 		
 		// User Label
 		lblUser = lblUserConfiguration.getComponent();
+		lblUser.setHorizontalAlignment(SwingConstants.LEFT);
 		addComponent(jPanel, lblUserConfiguration);
 		
 		// Thumbnail Label
 		lblThumbnail = lblThumbnailConfiguration.getComponent();
+		lblUser.setHorizontalAlignment(SwingConstants.RIGHT);
 		addComponent(jPanel, lblThumbnailConfiguration);
-	}
-	
-	
-	public static ImagePanel generateImagePanel(String imgPath) {
-		ImagePanel panel;
-		
-		try {
-			panel = new ImagePanel(imgPath);
-		} catch (Exception e) {
-			return null;
-		}
-		
-		return panel;
 	}
 }	

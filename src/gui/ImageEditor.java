@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -17,6 +19,8 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
 import baselogger.BaseLogger;
+import image.ImageEnum;
+import image.PhotocloudImage;
 import user.User;
 import user.UserTiers;
 import util.Colors;
@@ -43,9 +47,6 @@ public class ImageEditor extends FrameFactory {
 	// Filter Enumerator
 	private FilterType filterType = FilterType.NULL;
 	
-	// Filter List
-	private ArrayList<String> filtersApplied = new ArrayList<String>();
-	
 	// Loggers
 	private BaseLogger baseLogger = new BaseLogger();
 	
@@ -61,6 +62,7 @@ public class ImageEditor extends FrameFactory {
 	private JSlider slider;
 	private RoundedJButton btnApplyFilter;
 	
+	private RoundedJTextField txtThumbnail;
 	private RoundedJTextField txtCaption;
 	private RoundedJButton btnSaveToDrafts;
 	private RoundedJButton btnShare;
@@ -94,19 +96,21 @@ public class ImageEditor extends FrameFactory {
 	ComponentConfiguration<RoundedJButton> btnApplyFilterConfiguration = ComponentGenerator.generateRoundedButton(
 			btnApplyFilter, 15, "Apply", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(150, 20, 15, 5), 1, 13);
 	
+	ComponentConfiguration<RoundedJTextField> txtThumbnailConfiguration = ComponentGenerator.generateRoundedTextField(
+			txtThumbnail, 25, Colors.BROKEN_WHITE, new Insets(0, 20, 40, 0), 3, 14);
+	
 	ComponentConfiguration<RoundedJTextField> txtCaptionConfiguration = ComponentGenerator.generateRoundedTextField(
-			txtCaption, 25, Colors.BROKEN_WHITE, new Insets(0, 20, 40, 0), 2, 14);
+			txtCaption, 25, Colors.BROKEN_WHITE, new Insets(0, 0, 40, 0), 5, 14);
 	
 	ComponentConfiguration<RoundedJButton> btnSaveToDraftsConfiguration = ComponentGenerator.generateRoundedButton(
-			btnSaveToDrafts, 10, "Save To Drafts", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(0, 5, 40, 5), 3, 14);
+			btnSaveToDrafts, 10, "Save To Drafts", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.DIM_GRAY, new Insets(0, 5, 40, 5), 6, 14);
 	
 	ComponentConfiguration<RoundedJButton> btnShareConfiguration = ComponentGenerator.generateRoundedButton(
-			btnShare, 10, "Share", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 5, 40, 75), 4, 14);
+			btnShare, 10, "Share", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(0, 5, 40, 75), 7, 14);
 	
 	// Images
-	private BufferedImage bfImg;
 	private BufferedImage bfImgScaled;
-	
+
 	
 	// Dummy Constructor
 	public ImageEditor() {
@@ -126,7 +130,7 @@ public class ImageEditor extends FrameFactory {
 		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{10, 120, 1000, 100, 100, 100, 20};
+		gbl_contentPane.columnWidths = new int[]{10, 200, 100, 250, 100, 470, 100, 100, 100, 20};
 		gbl_contentPane.rowHeights = new int[]{25, 260, 25, 50, 50, 25, 50, 50, 25, 50, 50, 50, 10, 200, 60};
 		setBackground(Colors.GHOST_WHITE);
 		
@@ -141,7 +145,6 @@ public class ImageEditor extends FrameFactory {
 		// Create Buffered Images
 		try {
 			GUIContainer.getProfilePage().displayFileError("");
-			bfImg = ImageOperations.toBufferedImage(ImageOperations.readNewImageFromUser(imgPath));
 			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(imgPath), 1300, 900);
 		} catch (NullPointerException e) {
 			baseLogger.error().log("Failed to read Image: " + imgPath);
@@ -245,6 +248,7 @@ public class ImageEditor extends FrameFactory {
 		 * 
 		 */
 		
+		// Apply
 		btnApplyFilter.addActionListener(new ActionListener() {
 			
 			@Override
@@ -255,32 +259,26 @@ public class ImageEditor extends FrameFactory {
 				try {
 					// Blur
 					if (filterType == FilterType.BLUR) {
-						bfImg = Blur.BlurImage(bfImg, slider.getValue());
 						bfImgScaled = Blur.BlurImage(bfImgScaled, slider.getValue());
 					}
 					// Sharpen
 					else if (filterType == FilterType.SHARPEN) {
-						bfImg = Sharpen.SharpenImage(bfImg, slider.getValue());
 						bfImgScaled = Sharpen.SharpenImage(bfImgScaled, slider.getValue());
 					} 
 					// Grayscale
 					else if (filterType == FilterType.GRAYSCALE) {
-						bfImg = Grayscale.GrayscaleImage(bfImg, slider.getValue());
 						bfImgScaled = Grayscale.GrayscaleImage(bfImgScaled, slider.getValue());
 					} 
 					// Edge Detection
 					else if (filterType == FilterType.EDGE_DETECTION) {
-						bfImg = EdgeDetection.detectEdges(bfImg);
 						bfImgScaled = EdgeDetection.detectEdges(bfImgScaled);
 					} 
 					// Brightness
 					else if (filterType == FilterType.BRIGHTNESS) {
-						bfImg = Brightness.BrightenImage(bfImg, slider.getValue());
 						bfImgScaled = Brightness.BrightenImage(bfImgScaled, slider.getValue());
 					} 
 					// Contrast
 					else if (filterType == FilterType.CONTRAST) {
-						bfImg = Contrast.changeContrast(bfImg, slider.getValue());
 						bfImgScaled = Contrast.changeContrast(bfImgScaled, slider.getValue());
 					} 
 					// Set Edited image as displayed
@@ -292,6 +290,95 @@ public class ImageEditor extends FrameFactory {
 				} catch (Exception e2) {
 					baseLogger.error().log("Failed to apply filter: " + filterType.toString());
 				}
+			}
+		});
+		
+		// Save to Drafts
+		btnSaveToDrafts.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				UUID imageUUID = UUID.randomUUID();
+				
+				// Create an image object
+				PhotocloudImage pImage = new PhotocloudImage(
+						user.getUsername(), 
+						"resources/pictures/picturedatabase/" + imageUUID.toString(), 
+						txtThumbnail.getText(), 
+						txtCaption.getText(),
+						0, 0,
+						new HashMap<String, String>(), 
+						ImageEnum.PRIVATE,
+						imageUUID.toString()
+					);
+				
+				// Save image
+				try {
+					ImageOperations.saveImageToResources(bfImgScaled, "/picturedatabase/" + pImage.getImageUUID());
+				} catch (IOException e1) {
+					baseLogger.error().log("Failed to save image");
+				}
+				
+				// Write Picture Details
+				try {
+					ImageOperations.writePictureData(pImage);
+				} catch (IOException e1) {
+					baseLogger.error().log("Failed to write picture data");
+				}
+				
+				// Update Frames
+				GUIContainer.getImageEditor().setFrameStatus(FrameStatus.DISPOSED);
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.DISPOSED);
+				GUIContainer.updateGUI();
+				GUIContainer.updateProfilePage(user.getUsername(), true);
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
+			}
+		});
+		
+		// Share 
+		btnShare.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				UUID imageUUID = UUID.randomUUID();
+				
+				// Create an image object
+				PhotocloudImage pImage = new PhotocloudImage(
+						user.getUsername(), 
+						"resources/pictures/picturedatabase/" + imageUUID.toString(), 
+						txtThumbnail.getText(), 
+						txtCaption.getText(), 
+						0,0,
+						new HashMap<String, String>(), 
+						ImageEnum.PUBLIC,
+						imageUUID.toString()
+					);
+				
+				// Save image
+				try {
+					ImageOperations.saveImageToResources(bfImgScaled, "/picturedatabase/" + pImage.getImageUUID());
+				} catch (IOException e1) {
+					baseLogger.error().log("Failed to save image");
+				}
+				
+				// Write Picture Details
+				try {
+					ImageOperations.writePictureData(pImage);
+				} catch (IOException e1) {
+					baseLogger.error().log("Failed to write picture data");
+				}
+				
+				// Update Frames
+				GUIContainer.getImageEditor().setFrameStatus(FrameStatus.DISPOSED);
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.DISPOSED);
+				GUIContainer.updateGUI();
+				GUIContainer.updateProfilePage(user.getUsername(), true);
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
+				
 			}
 		});
 	}
@@ -312,7 +399,7 @@ public class ImageEditor extends FrameFactory {
 		
 		// Image Label
 		lblImage = lblImageConfiguration.getComponent();
-		lblImageConfiguration.getGridBagConstraints().gridwidth = 4;
+		lblImageConfiguration.getGridBagConstraints().gridwidth = 7;
 		lblImageConfiguration.getGridBagConstraints().gridheight = 13;
 		addComponent(jPanel, lblImageConfiguration);
 		
@@ -365,12 +452,19 @@ public class ImageEditor extends FrameFactory {
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
 				"PROFESSIONAL", new Font("Arial", Font.BOLD, 12), new Insets(20, 40, 0, 0), 1, 8));
 		
+		// Thumbnail
+		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
+				"Add Thumbnail", new Font("Ariel", Font.BOLD, 12), new Insets(0, 80, 40, 0), 2, 14));
+		
+		txtThumbnail = txtThumbnailConfiguration.getComponent();
+		addComponent(jPanel, txtThumbnailConfiguration);
+		
 		// Caption
 		txtCaption = txtCaptionConfiguration.getComponent();
 		addComponent(jPanel, txtCaptionConfiguration);
 		
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
-				"Add Caption", new Font("Ariel", Font.BOLD, 12), new Insets(0, 120, 40, 0), 1, 14));
+				"Add Caption", new Font("Ariel", Font.BOLD, 12), new Insets(0, 50, 40, 0), 4, 14));
 		
 		// Share/Save Buttons
 		btnSaveToDrafts = btnSaveToDraftsConfiguration.getComponent();

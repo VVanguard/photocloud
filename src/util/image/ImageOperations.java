@@ -4,9 +4,16 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
+import java.util.Scanner;
 
 import javax.imageio.ImageIO;
+
+import image.ImageEnum;
+import image.PhotocloudImage;
 
 /**
  * Basic Image operations class
@@ -16,6 +23,16 @@ import javax.imageio.ImageIO;
  */
 public class ImageOperations {
 
+	
+	/**
+	 * Converts image to Buffered Image
+	 * 
+	 * @param img	Image
+	 * 
+	 * @return		new buffered image
+	 * 
+	 * @throws NullPointerException
+	 */
 	public static BufferedImage toBufferedImage(Image img) throws NullPointerException{
 		// Create a buffered image with RGB values
 	    BufferedImage newBuffImg = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
@@ -27,6 +44,7 @@ public class ImageOperations {
 
 	    return newBuffImg;
 	}
+	
 	
 	/**
 	 * Resize image by pixels
@@ -161,8 +179,170 @@ public class ImageOperations {
 	}
 	
 	
-	public static void writePictureData(String username, String imgPath, String thumbnail, String caption, String[] comments) {
-		File userPictureDataFile = new File("resources/picturedata/" + username + "_pictures.txt");
+	/**
+	 * Writes picture data to resources
+	 * 
+	 * @param username		username of the user
+	 * @param imgPath		imgPath
+	 * @param thumbnail		thumbnail of the image
+	 * @param caption		caption of the image
+	 * @param comments		comments HashMap<username, comment>
+	 * @param imageEnum		image enum: public, private, null
+	 * 
+	 * @throws IOException
+	 */
+	public static void writePictureData(PhotocloudImage pImage) throws IOException {
+
+		// Picture Location
+		File userPictureFile = new File("resources/users/" + pImage.getUsername() + "/picturedata/" + pImage.getImageUUID() + ".txt");
+		
+		// Create image data file
+		try {
+			userPictureFile.createNewFile();
+		} catch (IOException e) {
+			throw new IOException("Failed to create image data");
+		}
+		
+		PrintWriter deleteWriter = new PrintWriter(new FileWriter(userPictureFile), false);
+		deleteWriter.print("");
+		deleteWriter.close();
+		
+		PrintWriter printWriter = new PrintWriter(userPictureFile);
+		
+		// Write username imgPath imgEnum
+		printWriter.printf("%s %s %s\n", pImage.getUsername(), pImage.getImgPath(), pImage.getImageEnum().toString());
+		// Write thumbnail
+		printWriter.printf("%s\n", pImage.getThumbnail());
+		// Write caption
+		printWriter.printf("%s\n", pImage.getCaption());
+		
+		printWriter.printf("%d %d", pImage.getLikeCount(), pImage.getDislikeCount());
+		
+		//Write Comments
+		for (Map.Entry<String, String> pairEntry : pImage.getComments().entrySet()) {
+			printWriter.printf("%s %s\n", pairEntry.getKey(), pairEntry.getValue());
+		}
+		
+		setImageVisibility(pImage);
+		
+		printWriter.close();
 	}
 	
+	
+	/**
+	 * Deletes picture from the user and shared pictures database
+	 * 
+	 * @param pImage
+	 * 
+	 * @throws IOException
+	 */
+	public static void deletePicture(PhotocloudImage pImage) throws IOException {
+	
+		// Remove from public images
+		updateDatabase(pImage);
+		
+		// Get picture data File
+		File userPictureFile = new File("resources/users/" + pImage.getUsername() + "/picturedata/" + pImage.getImageUUID() + ".txt");
+		
+		// Delete the picture data file
+		try {
+			
+			PrintWriter printWriter = new PrintWriter(new FileWriter(userPictureFile, false));
+			
+			printWriter.print("deleted");
+			printWriter.close();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new IOException("File cannot be deleted!");
+		}
+	}
+	
+	
+	/**
+	 * Sets image visibility
+	 * 
+	 * @param pImage
+	 * 
+	 * @throws IOException
+	 */
+	public static void setImageVisibility(PhotocloudImage pImage) throws IOException {
+		
+		File fileShared; 
+		PrintWriter printWriter;
+		
+		// Initiate print writer
+		try {
+			fileShared = new File("resources/users/sharedpicture.txt");
+			printWriter = new PrintWriter(new FileWriter(fileShared), true);
+		} catch (Exception e) {
+			throw new IOException("Cannot locate sharedpictuer");
+		}
+		
+		
+		
+		// Set Image Private
+		if (pImage.getImageEnum() == ImageEnum.PRIVATE) {
+			updateDatabase(pImage);
+		}
+		
+		// Set Image Public
+		else if (pImage.getImageEnum() == ImageEnum.PUBLIC) {
+			// Username UUIDString
+			printWriter.printf("%s %s", pImage.getUsername(), pImage.getImageUUID());
+		}
+		
+		printWriter.close();
+	}
+
+	
+	/**
+	 * Updates the public database 
+	 * 
+	 * @param pImage
+	 * @throws IOException 
+	 */
+	private static void updateDatabase(PhotocloudImage pImage) throws IOException {
+		
+		File sharedPictures;
+		Scanner fileScanner;
+		
+		File tempFile;
+		PrintWriter pw;
+		
+		// Try initiating writers and scanners through database file
+		try {
+			// Update Database
+			sharedPictures = new File("resources/users/sharedpicture.txt");
+			fileScanner = new Scanner(sharedPictures);
+
+			// Create temporary database
+			tempFile = new File("resources/users/sharedpicture_temp.txt");
+			pw = new PrintWriter(new FileWriter(tempFile));
+			
+		} catch (Exception e) {
+			throw new IOException("Database not located");
+		}
+
+		// Iterate through the picture database
+		while (fileScanner.hasNext()) {
+			String[] userLine = fileScanner.nextLine().split(" ");
+
+			// If UUID matches, don't write the line
+			if (userLine[1].matches(pImage.getImageUUID())) {
+				continue;
+			} else {
+				// Write new line
+				pw.printf("%s %s\n", userLine[0], userLine[1]);
+			}
+		}
+
+		pw.close();
+		fileScanner.close();
+
+		// Delete the original file
+		sharedPictures.delete();
+		// Rename the temp file
+		tempFile.renameTo(sharedPictures);
+	}
 }

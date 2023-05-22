@@ -13,7 +13,7 @@ Functionality
 - [ ] Admin User
 - [X] Photo Editting 
 - [ ] Search Users
-- [ ] Save Photos to ScrollPane
+- [X] Save Photos to ScrollPane
 
 
 Pages
@@ -24,4 +24,4 @@ Pages
 - [X] SignUp
 - [X] Profile Pages
 - [X] Profile Pages Info Edit Section
-- [ ] Scroll Pane panel design
+- [X] Scroll Pane panel design

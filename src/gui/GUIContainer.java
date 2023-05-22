@@ -7,10 +7,13 @@ import util.customframes.FrameFactory;
 
 public class GUIContainer {
 	
+	// Current User
+	private static User currentUser;
+	
 	// Frames
 	private static Login logIn = new Login();
 	private static SignUp signUp = new SignUp(); 
-	private static ProfilePage profilePage = new ProfilePage("dummyuser", true);
+	private static ProfilePage profilePage = new ProfilePage("dummyuser", true, currentUser);
 	private static ImageEditor imageEditor = new ImageEditor();
 	private static EditInfo editInfo = new EditInfo();
 	
@@ -83,13 +86,18 @@ public class GUIContainer {
 	}
 	
 	
+	public static User getCurrentUser() {
+		return currentUser;
+	}
+	
+	
 	//
 	// Setters
 	//
 	
 	
 	public static void updateProfilePage(String username, boolean isUserSelf) {
-		profilePage = new ProfilePage(username, isUserSelf);
+		profilePage = new ProfilePage(username, isUserSelf, currentUser);
 		// Replace profile page reference
 		frames.set(2, profilePage);
 	}
@@ -105,5 +113,10 @@ public class GUIContainer {
 	public static void updateEditInfo(User user) {
 		editInfo = new EditInfo(user);
 		frames.set(4, editInfo);
+	}
+	
+	
+	public static void setCurrentUser(User currentUser) {
+		GUIContainer.currentUser = currentUser;
 	}
 }

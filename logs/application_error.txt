@@ -119,7 +119,6 @@
 [Sun 21 05 18:39:35 2023][ERROR] Username or Password is not correct
 [Sun 21 05 18:46:14 2023][ERROR] resources\users\bkaymakcioglu\bkaymakcioglu.txt (The system cannot find the path specified)
 [Sun 21 05 18:52:07 2023][ERROR] Tier is not selected!
-
 [Sun 21 05 20:53:05 2023][ERROR] Tier is not selected!
 [Sun 21 05 20:53:07 2023][ERROR] Scanner closed
 [Sun 21 05 20:53:10 2023][ERROR] Scanner closed
@@ -128,3 +127,70 @@
 [Sun 21 05 20:54:09 2023][ERROR] Username must be unique!
 [Sun 21 05 20:54:16 2023][ERROR] Email address must be unique
 [Sun 21 05 20:55:26 2023][ERROR] Username must be unique!
+[Mon 22 05 00:15:30 2023][ERROR] Username or Password is not correct
+[Mon 22 05 00:15:39 2023][ERROR] Username or Password is not correct
+[Mon 22 05 00:15:40 2023][ERROR] Username or Password is not correct
+[Mon 22 05 01:39:36 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:39:36 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 01:40:05 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:40:05 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 01:41:02 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:41:02 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 01:43:04 2023][ERROR] Failed to read image
+[Mon 22 05 01:43:04 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:43:04 2023][ERROR] Failed to read image
+[Mon 22 05 01:43:04 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 01:43:46 2023][ERROR] Failed to read image
+[Mon 22 05 01:43:46 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:43:46 2023][ERROR] Failed to read image
+[Mon 22 05 01:43:46 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 01:45:07 2023][ERROR] Username or Password is not correct
+[Mon 22 05 01:45:14 2023][ERROR] Failed to read image
+[Mon 22 05 01:45:14 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 01:45:14 2023][ERROR] Failed to read image
+[Mon 22 05 01:45:14 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 05:16:55 2023][ERROR] Username or Password is not correct
+[Mon 22 05 06:20:01 2023][ERROR] Username or Password is not correct
+[Mon 22 05 13:56:37 2023][ERROR] Password length must be at least 6!
+[Mon 22 05 13:57:38 2023][ERROR] Username or Password is not correct
+[Mon 22 05 13:57:42 2023][ERROR] Username or Password is not correct
+[Mon 22 05 14:18:57 2023][ERROR] Failed to get User from username: asdasd
+[Mon 22 05 14:18:57 2023][ERROR] No User such: asdasd
+[Mon 22 05 14:18:59 2023][ERROR] Failed to get User from username: asdasd
+[Mon 22 05 14:18:59 2023][ERROR] No User such: asdasd
+[Mon 22 05 14:19:41 2023][ERROR] Failed to get User from username: asdasd
+[Mon 22 05 14:19:41 2023][ERROR] No User such: No User Found!!
+[Mon 22 05 14:21:19 2023][ERROR] No User such: No User Found!!
+[Mon 22 05 14:29:00 2023][ERROR] Failed to get User from username: bkaymakcigolu
+[Mon 22 05 14:29:00 2023][ERROR] No User such: No User Found!!
+[Mon 22 05 14:39:55 2023][ERROR] Failed to delete image at: resources/pictures/picturedatabase/e5d38394-4337-426c-bafb-177f5f46d727.jpg
+[Mon 22 05 14:41:37 2023][ERROR] Failed to delete image at: resources/pictures/picturedatabase/e5d38394-4337-426c-bafb-177f5f46d727.jpg
+[Mon 22 05 15:13:06 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 15:47:24 2023][ERROR] Failed to read image
+[Mon 22 05 15:47:24 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:47:34 2023][ERROR] Failed to read image
+[Mon 22 05 15:47:34 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:47:39 2023][ERROR] Failed to read image
+[Mon 22 05 15:47:39 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:47:52 2023][ERROR] Failed to read image
+[Mon 22 05 15:47:52 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:49:52 2023][ERROR] Failed to read image
+[Mon 22 05 15:49:52 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:50:43 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:50:50 2023][ERROR] Failed to read image
+[Mon 22 05 15:50:50 2023][ERROR] Username or Password is not correct
+[Mon 22 05 15:52:22 2023][ERROR] Failed to read image
+[Mon 22 05 16:03:22 2023][ERROR] Failed to read image
+[Mon 22 05 16:05:19 2023][ERROR] Failed to read image
+[Mon 22 05 16:06:02 2023][ERROR] Failed to read image
+[Mon 22 05 16:06:02 2023][ERROR] Username or Password is not correct
+[Mon 22 05 16:06:30 2023][ERROR] Failed to read image
+[Mon 22 05 16:06:30 2023][ERROR] Username or Password is not correct
+[Mon 22 05 16:06:47 2023][ERROR] Failed to read image
+[Mon 22 05 16:06:47 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 16:06:47 2023][ERROR] Failed to read image data file: e5d38394-4337-426c-bafb-177f5f46d727.txt
+[Mon 22 05 16:09:34 2023][ERROR] Failed to read image
+[Mon 22 05 16:09:34 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 16:10:06 2023][ERROR] Failed to read image
+[Mon 22 05 16:10:06 2023][ERROR] Failed to read image data file: 1fd1af0f-468e-4d75-b29a-bcf53825620d.txt
+[Mon 22 05 16:13:49 2023][ERROR] Failed to read image data file: 00e0f654-be7c-4bc9-9bf2-04c3de74cdd3.txt

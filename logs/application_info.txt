@@ -146,3 +146,461 @@
 [Sun 21 05 20:52:59 2023][INFO] New SignUp Request
 [Sun 21 05 20:53:57 2023][INFO] New SignUp Request
 [Sun 21 05 20:55:18 2023][INFO] New SignUp Request
+[Sun 21 05 23:47:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:47:20 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:52:20 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:52:20 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:54:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:54:14 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:55:55 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:55:55 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:56:50 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:56:50 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:57:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:57:17 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:58:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:58:29 2023][INFO] New LogIn: bkaymakcioglu
+[Sun 21 05 23:59:50 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Sun 21 05 23:59:50 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:01:37 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:01:37 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:02:01 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:02:01 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:03:12 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:03:12 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:03:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:03:42 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:04:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:04:18 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:04:36 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:04:37 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:06:20 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:06:21 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:07:53 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:07:53 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:08:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:08:47 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:09:23 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:09:23 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:09:57 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:09:57 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:11:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:11:05 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:12:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:12:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:12:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:12:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:13:10 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:13:10 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:13:30 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:13:30 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:14:09 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:14:09 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:15:03 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:15:03 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:15:43 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 00:15:43 2023][INFO] New LogIn: cozmen
+[Mon 22 05 00:23:13 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:23:14 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:24:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:24:29 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:24:43 2023][INFO] bkaymakcioglu applied EDGE_DETECTION to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20191012-WA0012.jpg. Duration: 840ms.
+[Mon 22 05 00:37:22 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:37:22 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:37:49 2023][INFO] bkaymakcioglu applied EDGE_DETECTION to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20200103-WA0002.jpg. Duration: 358ms.
+[Mon 22 05 00:37:54 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20200103-WA0002.jpg. Duration: 30ms.
+[Mon 22 05 00:37:57 2023][INFO] bkaymakcioglu applied BRIGHTNESS to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20200103-WA0002.jpg. Duration: 29ms.
+[Mon 22 05 00:38:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:41:21 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 00:41:22 2023][INFO] New LogIn: cozmen
+[Mon 22 05 00:41:40 2023][INFO] cozmen applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 292ms.
+[Mon 22 05 00:41:44 2023][INFO] cozmen applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 136ms.
+[Mon 22 05 00:41:58 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 00:46:15 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:46:15 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:46:32 2023][INFO] bkaymakcioglu applied GRAYSCALE to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 105ms.
+[Mon 22 05 00:46:36 2023][INFO] bkaymakcioglu applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 107ms.
+[Mon 22 05 00:46:40 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-zetong-li-1784578.jpg. Duration: 27ms.
+[Mon 22 05 00:46:59 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:51:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 00:51:44 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 00:52:06 2023][INFO] bkaymakcioglu applied SHARPEN to image at C:\Users\bkaym\Desktop\Image Container\pexels-craig-adderley-1563355.jpg. Duration: 497ms.
+[Mon 22 05 00:52:13 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-craig-adderley-1563355.jpg. Duration: 55ms.
+[Mon 22 05 00:52:16 2023][INFO] bkaymakcioglu applied GRAYSCALE to image at C:\Users\bkaym\Desktop\Image Container\pexels-craig-adderley-1563355.jpg. Duration: 39ms.
+[Mon 22 05 00:52:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:04:56 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:04:56 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:06:40 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:06:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:39:36 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:39:36 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:40:05 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:40:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:41:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:41:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:43:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:43:04 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:43:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:43:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:45:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:45:14 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:45:59 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:45:59 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:47:27 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:47:28 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:49:07 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 01:49:07 2023][INFO] New LogIn: cozmen
+[Mon 22 05 01:53:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:53:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:54:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:54:59 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:56:31 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:56:31 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:57:10 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:57:10 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:57:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:57:34 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 01:58:05 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 01:58:05 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:08:21 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:08:21 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:08:56 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:08:57 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:10:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:10:43 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:10:57 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:10:57 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:16:01 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:16:01 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:16:39 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:16:39 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:21:28 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:21:28 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:23:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:23:58 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:24:26 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:24:26 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:49:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:49:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:50:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:50:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:53:35 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:53:35 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:54:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:54:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:55:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:55:20 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 02:56:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 02:56:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:36:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:36:17 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:37:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:37:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:38:44 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:38:44 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:39:59 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:39:59 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:40:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:40:29 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:40:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:40:58 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:42:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:42:04 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:44:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:44:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:47:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:47:47 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:48:26 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:48:27 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:49:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:49:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:50:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:50:29 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:50:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:50:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:52:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:52:43 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:53:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:53:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:53:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:53:53 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:54:39 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:54:39 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 03:55:55 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 03:55:55 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:44:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:44:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:49:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:49:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:49:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:49:52 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:50:53 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:50:54 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:51:14 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:51:14 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:51:44 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:51:44 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:52:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:52:42 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:53:48 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:53:48 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:54:05 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:54:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:56:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:56:19 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:56:41 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:56:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:57:34 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:57:35 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 04:59:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 04:59:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:16:57 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:16:57 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:17:55 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:17:55 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:19:23 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:19:23 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:20:53 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:20:54 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:21:45 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:21:45 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:22:12 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:22:12 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:22:33 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 05:22:33 2023][INFO] New LogIn: cozmen
+[Mon 22 05 05:24:41 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:24:42 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:25:38 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:25:39 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:31:36 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:31:36 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:32:36 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:32:36 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:33:41 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:33:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:39:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:39:59 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:41:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:41:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:41:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:41:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:42:24 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:42:25 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:44:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:44:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:49:48 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:49:49 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 05:58:49 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 05:58:49 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:00:27 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 06:00:27 2023][INFO] New LogIn: cozmen
+[Mon 22 05 06:02:01 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 06:02:01 2023][INFO] New LogIn: cozmen
+[Mon 22 05 06:08:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:08:52 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:10:48 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:10:48 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:13:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:13:47 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:15:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:15:43 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:17:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:17:48 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:19:34 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:19:35 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:20:04 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:20:04 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:21:40 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:21:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:22:53 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:22:54 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:24:41 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:24:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:26:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:26:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:27:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:27:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:28:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:28:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:30:03 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:30:03 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:32:18 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:32:18 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:33:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:33:43 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:38:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:38:11 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:39:13 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:39:13 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:44:01 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:44:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:48:03 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:48:03 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:48:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:48:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:48:28 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 06:48:29 2023][INFO] New LogIn: cozmen
+[Mon 22 05 06:48:56 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 06:52:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:52:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:52:40 2023][INFO] bkaymakcioglu commented on: jellyfish of user bkaymakcioglu
+[Mon 22 05 06:53:07 2023][INFO] bkaymakcioglu commented on: jellyfish of user bkaymakcioglu
+[Mon 22 05 06:53:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:53:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:53:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 06:53:50 2023][INFO] bkaymakcioglu commented on: jellyfish of user bkaymakcioglu
+[Mon 22 05 06:53:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 06:54:01 2023][INFO] bkaymakcioglu commented on: forest of user bkaymakcioglu
+[Mon 22 05 13:53:22 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 13:53:23 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 13:53:34 2023][INFO] bkaymakcioglu commented on: jellyfish of user bkaymakcioglu
+[Mon 22 05 13:55:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 13:55:11 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 13:56:21 2023][INFO] New SignUp Request
+[Mon 22 05 13:56:45 2023][INFO] New User Created: admin
+[Mon 22 05 13:56:45 2023][INFO] Entered to User Profile: admin
+[Mon 22 05 13:57:56 2023][INFO] Entered to User Profile: admin
+[Mon 22 05 13:57:57 2023][INFO] New LogIn: admin
+[Mon 22 05 14:00:56 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:00:56 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:14:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:14:47 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:14:53 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:14:54 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 14:15:24 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:15:24 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:15:29 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:15:29 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:16:02 2023][INFO] Entered to User Profile: admin
+[Mon 22 05 14:16:03 2023][INFO] New LogIn: admin
+[Mon 22 05 14:16:08 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:16:08 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 14:18:53 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:18:54 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:19:37 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:19:38 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:19:46 2023][INFO] Entered to User Profile: admin
+[Mon 22 05 14:19:46 2023][INFO] Entered to profile: admin
+[Mon 22 05 14:21:16 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:21:16 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:21:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:21:42 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:21:48 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:21:48 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 14:21:57 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:21:57 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:22:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:22:03 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:23:34 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:23:34 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:23:38 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:23:38 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:26:23 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:26:23 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:26:28 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:26:28 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:27:41 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:27:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:27:45 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:27:45 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 14:27:57 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:27:57 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:28:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:28:02 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:28:07 2023][INFO] cozmen commented on: forest of user bkaymakcioglu
+[Mon 22 05 14:28:55 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:28:55 2023][INFO] New LogIn: cozmen
+[Mon 22 05 14:29:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:29:06 2023][INFO] Entered to profile: bkaymakcioglu
+[Mon 22 05 14:29:11 2023][INFO] cozmen commented on: forest of user bkaymakcioglu
+[Mon 22 05 14:29:24 2023][INFO] Entered to User Profile: admin
+[Mon 22 05 14:29:24 2023][INFO] New LogIn: admin
+[Mon 22 05 14:29:32 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 14:29:32 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 14:29:37 2023][INFO] admin commented on: View  of user cozmen
+[Mon 22 05 14:38:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:38:11 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:39:43 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:39:44 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:41:13 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:41:13 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:44:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:44:00 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:47:17 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:47:17 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:49:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:49:48 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:50:39 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:50:40 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:51:56 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:51:56 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 14:59:32 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 14:59:32 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:00:23 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:00:23 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:00:56 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:00:56 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:05:51 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:05:51 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:11:58 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:11:58 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:13:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:13:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:15:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:15:20 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:40:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:40:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:41:18 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:41:18 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:43:45 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:43:45 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:45:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:45:02 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:45:42 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:45:42 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 15:47:24 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:47:34 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:47:39 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:47:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:49:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:50:50 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:52:22 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 15:52:22 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:03:22 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:03:22 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:05:19 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:05:20 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:06:02 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:06:30 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:06:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:06:47 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:09:34 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:09:35 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:10:06 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:10:06 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:11:45 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:11:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:11:54 2023][INFO] bkaymakcioglu applied EDGE_DETECTION to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20191229-WA0003.jpg. Duration: 378ms.
+[Mon 22 05 16:12:07 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:12:21 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:12:21 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:12:29 2023][INFO] bkaymakcioglu applied BRIGHTNESS to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20190917-WA0021.jpg. Duration: 118ms.
+[Mon 22 05 16:12:31 2023][INFO] bkaymakcioglu applied BRIGHTNESS to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20190917-WA0021.jpg. Duration: 63ms.
+[Mon 22 05 16:12:34 2023][INFO] bkaymakcioglu applied CONTRAST to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20190917-WA0021.jpg. Duration: 50ms.
+[Mon 22 05 16:12:37 2023][INFO] bkaymakcioglu applied EDGE_DETECTION to image at C:\Users\bkaym\Downloads\drive-download-20230519T141134Z-001\IMG-20190917-WA0021.jpg. Duration: 316ms.
+[Mon 22 05 16:12:47 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:12:54 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 16:12:54 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 16:13:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:13:34 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:13:49 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:13:50 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:15:46 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:15:46 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:19:40 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 16:19:41 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 16:21:02 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 16:21:02 2023][INFO] New LogIn: cozmen
+[Mon 22 05 16:21:24 2023][INFO] cozmen applied BLUR to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 151ms.
+[Mon 22 05 16:21:32 2023][INFO] cozmen applied CONTRAST to image at C:\Users\bkaym\Desktop\Image Container\pexels-eberhard-grossgasteiger-534164.jpg. Duration: 71ms.
+[Mon 22 05 16:21:57 2023][INFO] Entered to User Profile: cozmen

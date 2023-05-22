@@ -14,6 +14,7 @@ import util.validators.DatabaseValidators;
 import java.awt.GridBagLayout;
 
 import baselogger.BaseLogger;
+import user.UserOperations;
 
 import java.awt.Insets;
 import java.awt.Color;
@@ -88,6 +89,7 @@ public class Login extends FrameFactory {
 							txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
 					
 					// Create new Profile Page and navigate
+					GUIContainer.setCurrentUser(UserOperations.getUserFromDatabase(usernameToLogIn));
 					GUIContainer.updateProfilePage(usernameToLogIn, true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
@@ -96,6 +98,7 @@ public class Login extends FrameFactory {
 					baseLogger.info().log("New LogIn: " + usernameToLogIn);
 					
 				} catch (Exception error) {
+					error.printStackTrace();
 					lblError.setText(error.getMessage());
 					baseLogger.error().log("Username or Password is not correct");
 				}

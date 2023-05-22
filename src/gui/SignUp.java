@@ -193,11 +193,11 @@ public class SignUp extends FrameFactory {
 					// Arrange Other Pages
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
 					GUIContainer.getSignUp().setFrameStatus(FrameStatus.HIDE);
-					//TODO: Show Profile or Discovery
 					
 					baseLogger.info().log("New User Created: " + txtUsername.getText());
 					
 					// Update Frame Status and navigate to the new user's profile page
+					GUIContainer.setCurrentUser(newUser);
 					GUIContainer.updateProfilePage(newUser.getUsername(), true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);
