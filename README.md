@@ -10,15 +10,15 @@ Functionality
 - [X] add signUp and logIn verifications
 - [X] logger
 - [X] Users
-- [ ] Admin User
+- [X] Admin User
 - [X] Photo Editting 
-- [ ] Search Users
+- [X] Search Users
 - [X] Save Photos to ScrollPane
 
 
 Pages
 - [X] Photo Editor
-- [ ] Discovery Page
+- [X] Discovery Page
 - [X] Profile Page
 - [X] LogIn
 - [X] SignUp

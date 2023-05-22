@@ -90,6 +90,7 @@ public class Login extends FrameFactory {
 					
 					// Create new Profile Page and navigate
 					GUIContainer.setCurrentUser(UserOperations.getUserFromDatabase(usernameToLogIn));
+					GUIContainer.updateDiscoveryPage();
 					GUIContainer.updateProfilePage(usernameToLogIn, true);
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.getLogIn().setFrameStatus(FrameStatus.HIDE);

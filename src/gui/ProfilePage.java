@@ -237,6 +237,18 @@ public class ProfilePage extends FrameFactory {
 			
 			}
 		});
+		
+		// Discovery
+		btnDiscovery.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.HIDE);
+				GUIContainer.updateDiscoveryPage();
+				GUIContainer.getDiscoveryPage().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
+			}
+		});
 
 	}
 
@@ -429,34 +441,33 @@ public class ProfilePage extends FrameFactory {
 				
 				
 				// If user is self add every panel
-				if (isUserSelf) {
-					GridBagConstraints gbc = new GridBagConstraints();
-					gbc.gridx = count % 3;
-					gbc.gridy = count / 3;
-					scrollPanePanel.add(imagePanel, gbc);
-					//scrollPanePanel.add(imagePanel);
-				} 
 				
-				// If user is not self add only public panels
-				else {
-					if (imageEnum == ImageEnum.PUBLIC) {
+				if (pImage.getImageEnum() != ImageEnum.NULL) {
+					if (isUserSelf) {
 						GridBagConstraints gbc = new GridBagConstraints();
 						gbc.gridx = count % 3;
 						gbc.gridy = count / 3;
 						scrollPanePanel.add(imagePanel, gbc);
+						count++;
+					} 
+					
+					// If user is not self add only public panels
+					else {
+						if (imageEnum == ImageEnum.PUBLIC) {
+							GridBagConstraints gbc = new GridBagConstraints();
+							gbc.gridx = count % 3;
+							gbc.gridy = count / 3;
+							scrollPanePanel.add(imagePanel, gbc);
+							count++;
+						}
 					}
 				}
-				
-				// Increase Count
-				count++;
 			} catch (Exception e) {
 				if (!isDeleted) {
 					baseLogger.error().log("Failed to read image data file: " + imageDataFile.getName());
 				}
 			}
 		}
-	
-	
 	}
 
 }

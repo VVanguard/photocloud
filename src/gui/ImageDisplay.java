@@ -167,6 +167,19 @@ public class ImageDisplay extends FrameFactory {
 		 * 
 		 */
 		
+		// Username
+		lblUsername.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GUIContainer.getProfilePage().dispose();
+				dispose();
+				GUIContainer.updateProfilePage(lblUsername.getText(), lblUsername.getText().matches(user.getUsername()));
+				GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
+				GUIContainer.updateGUI();
+				GUIContainer.updateInOrderComment();
+			}
+		});
+		
 
 		// Comment
 		btnComments.addActionListener(new ActionListener() {
@@ -190,6 +203,7 @@ public class ImageDisplay extends FrameFactory {
 						GUIContainer.updateProfilePage(commentPanel.getUsername(), commentPanel.getUsername().matches(user.getUsername()));
 						GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 						GUIContainer.updateGUI();
+						GUIContainer.updateInOrderComment();
 					}
 				});
 				
@@ -253,7 +267,7 @@ public class ImageDisplay extends FrameFactory {
 				
 				// Update Image Data
 				try {
-					ImageOperations.writePictureData(image);
+					ImageOperations.writePictureData(image, false);
 				} catch (IOException e1) {
 					e1.printStackTrace();
 					baseLogger.info().log("Image Updated: " + image.getImageUUID());
@@ -319,9 +333,19 @@ public class ImageDisplay extends FrameFactory {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					System.out.println("delete command");
 					try {
 						ImageOperations.deletePicture(pImage);
 						dispose();
+						
+						GUIContainer.getProfilePage().dispose();
+						GUIContainer.getDiscoveryPage().dispose();
+						GUIContainer.updateProfilePage(user.getUsername(), GUIContainer.getCurrentUser().getUsername().matches(user.getUsername()));
+						GUIContainer.updateDiscoveryPage();
+						GUIContainer.getDiscoveryPage().setFrameStatus(FrameStatus.VISIBLE);
+						GUIContainer.updateGUI();
+						
+						
 					} catch (IOException e1) {
 						e1.printStackTrace();
 						baseLogger.error().log("Failed to delete image at: " + pImage.getImgPath());
@@ -341,10 +365,10 @@ public class ImageDisplay extends FrameFactory {
 							pImage.setImageEnum(ImageEnum.PRIVATE);
 						}
 						
-						ImageOperations.writePictureData(pImage);
+						ImageOperations.writePictureData(pImage, true);
 						dispose();
 					} catch (IOException e1) {
-						e1.printStackTrace();
+						baseLogger.error().log("Failed to update image visibility");
 					}
 				}
 			});
@@ -436,7 +460,7 @@ public class ImageDisplay extends FrameFactory {
 					
 					// Update Image Data
 					try {
-						ImageOperations.writePictureData(pImage);
+						ImageOperations.writePictureData(pImage, false);
 					} catch (IOException e1) {
 						e1.printStackTrace();
 						baseLogger.info().log("Image Updated: " + pImage.getImageUUID());
@@ -448,6 +472,7 @@ public class ImageDisplay extends FrameFactory {
 					GUIContainer.updateProfilePage(commentPanel.getUsername(), commentPanel.getUsername().matches(user.getUsername()));
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.updateGUI();
+					GUIContainer.updateInOrderComment();
 				}
 			});
 			

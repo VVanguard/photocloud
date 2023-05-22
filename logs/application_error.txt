@@ -206,3 +206,40 @@
 [Mon 22 05 17:18:06 2023][ERROR] Failed to read image
 [Mon 22 05 17:18:06 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
 [Mon 22 05 17:35:12 2023][ERROR] Failed to read image data file: adcab409-c424-4480-b058-8392e02785b0.txt
+[Mon 22 05 19:44:17 2023][ERROR] Failed to get User from username: 
+[Mon 22 05 19:44:17 2023][ERROR] No User such: No User Found!!
+[Mon 22 05 20:48:07 2023][ERROR] Username or Password is not correct
+[Mon 22 05 20:48:14 2023][ERROR] Username or Password is not correct
+[Mon 22 05 20:48:22 2023][ERROR] Username or Password is not correct
+[Mon 22 05 20:48:33 2023][ERROR] Username or Password is not correct
+[Mon 22 05 20:48:37 2023][ERROR] Username or Password is not correct
+[Mon 22 05 20:57:30 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:57:30 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:57:46 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:57:46 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:57:55 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:57:55 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:58:24 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:58:24 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:59:26 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:59:26 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:59:55 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 20:59:55 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 21:00:27 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 21:01:13 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 21:03:26 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 21:03:26 2023][ERROR] Failed to display image at line 0 in sharedpicture!
+[Mon 22 05 21:18:37 2023][ERROR] Failed to read image
+[Mon 22 05 21:18:37 2023][ERROR] Failed to read image data file: 76ea7fc9-64d2-49fd-ba24-5511d894f155.txt
+[Mon 22 05 21:18:42 2023][ERROR] Failed to read image
+[Mon 22 05 21:18:42 2023][ERROR] Failed to display image at line 2 in sharedpicture!
+[Mon 22 05 21:20:55 2023][ERROR] Failed to read image
+[Mon 22 05 21:20:55 2023][ERROR] Failed to read image data file: 69f22d02-9a86-47af-9ac6-87292d034cf5.txt
+[Mon 22 05 21:24:05 2023][ERROR] Failed to display image at line 2 in sharedpicture!
+[Mon 22 05 21:24:26 2023][ERROR] Failed to display image at line 2 in sharedpicture!
+[Mon 22 05 21:24:27 2023][ERROR] Failed to display image at line 2 in sharedpicture!
+[Mon 22 05 21:37:08 2023][ERROR] Username or Password is not correct
+[Mon 22 05 21:37:13 2023][ERROR] Username or Password is not correct
+[Mon 22 05 21:40:48 2023][ERROR] Failed to get User from username: cozme
+[Mon 22 05 21:40:48 2023][ERROR] No User such: No User Found!!
+[Mon 22 05 21:57:17 2023][ERROR] Username or Password is not correct

@@ -16,6 +16,7 @@ public class GUIContainer {
 	private static ProfilePage profilePage = new ProfilePage("dummyuser", true, currentUser);
 	private static ImageEditor imageEditor = new ImageEditor();
 	private static EditInfo editInfo = new EditInfo();
+	private static DiscoveryPage discoveryPage = new DiscoveryPage(currentUser);
 	
 	private static ArrayList<FrameFactory> frames = new ArrayList<>();
 	
@@ -30,6 +31,7 @@ public class GUIContainer {
 		frames.add(profilePage);
 		frames.add(imageEditor);
 		frames.add(editInfo);
+		frames.add(discoveryPage);
 	}
 
 
@@ -53,6 +55,15 @@ public class GUIContainer {
 				frame.dispose();
 			}
 		});
+	}
+	
+	
+	/**
+	 * Updates frames when profile page is directed from a comment or label
+	 */
+	public static void updateInOrderComment() {
+		frames.get(5).setVisible(true);
+		frames.get(2).setVisible(true);
 	}
 	
 	
@@ -91,6 +102,11 @@ public class GUIContainer {
 	}
 	
 	
+	public static DiscoveryPage getDiscoveryPage() {
+		return discoveryPage;
+	}
+	
+	
 	//
 	// Setters
 	//
@@ -113,6 +129,12 @@ public class GUIContainer {
 	public static void updateEditInfo(User user) {
 		editInfo = new EditInfo(user);
 		frames.set(4, editInfo);
+	}
+	
+	
+	public static void updateDiscoveryPage() {
+		discoveryPage = new DiscoveryPage(getCurrentUser());
+		frames.set(5, discoveryPage);
 	}
 	
 	

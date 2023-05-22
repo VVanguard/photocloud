@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -191,7 +193,7 @@ public class ImageOperations {
 	 * 
 	 * @throws IOException
 	 */
-	public static void writePictureData(PhotocloudImage pImage) throws IOException {
+	public static void writePictureData(PhotocloudImage pImage, boolean isVisibilityChanged) throws IOException {
 
 		// Picture Location
 		File userPictureFile = new File("resources/users/" + pImage.getUsername() + "/picturedata/" + pImage.getImageUUID() + ".txt");
@@ -225,8 +227,10 @@ public class ImageOperations {
 			printWriter.printf("%s %s\n", commentData[0], commentData[1]);
 		}
 		
-		setImageVisibility(pImage);
-		
+		if (isVisibilityChanged) {
+			setImageVisibility(pImage);
+		}
+	
 		printWriter.close();
 	}
 	
@@ -239,21 +243,17 @@ public class ImageOperations {
 	 * @throws IOException
 	 */
 	public static void deletePicture(PhotocloudImage pImage) throws IOException {
-	
-		// Remove from public images
-		updateDatabase(pImage);
 		
-		// Get picture data File
-		File userPictureFile = new File("resources/users/" + pImage.getUsername() + "/picturedata/" + pImage.getImageUUID() + ".txt");
+		// Update Database
+		updateDatabase(pImage);
 		
 		// Delete the picture data file
 		try {
+			pImage.setImageEnum(ImageEnum.NULL);
 			
-			PrintWriter printWriter = new PrintWriter(new FileWriter(userPictureFile, false));
+			writePictureData(pImage, false);
 			
-			printWriter.print("deleted");
-			printWriter.close();
-	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("File cannot be deleted!");
@@ -273,56 +273,88 @@ public class ImageOperations {
 		File fileShared; 
 		PrintWriter printWriter;
 		
-		// Initiate print writer
-		try {
-			fileShared = new File("resources/users/sharedpicture.txt");
-			printWriter = new PrintWriter(new FileWriter(fileShared), true);
-		} catch (Exception e) {
-			throw new IOException("Cannot locate sharedpictuer");
-		}
+		System.out.println("start vis");
 		
 		
+		
+		System.out.println(pImage.getImageEnum());
 		
 		// Set Image Private
 		if (pImage.getImageEnum() == ImageEnum.PRIVATE) {
+			System.err.println("update");
 			updateDatabase(pImage);
 		}
 		
 		// Set Image Public
 		else if (pImage.getImageEnum() == ImageEnum.PUBLIC) {
-			// Username UUIDString
-			printWriter.printf("%s %s", pImage.getUsername(), pImage.getImageUUID());
+			System.out.println("making public");
+			
+			ArrayList<String> publicImages = new ArrayList<String>();
+
+			File sharedPictures;
+			Scanner fileScanner;
+
+			PrintWriter pw;
+	
+			// Try initiating writers and scanners through database file
+			try {
+				// Update Database
+				sharedPictures = new File("resources/users/sharedpicture.txt");
+				fileScanner = new Scanner(sharedPictures);
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new IOException("Database not located");
+			}
+
+			// Iterate through the picture database
+			while (fileScanner.hasNext()) {
+				String[] userLine = fileScanner.nextLine().split(" ");
+				publicImages.add(String.format("%s %s", userLine[0], userLine[1]));
+			}
+			
+			pw = new PrintWriter(new FileWriter(sharedPictures), false);
+			pw.print("");
+			pw.close();
+			
+			pw = new PrintWriter(new FileWriter(sharedPictures), true);
+			
+			for (String publicImage : publicImages) {
+				System.out.println("write" + publicImage);
+				pw.printf("%s\n", publicImage);
+			}
+			
+			pw.printf("%s\n", pImage.getUsername() + " " + pImage.getImageUUID());
+			
+			pw.close();
+			fileScanner.close();
 		}
-		
-		printWriter.close();
 	}
 
 	
 	/**
 	 * Updates the public database 
 	 * 
-	 * @param pImage
+	 * @param pImage		pImage to update
 	 * @throws IOException 
 	 */
 	private static void updateDatabase(PhotocloudImage pImage) throws IOException {
 		
+		ArrayList<String> publicImages = new ArrayList<String>();
+
 		File sharedPictures;
 		Scanner fileScanner;
-		
-		File tempFile;
+
 		PrintWriter pw;
 		
+		
+
 		// Try initiating writers and scanners through database file
 		try {
 			// Update Database
 			sharedPictures = new File("resources/users/sharedpicture.txt");
 			fileScanner = new Scanner(sharedPictures);
-
-			// Create temporary database
-			tempFile = new File("resources/users/sharedpicture_temp.txt");
-			pw = new PrintWriter(new FileWriter(tempFile));
-			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new IOException("Database not located");
 		}
 
@@ -330,21 +362,26 @@ public class ImageOperations {
 		while (fileScanner.hasNext()) {
 			String[] userLine = fileScanner.nextLine().split(" ");
 
-			// If UUID matches, don't write the line
+			// If UUID matches, don't add the line
 			if (userLine[1].matches(pImage.getImageUUID())) {
-				continue;
+				//Nothing
 			} else {
-				// Write new line
-				pw.printf("%s %s\n", userLine[0], userLine[1]);
+				publicImages.add(String.format("%s %s", userLine[0], userLine[1]));
 			}
 		}
-
+		
+		pw = new PrintWriter(new FileWriter(sharedPictures), false);
+		pw.print("");
+		pw.close();
+		
+		pw = new PrintWriter(new FileWriter(sharedPictures), true);
+		
+		for (String publicImage : publicImages) {
+			System.out.println("write" + publicImage);
+			pw.printf("%s\n", publicImage);
+		}
+		
 		pw.close();
 		fileScanner.close();
-
-		// Delete the original file
-		sharedPictures.delete();
-		// Rename the temp file
-		tempFile.renameTo(sharedPictures);
 	}
 }

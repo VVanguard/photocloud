@@ -303,7 +303,7 @@ public class ImageEditor extends FrameFactory {
 				// Create an image object
 				PhotocloudImage pImage = new PhotocloudImage(
 						user.getUsername(), 
-						"resources/pictures/picturedatabase/" + imageUUID.toString(), 
+						"resources/pictures/picturedatabase/" + imageUUID.toString() + ".jpg", 
 						txtThumbnail.getText(), 
 						txtCaption.getText(),
 						0, 0,
@@ -321,7 +321,7 @@ public class ImageEditor extends FrameFactory {
 				
 				// Write Picture Details
 				try {
-					ImageOperations.writePictureData(pImage);
+					ImageOperations.writePictureData(pImage, true);
 				} catch (IOException e1) {
 					baseLogger.error().log("Failed to write picture data");
 				}
@@ -347,7 +347,7 @@ public class ImageEditor extends FrameFactory {
 				// Create an image object
 				PhotocloudImage pImage = new PhotocloudImage(
 						user.getUsername(), 
-						"resources/pictures/picturedatabase/" + imageUUID.toString(), 
+						"resources/pictures/picturedatabase/" + imageUUID.toString() + ".jpg", 
 						txtThumbnail.getText(), 
 						txtCaption.getText(), 
 						0,0,
@@ -365,7 +365,7 @@ public class ImageEditor extends FrameFactory {
 				
 				// Write Picture Details
 				try {
-					ImageOperations.writePictureData(pImage);
+					ImageOperations.writePictureData(pImage, true);
 				} catch (IOException e1) {
 					baseLogger.error().log("Failed to write picture data");
 				}
