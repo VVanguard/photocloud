@@ -1,0 +1,8 @@
+username: ervatan
+password: ervatan123
+email: ervatan@gmail.com
+name: Elifnaz
+surname: Ervatan
+age: 20
+imgPath: resources/pictures/Default_Profile_Picture.png
+tier: FREE

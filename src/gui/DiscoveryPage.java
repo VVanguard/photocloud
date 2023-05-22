@@ -122,6 +122,7 @@ public class DiscoveryPage extends FrameFactory {
 							usernameString.matches(GUIContainer.getCurrentUser().getUsername()) || GUIContainer.getCurrentUser().getUsername().matches("admin"));
 					GUIContainer.getProfilePage().setFrameStatus(FrameStatus.VISIBLE);
 					GUIContainer.updateGUI();
+					GUIContainer.updateInOrderComment();
 
 					baseLogger.info().log("Entered to profile: " + txtSearch.getText());
 
@@ -173,6 +174,7 @@ public class DiscoveryPage extends FrameFactory {
 		gbc_scrollPanePanel.columnWidths = new int[] {140,140,140};
 		gbc_scrollPanePanel.rowHeights = new int[] {140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140};
 		scrollPanePanel = new JPanel(gbc_scrollPanePanel);
+		scrollPanePanel.setBackground(Colors.BROKEN_WHITE);
 
 		// Scroll Pane
 		scrollPanePhotos = new JScrollPane(scrollPanePanel);

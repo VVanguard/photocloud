@@ -3,8 +3,6 @@ package util;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 
-import javax.swing.SpringLayout.Constraints;
-
 
 /**
  * Custom configuration pairing with the component and its constraints

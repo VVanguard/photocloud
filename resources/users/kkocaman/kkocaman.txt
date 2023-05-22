@@ -1,0 +1,8 @@
+username: kkocaman
+password: kk1234
+email: kk@gmail.com
+name: Kaan
+surname: Kocaman
+age: 20
+imgPath: resources/pictures/Default_Profile_Picture.png
+tier: PROFESSIONAL

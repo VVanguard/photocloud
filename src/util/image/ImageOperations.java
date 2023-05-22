@@ -8,8 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
@@ -269,10 +267,7 @@ public class ImageOperations {
 	 * @throws IOException
 	 */
 	public static void setImageVisibility(PhotocloudImage pImage) throws IOException {
-		
-		File fileShared; 
-		PrintWriter printWriter;
-		
+
 		System.out.println("start vis");
 		
 		

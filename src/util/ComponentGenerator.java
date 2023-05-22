@@ -5,11 +5,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.JToggleButton;
 
 import util.customcomponents.RoundedJButton;
 import util.customcomponents.RoundedJPasswordField;

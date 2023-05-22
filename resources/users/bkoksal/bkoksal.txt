@@ -1,0 +1,8 @@
+username: bkoksal
+password: bk1234
+email: bkoksal@gmail.com
+name: Bartu
+surname: Koksal
+age: 21
+imgPath: resources/pictures/bkoksal.jpg
+tier: FREE

@@ -1,0 +1,8 @@
+username: lunal
+password: lu1234
+email: lunal@gmail.com
+name: Levent
+surname: Unal
+age: 20
+imgPath: resources/pictures/lunal.jpg
+tier: FREE
