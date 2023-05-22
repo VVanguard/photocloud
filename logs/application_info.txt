@@ -1022,3 +1022,45 @@
 [Mon 22 05 23:14:37 2023][INFO] Entered to profile: bediak
 [Mon 22 05 23:14:46 2023][INFO] Entered to User Profile: lunal
 [Mon 22 05 23:15:50 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:20:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:20:52 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:20:55 2023][INFO] Info Updated: bkaymakcioglu
+[Mon 22 05 23:20:59 2023][INFO] user updated: bkaymakcioglu
+[Mon 22 05 23:21:00 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:22:27 2023][INFO] GUI Updated
+[Mon 22 05 23:22:32 2023][INFO] Current User Set
+[Mon 22 05 23:22:32 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:22:33 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:22:33 2023][INFO] GUI Updated
+[Mon 22 05 23:22:33 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:22:35 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:22:35 2023][INFO] GUI Updated
+[Mon 22 05 23:22:36 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:22:36 2023][INFO] GUI Updated
+[Mon 22 05 23:22:37 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:22:37 2023][INFO] GUI Updated
+[Mon 22 05 23:26:16 2023][INFO] ------------------------------------------------
+[Mon 22 05 23:26:16 2023][INFO] Application Started
+[Mon 22 05 23:26:16 2023][INFO] ------------------------------------------------
+[Mon 22 05 23:26:17 2023][INFO] GUI Updated
+[Mon 22 05 23:26:23 2023][INFO] Current User Set
+[Mon 22 05 23:26:23 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:26:23 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:26:24 2023][INFO] GUI Updated
+[Mon 22 05 23:26:24 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:26:46 2023][INFO] ------------------------------------------------
+[Mon 22 05 23:26:46 2023][INFO] Application Started
+[Mon 22 05 23:26:46 2023][INFO] ------------------------------------------------
+[Mon 22 05 23:26:51 2023][INFO] Current User Set
+[Mon 22 05 23:26:52 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:26:52 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:26:52 2023][INFO] New LogIn: bkaymakcioglu
+[Mon 22 05 23:26:56 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:26:57 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:27:01 2023][INFO] Entered to User Profile: cozmen
+[Mon 22 05 23:27:01 2023][INFO] Entered to profile: cozmen
+[Mon 22 05 23:27:04 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:27:05 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:27:08 2023][INFO] Discovery Page Updated
+[Mon 22 05 23:27:11 2023][INFO] Entered to User Profile: bkaymakcioglu
+[Mon 22 05 23:27:14 2023][INFO] Discovery Page Updated

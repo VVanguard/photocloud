@@ -235,7 +235,6 @@ public class DiscoveryPage extends FrameFactory {
 
 					// If deleted
 					if (firstLineData[0].matches("deleted")) {
-						System.out.println("deleted found");
 						isDeleted = true;
 					}
 

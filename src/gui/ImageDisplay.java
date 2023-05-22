@@ -333,7 +333,6 @@ public class ImageDisplay extends FrameFactory {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("delete command");
 					try {
 						ImageOperations.deletePicture(pImage);
 						dispose();

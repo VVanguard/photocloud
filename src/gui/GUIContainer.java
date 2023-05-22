@@ -2,10 +2,14 @@ package gui;
 
 import java.util.ArrayList;
 
+import baselogger.BaseLogger;
 import user.User;
 import util.customframes.FrameFactory;
 
 public class GUIContainer {
+	
+	// Logger
+	static BaseLogger baseLogger = new BaseLogger();
 	
 	// Current User
 	private static User currentUser;
@@ -32,6 +36,10 @@ public class GUIContainer {
 		frames.add(imageEditor);
 		frames.add(editInfo);
 		frames.add(discoveryPage);
+	
+		baseLogger.info().log("------------------------------------------------");
+		baseLogger.info().log("Application Started");
+		baseLogger.info().log("------------------------------------------------");
 	}
 
 
@@ -123,6 +131,7 @@ public class GUIContainer {
 		imageEditor = new ImageEditor(imgPath, user);
 		// Replace image editor reference
 		frames.set(3, imageEditor);
+		baseLogger.info().log("Image Edittor Updated Updated");
 	}
 	
 	
@@ -135,10 +144,12 @@ public class GUIContainer {
 	public static void updateDiscoveryPage() {
 		discoveryPage = new DiscoveryPage(getCurrentUser());
 		frames.set(5, discoveryPage);
+		baseLogger.info().log("Discovery Page Updated");
 	}
 	
 	
 	public static void setCurrentUser(User currentUser) {
 		GUIContainer.currentUser = currentUser;
+		baseLogger.info().log("Current User Set");
 	}
 }

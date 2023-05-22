@@ -55,8 +55,6 @@ public class ImagePanel extends PanelFactory {
 		
 		initializeComponents(this);
 		
-		System.out.println(pImage.getImgPath());
-		
 		try {
 			BufferedImage bfImg = ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser(pImage.getImgPath()), 120);
 			lblImage.setIcon(new ImageIcon(bfImg));

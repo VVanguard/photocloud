@@ -379,7 +379,6 @@ public class ProfilePage extends FrameFactory {
 				ImageEnum imageEnum;
 				
 				if (firstLineData[0].matches("deleted")) {
-					System.out.println("deleted found");
 					isDeleted = true;
 				}
 				
@@ -407,9 +406,7 @@ public class ProfilePage extends FrameFactory {
 				} else {
 					imageEnum = ImageEnum.NULL;
 				}
-				
-				System.out.println(imageDataFile.getName().replace(".txt", ""));
-				
+
 				// Create new Image
 				PhotocloudImage pImage = new PhotocloudImage(
 						firstLineData[0], 

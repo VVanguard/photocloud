@@ -268,21 +268,13 @@ public class ImageOperations {
 	 */
 	public static void setImageVisibility(PhotocloudImage pImage) throws IOException {
 
-		System.out.println("start vis");
-		
-		
-		
-		System.out.println(pImage.getImageEnum());
-		
 		// Set Image Private
 		if (pImage.getImageEnum() == ImageEnum.PRIVATE) {
-			System.err.println("update");
 			updateDatabase(pImage);
 		}
 		
 		// Set Image Public
 		else if (pImage.getImageEnum() == ImageEnum.PUBLIC) {
-			System.out.println("making public");
 			
 			ArrayList<String> publicImages = new ArrayList<String>();
 
@@ -314,7 +306,6 @@ public class ImageOperations {
 			pw = new PrintWriter(new FileWriter(sharedPictures), true);
 			
 			for (String publicImage : publicImages) {
-				System.out.println("write" + publicImage);
 				pw.printf("%s\n", publicImage);
 			}
 			
@@ -372,7 +363,6 @@ public class ImageOperations {
 		pw = new PrintWriter(new FileWriter(sharedPictures), true);
 		
 		for (String publicImage : publicImages) {
-			System.out.println("write" + publicImage);
 			pw.printf("%s\n", publicImage);
 		}
 		
