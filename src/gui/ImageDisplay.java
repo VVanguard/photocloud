@@ -109,13 +109,13 @@ public class ImageDisplay extends FrameFactory {
 	 * @param image 	image to be displayed
 	 */
 	public ImageDisplay(PhotocloudImage image, User currentUser) {
-		super(1700, 1000, Type.POPUP);
+		super(1500, 860, Type.POPUP);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{10, 0, 100, 250, 100, 470, 100, 100, 100, 20, 100, 100};
-		gbl_contentPane.rowHeights = new int[]{25, 260, 25, 50, 50, 25, 50, 50, 25, 50, 50, 50, 10, 160, 50, 50};
+		gbl_contentPane.columnWidths = new int[]{10, 0, 50, 200, 100, 370, 100, 100, 100, 20, 100, 100};
+		gbl_contentPane.rowHeights = new int[]{25, 160, 25, 30, 30, 25, 30, 30, 25, 30, 30, 30, 10, 160, 30, 50};
 		setBackground(Colors.GHOST_WHITE);
 		
 		contentPane.setLayout(gbl_contentPane);
@@ -133,9 +133,9 @@ public class ImageDisplay extends FrameFactory {
 		// Create Buffered Images
 		try {
 			GUIContainer.getProfilePage().displayFileError("");
-			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(image.getImgPath()), 1300, 880);
+			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(image.getImgPath()), 1200, 600);
 			User imageUser = UserOperations.getUserFromDatabase(image.getUsername());
-			bfProfilePicture = ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser(imageUser.getImgPath()), 200);
+			bfProfilePicture = ImageOperations.resizeSquare(ImageOperations.readNewImageFromUser(imageUser.getImgPath()), 150);
 		} catch (NullPointerException e) {
 			baseLogger.error().log("Failed to read Image: " + image.getImgPath());
 			GUIContainer.getProfilePage().displayFileError("Cose a jpg!");

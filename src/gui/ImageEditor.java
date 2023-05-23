@@ -72,7 +72,7 @@ public class ImageEditor extends FrameFactory {
 			"", null, new Insets(0, 0, 0, 0), 2, 1);
 	
 	ComponentConfiguration<JLabel> lblFilterConfiguration = ComponentGenerator.generateCenteredLabel(
-			"Select Filter" , new Font("Ariel", Font.BOLD, 14), new Insets(100, 40, 0, 0), 1, 1);
+			"Select Filter" , new Font("Ariel", Font.BOLD, 14), new Insets(100, 15, 0, 0), 1, 1);
 	
 	ComponentConfiguration<RoundedJButton> btnBlurConfiguration = ComponentGenerator.generateRoundedButton(
 			btnBlur, 15, "Blur", new Font("Ariel", Font.BOLD, 12), Colors.BROKEN_WHITE, Colors.BRUNSWICK_GREEN, new Insets(5, 20, 5, 5), 1, 3);
@@ -124,13 +124,13 @@ public class ImageEditor extends FrameFactory {
 	 * @param imgPath 	path of the image to be edited
 	 */
 	public ImageEditor(String imgPath, User userEdit) {
-		super(1450, 1000, Type.POPUP);
+		super(1400, 900, Type.POPUP);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		// Content Pane Layout
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{10, 200, 100, 250, 100, 470, 100, 100, 100, 20};
-		gbl_contentPane.rowHeights = new int[]{25, 260, 25, 50, 50, 25, 50, 50, 25, 50, 50, 50, 10, 200, 60};
+		gbl_contentPane.columnWidths = new int[]{20, 200, 100, 250, 100, 350, 100, 100, 100, 20};
+		gbl_contentPane.rowHeights = new int[]{25, 160, 25, 50, 50, 25, 50, 50, 25, 50, 50, 50, 10, 100, 60};
 		setBackground(Colors.GHOST_WHITE);
 		
 		contentPane.setLayout(gbl_contentPane);
@@ -144,7 +144,7 @@ public class ImageEditor extends FrameFactory {
 		// Create Buffered Images
 		try {
 			GUIContainer.getProfilePage().displayFileError("");
-			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(imgPath), 1300, 900);
+			bfImgScaled = ImageOperations.scaleForDisplay(ImageOperations.readNewImageFromUser(imgPath), 1100, 750);
 		} catch (NullPointerException e) {
 			baseLogger.error().log("Failed to read Image: " + imgPath);
 			GUIContainer.getProfilePage().displayFileError("Cose a jpg!");
@@ -439,17 +439,17 @@ public class ImageEditor extends FrameFactory {
 		
 		// Weight Label
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
-				"Filter Weight", new Font("Arial", Font.BOLD, 12), new Insets(40, 40, 0, 0), 1, 11));
+				"Filter Weight", new Font("Arial", Font.BOLD, 12), new Insets(40, 15, 0, 0), 1, 11));
 		
 		// Tier Labels
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
-				"FREE", new Font("Arial", Font.BOLD, 12), new Insets(20, 40, 0, 0), 1, 2));
+				"FREE", new Font("Arial", Font.BOLD, 12), new Insets(20, 15, 0, 0), 1, 2));
 		
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
-				"HOBBYIST", new Font("Arial", Font.BOLD, 12), new Insets(20, 40, 0, 0), 1, 5));
+				"HOBBYIST", new Font("Arial", Font.BOLD, 12), new Insets(20, 15, 0, 0), 1, 5));
 		
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
-				"PROFESSIONAL", new Font("Arial", Font.BOLD, 12), new Insets(20, 40, 0, 0), 1, 8));
+				"PROFESSIONAL", new Font("Arial", Font.BOLD, 12), new Insets(20, 15, 0, 0), 1, 8));
 		
 		// Thumbnail
 		addComponent(jPanel, ComponentGenerator.generateCenteredLabel(
