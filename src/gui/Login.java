@@ -37,7 +37,7 @@ public class Login extends FrameFactory {
 	private RoundedJButton btnSignUp;
 	private JLabel lblError;
 	
-	//Configurations
+	// Configurations
 	private ComponentConfiguration<RoundedJTextField> txtUsernameConfiguration = ComponentGenerator.generateRoundedTextField(
 			txtUsername, 5, Colors.BROKEN_WHITE, new Insets(10, 5, 10, 5), 1, 4);
 	

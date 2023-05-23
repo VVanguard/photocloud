@@ -8,8 +8,7 @@ import java.awt.GridBagConstraints;
  * Custom configuration pairing with the component and its constraints
  * @author bkaym
  *
- * @param <T1>	component extending Component
- * @param <T2>	constraint extending Constraints
+ * @param <T1>	general-type component extending Component
  */
 public class ComponentConfiguration<T extends Component> {
 
