@@ -1,4 +1,5 @@
 bkoksal resources/pictures/picturedatabase/31327f91-d7da-42fb-aa81-32d1eb5289ae.jpg PUBLIC
 Audi
 Audi Sports Car
-0 0
+0 1
+bkaymakcioglu MY car is better:(
