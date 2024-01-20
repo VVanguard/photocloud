@@ -1,20 +1,16 @@
 # photocloud
-PhotoCloud Application
+PhotoCloud local photo editing and sharing application designed for KU COMP132
 
-
-TODO:
 
 Functionality
-- [X] Git Integration
-- [X] add photo selection to SignUp
-- [X] add signUp and logIn verifications
-- [X] logger
+- [X] Photo selection in SignUp
+- [X] SignUp and LogIn verifications
+- [X] Activity Logger
 - [X] Users
 - [X] Admin User
 - [X] Photo Editting 
 - [X] Search Users
 - [X] Save Photos to ScrollPane
-
 
 Pages
 - [X] Photo Editor
@@ -24,4 +20,4 @@ Pages
 - [X] SignUp
 - [X] Profile Pages
 - [X] Profile Pages Info Edit Section
-- [X] Scroll Pane panel design
+- [X] Scroll Pane Desing Panel
